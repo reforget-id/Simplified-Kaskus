@@ -1,3 +1,9 @@
+! Version: v.0.1.1
+! Title: Simplified Kaskus
+! Description: Menyederhanakan interface Kaskus Mobile Webview
+! Last modified: 9 Feb 2020 00:00 UTC
+! Expires: 4 days (update frequency)
+
 ! Font Forum & Thread
 m.kaskus.co.id#$#.C\(c-primary\).nightmode_C\(c-primary-night\) {font-size: 14px!important;}
 m.kaskus.co.id#$#.C\(\#4a4a4a\).nightmode_C\(c-primary-night\) {font-size: 14px!important;}
