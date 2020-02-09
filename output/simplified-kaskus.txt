@@ -1,0 +1,103 @@
+! Font Forum & Thread
+m.kaskus.co.id#$#.C\(c-primary\).nightmode_C\(c-primary-night\) {font-size: 14px!important;}
+m.kaskus.co.id#$#.C\(\#4a4a4a\).nightmode_C\(c-primary-night\) {font-size: 14px!important;}
+m.kaskus.co.id#$#.Fz\(16px\).C\(c-primary\).nightmode_C\(c-primary-night\).Lh\(1\.4\).Py\(8px\).Px\(16px\) {font-size: 100%!important;}
+m.kaskus.co.id#$#.Py\(8px\).Fz\(16px\).pagetext {font-size: 100%!important;}
+m.kaskus.co.id#$#.Tweet-text.e-entry-title {font-size: 14px!important;}
+m.kaskus.co.id##.nightmode_Bdt\(borderSolidGray6\).Bdt\(borderSolidGray2\).Py\(16px\) > .Mb\(10px\).Pos\(r\).D\(f\) > .Fx\(flex1Auto\) > .pagetext.Lh\(1\.5\).Wob\(breakWord\).Fz\(16px\).Mt\(5px\):style(font-size: 100% !important)
+
+! Forum
+m.kaskus.co.id##.Ta\(c\).Py\(10px\).Bgc\(bgPrimaryColor\).nightmode_Bgc\(c-dark-grey-2\).Bdb\(BdbThreadItem\).nightmode_Bdb\(night-border\)
+m.kaskus.co.id##.H\(5px\).Bgc\(c-lightgrey\).nightmode_Bgc\(c-tersier-night\)
+m.kaskus.co.id##div.D\(f\):nth-of-type(2) > .Ov\(h\).Pos\(r\).Fx\(flexZero\).H\(88px\).W\(88px\).Bdrsbstart\(0\).Bdrs\(5px\).Mstart\(10px\)
+m.kaskus.co.id#$#.Mx\(10px\).Px\(6px\).Bdb\(gray-border\).Py\(10px\).nightmode_Bdb\(night-border\).Pos\(r\).jsThreadCard {padding-bottom: 3px!important; padding-top: 2px!important;}
+m.kaskus.co.id##.Bdb\(BdbThreadItem\).nightmode_Bdb\(BdbThreadItemNight\).Bgc\(c-white\).P\(16px\).Pb\(0\).nightmode_Bgc\(c-gray-7\)
+
+! Thread
+m.kaskus.co.id#$#.D\(f\).Jc\(fs\).Bdb\(borderSolidGray2\).nightmode_Bdbc\(c-gray-6\).Pt\(16px\) {padding-top: 10px!important;}
+m.kaskus.co.id#$#.Pb\(16px\).Mih\(70px\).Fz\(16px\).W\(100\%\) {padding-bottom: 5px!important; min-height: 40px!important;} 
+m.kaskus.co.id##.Ai\(c\).Bgc\(c-white\).C\(c-black\).D\(f\).Jc\(sb\).Maw\(620px\).W\(100\%\).nightmode_Bgc\(c-primary\).nightmode_C\(c-grey-light-3\).Ov\(h\).nightmode_Bdt\(night-border\).Pos\(r\).Bdb\(BdbThreadItem\).nightmode_Bdb\(Bdb000\)
+m.kaskus.co.id##div.nightmode_Bgc\(c-gray-7\).P\(16px\).Bgc\(c-white\).nightmode_Bdb\(BdbThreadItemNight\).Bdb\(BdbThreadItem\) > div.Pos\(r\) > .Pt\(16px\).Jc\(fs\).D\(f\) > .is-no-image_D\(n\)
+m.kaskus.co.id##.whoCendolAjax.Px\(5px\).Fld\(r\).Ai\(c\).Jc\(fs\).D\(f\) > .Ai\(c\).Jc\(fs\).D\(f\)
+m.kaskus.co.id##.whoCendolAjax.Px\(5px\).Fld\(r\).Ai\(c\).Jc\(fs\).D\(f\) > .nightmode_C\(c-secondary\).Fz\(14px\).C\(c-tertiary\).Mx\(16px\):style(font-size: 12px !important; font-style: italic !important; margin-left: 2px !important)
+
+! Channel
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(10) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):nth-of-type(5):style(width: 100% !important; display: block !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(18) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):nth-of-type(5):style(width: 100% !important; display: block !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(26) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):style(width: 100% !important; display: block !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(29) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):style(width: 100% !important; display: block !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(32) > div.jsThreadCard.Ov\(h\).Pos\(r\).nightmode_Bdb\(night-border\).Bdb\(gray-border\).Py\(10px\).Px\(6px\):style(width: 100% !important; display: block !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(35) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):style(width: 100% !important; display: block !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(26) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\) > .Py\(5px\).Jc\(sb\).D\(f\) > .jsPopover.Pos\(r\).Fx\(flex0Auto\) > div[data-subscribe-label*="obrolan hangat-"]:style(z-index: 999999 !important; position: fixed !important; right: 7% !important; top: 13% !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(29) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\) > .Py\(5px\).Jc\(sb\).D\(f\) > .jsPopover.Pos\(r\).Fx\(flex0Auto\) > div[data-subscribe-label*="obrolan hangat-"]:style(z-index: 999999 !important; position: fixed !important; right: 7% !important; top: 13% !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(32) > div.jsThreadCard.Ov\(h\).Pos\(r\).nightmode_Bdb\(night-border\).Bdb\(gray-border\).Py\(10px\).Px\(6px\) > .Py\(5px\).Jc\(sb\).D\(f\) > .jsPopover.Pos\(r\).Fx\(flex0Auto\) > div[data-subscribe-label*="obrolan hangat-"]:style(z-index: 999999 !important; position: fixed !important; right: 7% !important; top: 13% !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(35) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\) > .Py\(5px\).Jc\(sb\).D\(f\) > .jsPopover.Pos\(r\).Fx\(flex0Auto\) > div[data-subscribe-label*="obrolan hangat-"]:style(z-index: 999999 !important; position: fixed !important; right: 7% !important; top: 13% !important)
+!
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(26) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):style(padding-bottom: 3px !important; padding-top: 2px !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(29) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):style(padding-bottom: 3px !important; padding-top: 2px !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(32) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):style(padding-bottom: 3px !important; padding-top: 2px !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(35) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):style(padding-bottom: 3px !important; padding-top: 2px !important)
+!
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(10) > div.jsThreadCard.Ov\(h\).Pos\(r\).nightmode_Bdb\(night-border\).Bdb\(gray-border\).Py\(10px\).Px\(6px\) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .vote-wrapper.c-reputation.Ai\(c\).Jc\(fs\).D\(f\)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(10) > div.jsThreadCard.Ov\(h\).Pos\(r\).nightmode_Bdb\(night-border\).Bdb\(gray-border\).Py\(10px\).Px\(6px\) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .Mx\(16px\).Bgc\(c-lightgrey\).H\(16px\).W\(1px\)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(18) > div.jsThreadCard.Ov\(h\).Pos\(r\).nightmode_Bdb\(night-border\).Bdb\(gray-border\).Py\(10px\).Px\(6px\) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .vote-wrapper.c-reputation.Ai\(c\).Jc\(fs\).D\(f\)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(18) > div.jsThreadCard.Ov\(h\).Pos\(r\).nightmode_Bdb\(night-border\).Bdb\(gray-border\).Py\(10px\).Px\(6px\) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .Mx\(16px\).Bgc\(c-lightgrey\).H\(16px\).W\(1px\)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(21) > div.jsThreadCard.Ov\(h\).Pos\(r\).nightmode_Bdb\(night-border\).Bdb\(gray-border\).Py\(10px\).Px\(6px\) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .vote-wrapper.c-reputation.Ai\(c\).Jc\(fs\).D\(f\)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(21) > div.jsThreadCard.Ov\(h\).Pos\(r\).nightmode_Bdb\(night-border\).Bdb\(gray-border\).Py\(10px\).Px\(6px\) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .Mx\(16px\).Bgc\(c-lightgrey\).H\(16px\).W\(1px\)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(10):style(padding-left: 3px !important; padding-right: 3px !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(18):style(padding-left: 3px !important; padding-right: 3px !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(21):style(padding-left: 3px !important; padding-right: 3px !important)
+
+! Gambar Forum
+||s.kaskus.id/c200x200/images/*$domain=m.kaskus.co.id
+||s.kaskus.id/c200x200/themes_3.0/img/default-forum-image-doodle-600x315.png$domain=m.kaskus.co.id
+||s.kaskus.id/c60x60/img/hot_thread/$domain=m.kaskus.co.id
+
+! Podcast
+||s.kaskus.id/ms/assets/kaskus-podcast/js/kaskus_forum.007f623.js$domain=m.kaskus.co.id
+m.kaskus.co.id##div#podcastGlobalWidgetContainer
+m.kaskus.co.id#$#.jsHeaderSeparator {padding-top: 70px!important;}
+
+! Homepage
+m.kaskus.co.id##div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):style(width: 50% !important; display: inline-block !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(8) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):nth-of-type(5):style(width: 100% !important; display: block !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(14) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):nth-of-type(5):style(width: 100% !important; display: block !important)
+!
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(24) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):style(width: 100% !important; display: block !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(24) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\) > .Py\(5px\).Jc\(sb\).D\(f\) > .jsPopover.Pos\(r\).Fx\(flex0Auto\) > div[data-subscribe-label*="obrolan hangat-"]:style(z-index: 999999 !important; position: fixed !important; right: 7% !important; top: 13% !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(27) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):style(width: 100% !important; display: block !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(27) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\) > .Py\(5px\).Jc\(sb\).D\(f\) > .jsPopover.Pos\(r\).Fx\(flex0Auto\) > div[data-subscribe-label*="obrolan hangat-"]:style(z-index: 999999 !important; position: fixed !important; right: 7% !important; top: 13% !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(30) > div.jsThreadCard.Ov\(h\).Pos\(r\).nightmode_Bdb\(night-border\).Bdb\(gray-border\).Py\(10px\).Px\(6px\):style(width: 100% !important; display: block !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(30) > div.jsThreadCard.Ov\(h\).Pos\(r\).nightmode_Bdb\(night-border\).Bdb\(gray-border\).Py\(10px\).Px\(6px\) > .Py\(5px\).Jc\(sb\).D\(f\) > .jsPopover.Pos\(r\).Fx\(flex0Auto\) > div[data-subscribe-label*="obrolan hangat-"]:style(z-index: 999999 !important; position: fixed !important; right: 7% !important; top: 13% !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(33) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):style(width: 100% !important; display: block !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(33) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\) > .Py\(5px\).Jc\(sb\).D\(f\) > .jsPopover.Pos\(r\).Fx\(flex0Auto\) > div[data-subscribe-label*="obrolan hangat-"]:style(z-index: 999999 !important; position: fixed !important; right: 7% !important; top: 13% !important)
+!
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(24) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):style(padding-bottom: 3px !important; padding-top: 2px !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(27) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):style(padding-bottom: 3px !important; padding-top: 2px !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(30) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):style(padding-bottom: 3px !important; padding-top: 2px !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(33) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):style(padding-bottom: 3px !important; padding-top: 2px !important)
+!
+m.kaskus.co.id##div.jsThreadCard.Ov\(h\).Pos\(r\).nightmode_Bdb\(night-border\).Bdb\(gray-border\).Py\(10px\).Px\(6px\) > .Mb\(10px\).Fz\(18px\).nightmode_C\(c-primary-night\).C\(c-primary\).Fw\(500\) > .nightmode_C\(c-primary-night\).C\(c-primary\):style(font-size: 12px !important)
+m.kaskus.co.id##div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):nth-of-type(10) > .Mb\(10px\).Fz\(18px\).nightmode_C\(c-primary-night\).C\(c-primary\).Fw\(500\) > .nightmode_C\(c-primary-night\).C\(c-primary\):style(font-size: 12px !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(8) > div.jsThreadCard.Ov\(h\).Pos\(r\).nightmode_Bdb\(night-border\).Bdb\(gray-border\).Py\(10px\).Px\(6px\) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .vote-wrapper.c-reputation.Ai\(c\).Jc\(fs\).D\(f\)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(8) > div.jsThreadCard.Ov\(h\).Pos\(r\).nightmode_Bdb\(night-border\).Bdb\(gray-border\).Py\(10px\).Px\(6px\) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .Mx\(16px\).Bgc\(c-lightgrey\).H\(16px\).W\(1px\)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(14) > div.jsThreadCard.Ov\(h\).Pos\(r\).nightmode_Bdb\(night-border\).Bdb\(gray-border\).Py\(10px\).Px\(6px\) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .vote-wrapper.c-reputation.Ai\(c\).Jc\(fs\).D\(f\)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(14) > div.jsThreadCard.Ov\(h\).Pos\(r\).nightmode_Bdb\(night-border\).Bdb\(gray-border\).Py\(10px\).Px\(6px\) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .Mx\(16px\).Bgc\(c-lightgrey\).H\(16px\).W\(1px\)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(17) > div.jsThreadCard.Ov\(h\).Pos\(r\).nightmode_Bdb\(night-border\).Bdb\(gray-border\).Py\(10px\).Px\(6px\) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .vote-wrapper.c-reputation.Ai\(c\).Jc\(fs\).D\(f\)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(17) > div.jsThreadCard.Ov\(h\).Pos\(r\).nightmode_Bdb\(night-border\).Bdb\(gray-border\).Py\(10px\).Px\(6px\) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .Mx\(16px\).Bgc\(c-lightgrey\).H\(16px\).W\(1px\)
+m.kaskus.co.id##div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):nth-of-type(10) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .vote-wrapper.c-reputation.Ai\(c\).Jc\(fs\).D\(f\)
+m.kaskus.co.id##div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):nth-of-type(10) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .Mx\(16px\).Bgc\(c-lightgrey\).H\(16px\).W\(1px\)
+!
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(8):style(padding-left: 3px !important; padding-right: 3px !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(14):style(padding-left: 3px !important; padding-right: 3px !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(17):style(padding-left: 3px !important; padding-right: 3px !important)
+! 
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(8):style(display: flex !important; flex-wrap: wrap !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(14):style(display: flex !important; flex-wrap: wrap !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(17):style(display: flex !important; flex-wrap: wrap !important)
+m.kaskus.co.id##div.Px\(10px\) > div.jsThreadCard.Ov\(h\).Pos\(r\).nightmode_Bdb\(night-border\).Bdb\(gray-border\).Py\(10px\).Px\(6px\) > .Mb\(10px\).Fz\(18px\).nightmode_C\(c-primary-night\).C\(c-primary\).Fw\(500\):style(overflow: hidden; text-overflow: ellipsis; line-height: 1.3em; height: 3.9em; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3 !important)
+m.kaskus.co.id##div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):nth-of-type(10) > .Mb\(10px\).Fz\(18px\).nightmode_C\(c-primary-night\).C\(c-primary\).Fw\(500\):style(overflow: hidden; text-overflow: ellipsis; line-height: 1.3em; height: 3.9em; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3 !important)
+!
+m.kaskus.co.id##div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\) > .Py\(5px\).Jc\(sb\).D\(f\) > .jsPopover.Pos\(r\).Fx\(flex0Auto\) > div[data-subscribe-label*="hot thread-"]:style(width: 180px !important)
+m.kaskus.co.id##div.jsThreadCard.Ov\(h\).Pos\(r\).nightmode_Bdb\(night-border\).Bdb\(gray-border\).Py\(10px\).Px\(6px\) > .Mb\(10px\).Fz\(18px\).nightmode_C\(c-primary-night\).C\(c-primary\).Fw\(300\) > .nightmode_C\(c-primary-night\).C\(c-primary\):style(font-size: 12px !important; overflow: hidden; text-overflow: ellipsis; line-height: 1.5em; height: 4.5em; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3 !important)
+m.kaskus.co.id##div.Px\(10px\) > div.jsThreadCard.Ov\(h\).Pos\(r\).nightmode_Bdb\(night-border\).Bdb\(gray-border\).Py\(10px\).Px\(6px\) > .Py\(5px\).Jc\(sb\).D\(f\) > .jsPopover.Pos\(r\).Fx\(flex0Auto\):style(padding-right: 7px !important; padding-left: 8px !important)
