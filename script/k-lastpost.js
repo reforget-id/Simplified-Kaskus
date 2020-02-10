@@ -1,4 +1,14 @@
-last-post.js application/javascript
+// ==UserScript==
+// @name        Kaskus : Open Last Post in New Tab
+// @version     1.0.0
+// @namespace   ffsuperteam
+// @description Buka Last Post di Tab Baru
+// @include     https://m.kaskus.co.id/*
+// @grant		none
+// ==/UserScript==
+
+"use strict";
+
 function getAnchor(element) {
 	while (element && element.nodeName != "A") {
 		element = element.parentNode;
