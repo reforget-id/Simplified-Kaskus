@@ -1,11 +1,5 @@
 last-post.js application/javascript
-
-// @include     http*
-// @grant	none
-
-"use strict";
-
-function getAnchor(element) {
+(function getAnchor(element) {
 	while (element && element.nodeName != "A") {
 		element = element.parentNode;
 	}
@@ -20,4 +14,4 @@ document.addEventListener("click", function(e){
 	if (anchor.hostname != location.hostname) {
 		anchor.target = "_blank";
 	}
-});
+})();
