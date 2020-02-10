@@ -16,7 +16,7 @@ m.kaskus.co.id##.nightmode_Bdt\(borderSolidGray6\).Bdt\(borderSolidGray2\).Py\(1
 m.kaskus.co.id##.Ta\(c\).Py\(10px\).Bgc\(bgPrimaryColor\).nightmode_Bgc\(c-dark-grey-2\).Bdb\(BdbThreadItem\).nightmode_Bdb\(night-border\)
 m.kaskus.co.id##.H\(5px\).Bgc\(c-lightgrey\).nightmode_Bgc\(c-tersier-night\)
 m.kaskus.co.id##div.D\(f\):nth-of-type(2) > .Ov\(h\).Pos\(r\).Fx\(flexZero\).H\(88px\).W\(88px\).Bdrsbstart\(0\).Bdrs\(5px\).Mstart\(10px\)
-m.kaskus.co.id#$#.Mx\(10px\).Px\(6px\).Bdb\(gray-border\).Py\(10px\).nightmode_Bdb\(night-border\).Pos\(r\).jsThreadCard {padding-bottom: 1px!important; padding-top: 2px!important;}
+m.kaskus.co.id#$#.Mx\(10px\).Px\(6px\).Bdb\(gray-border\).Py\(10px\).nightmode_Bdb\(night-border\).Pos\(r\).jsThreadCard {padding-bottom: 1px!important; padding-top: 4px!important;}
 m.kaskus.co.id##.Bdb\(BdbThreadItem\).nightmode_Bdb\(BdbThreadItemNight\).Bgc\(c-white\).P\(16px\).Pb\(0\).nightmode_Bgc\(c-gray-7\)
 
 ! Thread
