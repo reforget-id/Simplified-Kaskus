@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name        Kaskus : Open Last Post in New Tab
 // @version     1.0.0
-// @namespace   ffsuperteam
+// @namespace   https://github.com/reforget-id/Simplified-Kaskus-Mobile-Webview
 // @description Buka Last Post di Tab Baru
-// @include     https://m.kaskus.co.id/*
+// @include     https://*.kaskus.co.id/*
 // @grant		none
 // ==/UserScript==
 
