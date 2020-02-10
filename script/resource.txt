@@ -1,0 +1,23 @@
+// @include     http*
+// @grant		none
+
+last-post.js
+
+"use strict";
+
+function getAnchor(element) {
+	while (element && element.nodeName != "A") {
+		element = element.parentNode;
+	}
+	return element;
+}
+
+document.addEventListener("click", function(e){
+	var anchor = getAnchor(e.target);
+	if (!anchor || anchor.target || anchor.protocol == "javascript:" || e.isTrusted === false || !anchor.offsetParent || (e.isTrusted == null && !e.detail)) {
+		return;
+	}
+	if (anchor.hostname != location.hostname) {
+		anchor.target = "_blank";
+	}
+});
