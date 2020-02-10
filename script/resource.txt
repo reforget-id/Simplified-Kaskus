@@ -1,7 +1,7 @@
-// @include     http*
-// @grant		none
+last-post.js application/javascript
 
-last-post.js
+// @include     http*
+// @grant	none
 
 "use strict";
 
