@@ -1,5 +1,5 @@
 last-post.js application/javascript
-(function getAnchor(element) {
+function getAnchor(element) {
 	while (element && element.nodeName != "A") {
 		element = element.parentNode;
 	}
@@ -8,10 +8,11 @@ last-post.js application/javascript
 
 document.addEventListener("click", function(e){
 	var anchor = getAnchor(e.target);
-	if (!anchor || anchor.target || anchor.protocol == "javascript:" || e.isTrusted === false || !anchor.offsetParent || (e.isTrusted == null && !e.detail)) {
-		return;
+    var att = anchor.getAttribute("href");
+    var keyword = /.*(\/lastpost\/|\?goto=newpost).*/gm;
+    var m = att.match(keyword);
+
+	if (att == m) {
+        anchor.target = "_blank";
 	}
-	if (anchor.hostname != location.hostname) {
-		anchor.target = "_blank";
-	}
-})();
+});
