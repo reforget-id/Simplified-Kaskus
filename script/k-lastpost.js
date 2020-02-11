@@ -37,6 +37,7 @@ for (var i = 0; i < list.length ; i++) {
     NewElement.style.marginRight = '5px';
     NewElement.style.marginLeft = '5px';
     NewElement.style.textAlign = 'right';
+    NewElement.style.fontWeight = '500';
     NewElement.target = '_blank';
     NewElement.appendBefore(list[i]);
 }
