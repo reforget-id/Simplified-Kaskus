@@ -33,6 +33,10 @@ for (var i = 0; i < list.length ; i++) {
 
     NewElement.innerHTML = 'Last Post';
     NewElement.href = "/lastpost/" + threadid + "#post" + lastpostid;
+    NewElement.style.fontSize = '12px';
+    NewElement.style.marginRight = '5px';
+    NewElement.style.marginLeft = '5px';
+    NewElement.style.textAlign = 'right';
     NewElement.target = '_blank';
     NewElement.appendBefore(list[i]);
 }
