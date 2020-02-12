@@ -2,13 +2,14 @@
 // @name        Kaskus : Open in New Tab
 // @version     1.1.0
 // @icon        https://www.google.com/s2/favicons?domain=m.kaskus.co.id
-// @namespace   ffsuperteam
-// @homepage    https://github.com/reforget-id/Simplified-Kaskus-Mobile-Webview
+// @namespace   k-newtab
+// @author      ffsuperteam
+// @homepage    https://github.com/reforget-id/Simplified-Kaskus
 // @description Buka Last Post, First New Post, Hot Thread di Tab Baru
 // @include     https://m.kaskus.co.id/*
 // @downloadURL https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/k-newtab.js
 // @updateURL   https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/k-newtab.js
-// @grant		none
+// @grant	none
 // ==/UserScript==
 
 
