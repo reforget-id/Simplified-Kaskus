@@ -31,6 +31,8 @@ m.kaskus.co.id##.Ai\(c\).Bgc\(c-white\).C\(c-black\).D\(f\).Jc\(sb\).Maw\(620px\
 m.kaskus.co.id##div.nightmode_Bgc\(c-gray-7\).P\(16px\).Bgc\(c-white\).nightmode_Bdb\(BdbThreadItemNight\).Bdb\(BdbThreadItem\) > div.Pos\(r\) > .Pt\(16px\).Jc\(fs\).D\(f\) > .is-no-image_D\(n\)
 m.kaskus.co.id##.whoCendolAjax.Px\(5px\).Fld\(r\).Ai\(c\).Jc\(fs\).D\(f\) > .Ai\(c\).Jc\(fs\).D\(f\)
 m.kaskus.co.id##.whoCendolAjax.Px\(5px\).Fld\(r\).Ai\(c\).Jc\(fs\).D\(f\) > .nightmode_C\(c-secondary\).Fz\(14px\).C\(c-tertiary\).Mx\(16px\):style(font-size: 12px !important; font-style: italic !important; margin-left: 2px !important)
+! Embed Instagram
+m.kaskus.co.id###instagram-embed-0:style(box-sizing: content-box !important)
 
 ! Gambar Forum
 ||s.kaskus.id/c200x200/images/*$domain=m.kaskus.co.id
