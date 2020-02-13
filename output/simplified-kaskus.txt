@@ -1,8 +1,8 @@
-! Version: 1.1.0
+! Version: 1.1.1
 ! Title: Simplified Kaskus
 ! Description: Menyederhanakan interface Kaskus Mobile Webview
-! Last modified: 12 Feb 2020 00:00 UTC
-! Expires: 4 days (update frequency)
+! Last modified: 13 Feb 2020 00:00 UTC
+! Expires: 1 days (update frequency)
 
 ! Font Forum & Thread
 m.kaskus.co.id#$#.C\(c-primary\).nightmode_C\(c-primary-night\) {font-size: 14px!important;}
@@ -31,8 +31,7 @@ m.kaskus.co.id##.Ai\(c\).Bgc\(c-white\).C\(c-black\).D\(f\).Jc\(sb\).Maw\(620px\
 m.kaskus.co.id##div.nightmode_Bgc\(c-gray-7\).P\(16px\).Bgc\(c-white\).nightmode_Bdb\(BdbThreadItemNight\).Bdb\(BdbThreadItem\) > div.Pos\(r\) > .Pt\(16px\).Jc\(fs\).D\(f\) > .is-no-image_D\(n\)
 m.kaskus.co.id##.whoCendolAjax.Px\(5px\).Fld\(r\).Ai\(c\).Jc\(fs\).D\(f\) > .Ai\(c\).Jc\(fs\).D\(f\)
 m.kaskus.co.id##.whoCendolAjax.Px\(5px\).Fld\(r\).Ai\(c\).Jc\(fs\).D\(f\) > .nightmode_C\(c-secondary\).Fz\(14px\).C\(c-tertiary\).Mx\(16px\):style(font-size: 12px !important; font-style: italic !important; margin-left: 2px !important)
-! Embed Instagram
-m.kaskus.co.id###instagram-embed-0:style(box-sizing: content-box !important)
+m.kaskus.co.id###my-ad-slot
 
 ! Gambar Forum
 ||s.kaskus.id/c200x200/images/*$domain=m.kaskus.co.id
@@ -116,3 +115,8 @@ m.kaskus.co.id##div.Px\(10px\) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px
 ! Padding Kiri Kanan Titik Tombol Sudut (Homepage & Channel)
 m.kaskus.co.id##div.Px\(10px\) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\) > .Py\(5px\).Jc\(sb\).D\(f\) > .jsPopover.Pos\(r\).Fx\(flex0Auto\):style(padding-right: 7px !important; padding-left: 8px !important)
 ! ----- END OF HOMEPAGE -----
+
+! --- EXCEPTION ---
+instagram.com#@#body:style(overflow-y: scroll !important;)
+instagram.com#@#[class]:style(-webkit-touch-callout: default !important; -webkit-user-select: text !important;-moz-user-select: text !important;-ms-user-select: text !important;user-select: text !important; -khtml-user-select: text !important; -o-user-select: text !important;)
+! --- --------- ---
