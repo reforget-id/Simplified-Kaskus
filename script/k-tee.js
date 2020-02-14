@@ -10,6 +10,7 @@
 // @downloadURL https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/k-tee.js
 // @updateURL   https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/k-tee.js
 // @grant       GM_addStyle
+// @run-at      document-idle
 // ==/UserScript==
 
 GM_addStyle(`
