@@ -2,7 +2,7 @@
 // @name        Kaskus : Thread Editor Enhanced 
 // @namespace   k-tee
 // @homepage    https://github.com/reforget-id/Simplified-Kaskus
-// @version     1.0.1
+// @version     1.1.0
 // @author      ffsuperteam
 // @description Mengubah tampilan lama thread editor agar lebih nyaman digunakan
 // @icon        https://www.google.com/s2/favicons?domain=m.kaskus.co.id
