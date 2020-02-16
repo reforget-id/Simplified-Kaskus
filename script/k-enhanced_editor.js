@@ -2,13 +2,13 @@
 // @name        Kaskus : Enhanced Thread Editor  
 // @namespace   k-enhanced editor
 // @homepage    https://github.com/reforget-id/Simplified-Kaskus
-// @version     1.1.1
+// @version     1.1.2
 // @author      ffsuperteam
 // @description Mengubah tampilan lama thread editor agar lebih nyaman digunakan
 // @icon        https://www.google.com/s2/favicons?domain=m.kaskus.co.id
 // @include     https://www.kaskus.co.id/post_reply/*
-// @downloadURL https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/k-enhanced_editor.js
-// @updateURL   https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/k-enhanced_editor.js
+// @downloadURL https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/k-tee.js
+// @updateURL   https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/k-tee.js
 // @grant       GM_addStyle
 // @run-at      document-idle
 // ==/UserScript==
@@ -42,19 +42,27 @@ display: none;
 display: none;
 }
 .entry {
-height: 470px !important;
+    font-size: 16px !important;
+    overflow-x: hidden !important;
+    height: 493px !important;
+    padding-right: 48px !important;
+    padding-left: 33px !important;
 }
 .markItUpEditor {
 overflow-y: scroll !important;
-height: 380px !important;
+height: 383px !important;
 color: black !important;
 font-family: monospace;
+font-size: 14px;
 }
 .m-top-4{
 display: none;
 }
 #preview-anchor > .clearfix {
 display: none;
+}
+#preview-anchor .entry-title {
+    display: none;
 }
 .header-notification-wrap{
 display: none !important;
@@ -104,6 +112,19 @@ Element.prototype.appendAfter = function (element) {
     element.parentNode.insertBefore(this, element.nextSibling);
 }, false;
 
+/*
+var node0 = document.getElementsByClassName("markItUpButton markItUpButton6")[0];
+var li = document.createElement('li');
+li.id = 'justifyli';
+li.setAttribute("class", "markItUpButton markItUpButton6");
+li.appendAfter(node0);
+var Justify = document.createElement('button');
+Justify.setAttribute("type", "button");
+//Justify.setAttribute("class", "markItUpButton markItUpButton6");
+Justify.style.background = 'url(https://s.kaskus.id/assets/web_1.0/images/ic-editor-align-justify.svg)';
+li.appendChild(Justify);
+*/
+
 var node1 = document.getElementsByClassName("pull-right m-top-4")[0];
 var Toogle = document.createElement('button');
 Toogle.innerHTML = 'Toogle Preview';
@@ -135,6 +156,8 @@ ImportFile.id = 'fileToLoad';
 ImportFile.setAttribute("type", "file");
 ImportFile.setAttribute("class", "importfile");
 ImportFile.appendAfter(node4);
+
+
 
 
 function saveTextAsFile() {
