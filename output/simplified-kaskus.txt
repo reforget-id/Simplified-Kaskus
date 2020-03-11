@@ -1,4 +1,4 @@
-! Version: 1.1.1
+! Version: 1.1.2
 ! Title: Simplified Kaskus
 ! Description: Menyederhanakan interface Kaskus Mobile Webview
 ! Last modified: 13 Feb 2020 00:00 UTC
@@ -20,8 +20,8 @@ m.kaskus.co.id#$#.Mx\(10px\).Px\(6px\).Bdb\(gray-border\).Py\(10px\).nightmode_B
 m.kaskus.co.id##.Bdb\(BdbThreadItem\).nightmode_Bdb\(BdbThreadItemNight\).Bgc\(c-white\).P\(16px\).Pb\(0\).nightmode_Bgc\(c-gray-7\)
 m.kaskus.co.id##.Py\(5px\).Jc\(sb\).D\(f\):style(padding-bottom: 10px !important)
 ! Margin View post
-m.kaskus.co.id##.is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .Mx\(16px\).Bgc\(c-lightgrey\).H\(16px\).W\(1px\):style(margin-right: 10px;     margin-left: 10px)
-m.kaskus.co.id##.is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .jsWhoPosted.Mend\(16px\).Lh\(10px\).Ai\(c\).D\(f\):style(margin-right: 10px)
+m.kaskus.co.id##.is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .Mx\(16px\).Bgc\(c-lightgrey\).H\(16px\).W\(1px\):style(margin-right: 10px !important; margin-left: 10px !important)
+m.kaskus.co.id##.is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .jsWhoPosted.Mend\(16px\).Lh\(10px\).Ai\(c\).D\(f\):style(margin-right: 10px !important)
 
 
 ! Thread
