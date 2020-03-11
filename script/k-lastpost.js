@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Insert Last Post Button
-// @version       1.1.0
+// @version       1.1.1
 // @namespace     k-lastpost
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
@@ -45,8 +45,8 @@ function Main(){
             NewElement.setAttribute("class", "lastpost-btn");
             NewElement.href = "/lastpost/" + threadid + "#post" + lastpostid;
             NewElement.style.fontSize = '12px';
-            NewElement.style.marginRight = '5px';
-            NewElement.style.marginLeft = '5px';
+            //NewElement.style.marginRight = '5px';
+            //NewElement.style.marginLeft = '5px';
             NewElement.style.textAlign = 'right';
             NewElement.style.fontWeight = '500';
             NewElement.target = '_blank';
