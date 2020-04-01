@@ -1,7 +1,7 @@
-! Version: 1.1.3
+! Version: 1.1.4
 ! Title: Simplified Kaskus
 ! Description: Menyederhanakan interface Kaskus Mobile Webview
-! Last modified: 13 Feb 2020 00:00 UTC
+! Last modified: 1 April 2020 00:00 UTC
 ! Expires: 1 days (update frequency)
 
 ! Font Forum & Thread
@@ -39,7 +39,8 @@ m.kaskus.co.id###my-ad-slot
 ||s.kaskus.id/c60x60/img/hot_thread/$domain=m.kaskus.co.id
 ! ------
 
-! Podcast
+! Podcast & TV
+||tv.kaskus.co.id/embed-resources/embed-widget.js
 ||s.kaskus.id/ms/assets/kaskus-podcast/js/kaskus_forum.007f623.js$domain=m.kaskus.co.id
 m.kaskus.co.id##div#podcastGlobalWidgetContainer
 m.kaskus.co.id#$#.jsHeaderSeparator {padding-top: 70px!important;}
