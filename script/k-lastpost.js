@@ -44,6 +44,7 @@ function Main(){
             NewElement.setAttribute("class", "lastpost-btn fas fa-share-square");
             NewElement.href = "/lastpost/" + threadid + "#post" + lastpostid;
             NewElement.style.marginLeft = '20px';
+            NewElement.style.fontSize = '12px';
             NewElement.target = '_blank';
             NewElement.appendBefore(list[i]);
         }
