@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Insert Last Post Button
-// @version       1.1.2
+// @version       1.5.0
 // @namespace     k-lastpost
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
@@ -33,7 +33,7 @@ function Main(){
     var list = document.getElementsByClassName("Mstart(a)");
     var cl = document.getElementsByClassName("Pos(r) D(f) Jc(fs) Py(10px) C(c-secondary) nightmode_C(c-secondary-night) Ai(c) c-compact__info is-compact-view_Pb(10px)");
     var postedOnes = getElementsByIdStartsWith("div", "menudata-");
-    var lp = document.getElementsByClassName("lastpost-btn");
+    var lp = document.getElementsByClassName("lastpost-btn fa-share-square");
 
     for (var i = 0; i < list.length ; i++) {
         var NewElement = document.createElement('a');
@@ -41,14 +41,9 @@ function Main(){
         var lastpostid = postedOnes[i].getAttribute("data-last-post-id");
 
         if (!cl[i].contains(lp[i])) {
-            NewElement.innerHTML = 'Last Post';
-            NewElement.setAttribute("class", "lastpost-btn");
+            NewElement.setAttribute("class", "lastpost-btn fas fa-share-square");
             NewElement.href = "/lastpost/" + threadid + "#post" + lastpostid;
-            NewElement.style.fontSize = '12px';
-            NewElement.style.marginRight = '5px';
-            //NewElement.style.marginLeft = '5px';
-            NewElement.style.textAlign = 'right';
-            NewElement.style.fontWeight = '500';
+            NewElement.style.marginLeft = '20px';
             NewElement.target = '_blank';
             NewElement.appendBefore(list[i]);
         }
