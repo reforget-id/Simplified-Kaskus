@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Insert Quote Button
-// @version       2.0.0
+// @version       2.1.0
 // @namespace     k-quote
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
@@ -90,16 +90,17 @@ function singleQuote(){
 function getText(){
     var elem = document.getElementById("jsCreateThread").value;
     var link = document.URL;
-    if (link == link.match(/^.*\/\?post=.*/g)){
-        GM_deleteValue("quote");			
+    if (link == link.match(/^.*\/\?post=.*/g)){			
         GM_setValue("quote", elem);
         link = link.match(/^.*\//g);
         window.location.href = link;
-    }
-
-    if (elem.value == null){
-        document.getElementById("jsCreateThread").value = GM_getValue("quote");
-    }
+		}
+	
+     if (link == link.match(/^.*\/$/g)){
+      	document.getElementById("jsCreateThread").value = GM_getValue("quote");
+    }	
+	
+     GM_deleteValue("quote");
 }
 
 
