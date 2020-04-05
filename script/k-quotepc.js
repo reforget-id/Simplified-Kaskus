@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Insert Quote Button for PC
-// @version       1.0.0
+// @version       1.1.0
 // @namespace     k-quotepc
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
@@ -75,16 +75,17 @@ function singleQuote(){
 function getText(){
     var elem = document.getElementById("reply-messsage").value;
     var link = document.URL;
-    if (link == link.match(/^.*\/\?post=.*/g)){
-        GM_deleteValue("quote");			
+    if (link == link.match(/^.*\/\?post=.*/g)){		
         GM_setValue("quote", elem);
         link = link.match(/^.*\//g);
         window.location.href = link;
     }
 
-    if (elem.value == null){
+    if (link == link.match(/^.*\/$/g)){
         document.getElementById("reply-messsage").value = GM_getValue("quote");
     }
+	
+		GM_deleteValue("quote");	
 }
 
 
