@@ -7,8 +7,8 @@
 // @homepage    https://github.com/reforget-id/Simplified-Kaskus
 // @description Buka Last Post, First New Post, Hot Thread di Tab Baru
 // @include     https://m.kaskus.co.id/*
-// @downloadURL https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/k-newtab.js
-// @updateURL   https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/k-newtab.js
+// @downloadURL https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/k-newtab.user.js
+// @updateURL   https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/k-newtab.user.js
 // @grant	none
 // ==/UserScript==
 
