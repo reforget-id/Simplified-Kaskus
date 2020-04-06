@@ -7,8 +7,8 @@
 // @description Mengubah tampilan lama thread editor agar lebih nyaman digunakan
 // @icon        https://www.google.com/s2/favicons?domain=m.kaskus.co.id
 // @include     https://www.kaskus.co.id/post_reply/*
-// @downloadURL https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/k-tee.user.js
-// @updateURL   https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/k-tee.user.js
+// @downloadURL https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/k-editor.user.js
+// @updateURL   https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/k-editor.user.js
 // @grant       GM_addStyle
 // @run-at      document-idle
 // ==/UserScript==
