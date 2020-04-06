@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Insert Last Post Button
-// @version       1.5.1
+// @version       1.5.2
 // @namespace     k-lastpost
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
@@ -44,7 +44,7 @@ function Main(){
             NewElement.setAttribute("class", "lastpost-btn fas fa-share-square");
             NewElement.href = "/lastpost/" + threadid + "#post" + lastpostid;
             NewElement.style.marginLeft = '20px';
-            NewElement.style.fontSize = '12px';
+            NewElement.style.fontSize = '15px';
             NewElement.target = '_blank';
             NewElement.appendBefore(list[i]);
         }
