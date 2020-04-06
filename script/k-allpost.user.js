@@ -7,8 +7,8 @@
 // @homepage      https://github.com/reforget-id/Simplified-Kaskus
 // @description   Otomatis redirect show all post
 // @include       https://*.kaskus.co.id/show_post/*
-// @downloadURL   https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/k-allpost.js
-// @updateURL     https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/k-allpost.js
+// @downloadURL   https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/k-allpost.user.js
+// @updateURL     https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/k-allpost.user.js
 // ==/UserScript==
 
 
