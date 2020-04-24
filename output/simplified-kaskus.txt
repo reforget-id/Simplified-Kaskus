@@ -117,6 +117,12 @@ m.kaskus.co.id##div.Px\(10px\) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px
 m.kaskus.co.id##div.Px\(10px\) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\) > .Py\(5px\).Jc\(sb\).D\(f\) > .jsPopover.Pos\(r\).Fx\(flex0Auto\):style(padding-right: 7px !important; padding-left: 8px !important)
 ! ----- END OF HOMEPAGE -----
 
+
+! --- TEMPORARY ---
+! cendol sticky
+m.kaskus.co.id##.cendolSticky:style(width: 24px!important; height: 50px!important)
+
+
 ! --- EXCEPTION ---
 instagram.com#@#body:style(overflow-y: scroll !important;)
 instagram.com#@#[class]:style(-webkit-touch-callout: default !important; -webkit-user-select: text !important;-moz-user-select: text !important;-ms-user-select: text !important;user-select: text !important; -khtml-user-select: text !important; -o-user-select: text !important;)
