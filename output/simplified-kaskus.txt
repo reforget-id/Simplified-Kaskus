@@ -40,7 +40,7 @@ m.kaskus.co.id###my-ad-slot
 ! ------
 
 ! Podcast & TV
-||tv.kaskus.co.id/embed-resources/embed-widget.js
+||tv.kaskus.co.id/embed-resources/embed-widget
 ||s.kaskus.id/ms/assets/kaskus-podcast/js/kaskus_forum.007f623.js$domain=m.kaskus.co.id
 m.kaskus.co.id##div#podcastGlobalWidgetContainer
 m.kaskus.co.id#$#.jsHeaderSeparator {padding-top: 70px!important;}
