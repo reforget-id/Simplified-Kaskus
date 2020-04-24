@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Insert Quote Button
-// @version       2.1.0
+// @version       2.1.1
 // @namespace     k-quote
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
@@ -17,7 +17,7 @@
 // @grant		      GM_setValue
 // @grant		      GM_getValue
 // @grant		      GM_deleteValue
-// @run-at        document-idle
+// @run-at        document-end
 
 // ==/UserScript==
 
