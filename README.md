@@ -1,1 +1,4 @@
-# Simplified-Kaskus-Mobile-Webview
+# Simplified Kaskus
+
+
+Menyederhanakan tampilan Kaskus
