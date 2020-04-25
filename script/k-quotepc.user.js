@@ -118,7 +118,7 @@ window.onload=function(){
     for (var i = 0; i < reply.length ; i++) {
         reply[i].click();
     }
-    setTimeout(quoteNested, 2500);
+    setTimeout(quoteNested, 2000);
 }
 
 getText();
