@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Insert Quote Button
-// @version       2.1.2
+// @version       2.1.3
 // @namespace     k-quote
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
