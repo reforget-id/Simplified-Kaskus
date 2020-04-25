@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Insert Quote Button
-// @version       2.1.1
+// @version       2.1.2
 // @namespace     k-quote
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
@@ -73,17 +73,24 @@ function quoteNested(){
 
 function singleQuote(){
 		var list = document.getElementsByClassName("quote-btn D(f) Jc(fs) Ai(c) Mend(10px) Cur(p) is-multiquoted_Bgc(c-orange-night) Px(8px) Py(3px) Bdrs(8px) is-multiquoted_C(c-white) is-multiquoted_Fw(500)");  
+	  var listreply = document.getElementsByClassName("D(f) Jc(fs) Ai(c) Cur(p) Mstart(10px) C(c-secondary) nightmode_C(c-secondary-night) reply-btn");  
     var thread = document.getElementById("thread_id");
     var post = getElementsByIdStartsWith("div", "cendol");
 
-    for (var i = 0; i < list.length ; i++) {
+    for (var i = 0; i < listreply.length ; i++) {
         var NewElement = document.createElement('a');
         var threadid = thread.getAttribute("value");
         var postid = post[i].getAttribute("id");
 
         NewElement.setAttribute("class", "single-quote fas fa-comment Fz(20px)");
         NewElement.href = "/post_reply/" + threadid + "/?post=" + postid.match(/[^cendol].*/g);
-        NewElement.appendBefore(list[i]);        
+			  
+				if(window.location.href.match(/^.*m\.kaskus\.co\.id\/show_post\/*./g)){
+						NewElement.appendBefore(listreply[i]);  
+				}
+				else{
+						NewElement.appendBefore(list[i]);  
+				}
     }
 }
 
@@ -111,7 +118,7 @@ window.onload=function(){
     for (var i = 0; i < reply.length ; i++) {
         reply[i].click();
     }
-    setTimeout(quoteNested, 2500);
+    setTimeout(quoteNested, 2000);
 }
 
 getText();
