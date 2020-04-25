@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Insert Quote Button for PC
-// @version       1.5.0
+// @version       1.5.1
 // @namespace     k-quotepc
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
@@ -55,10 +55,11 @@ function getElementsByIdStartsWith(selectorTag, prefix) {
 
 function singleQuote(){
     var list = document.getElementsByClassName("jsButtonMultiquote buttonMultiquote");
+		var listreply = document.getElementsByClassName("D(ib) Td(n):h Fz(16px) jsButtonReply buttonReply");
     var thread = document.getElementById("thread_id");
     var post = getElementsByIdStartsWith("div", "post");
 
-    for (var i = 0; i < list.length ; i++) {
+    for (var i = 0; i < listreply.length ; i++) {
         var NewElement1 = document.createElement('a');
 			  var NewElement2 = document.createElement('i');
 			  var NewElement3 = document.createElement('span');
@@ -66,13 +67,19 @@ function singleQuote(){
         var postid = post[i].getAttribute("id");
 				
 				NewElement1.setAttribute("class", "D(ib) Td(n):h Fz(16px) Mend(15px) Px(8px) Py(3px) Bdrs(8px) buttonMultiquote");
-			  NewElement1.href = "/post_reply/" + threadid + "/?post=" + postid.match(/[^post].*/g);
-			  NewElement1.appendBefore(list[i]);  
+			  NewElement1.href = "/post_reply/" + threadid + "/?post=" + postid.match(/[^post].*/g);			  
 			  NewElement1.appendChild(NewElement2);
 			  NewElement1.appendChild(NewElement3);
         NewElement2.setAttribute("class", "single-quote fas C(c-secondary) fa-comment Mend(2px)");
 			  NewElement3.setAttribute("class", "C(c-secondary) Fz(12px)");
 			  NewElement3.innerHTML = "Single Quote";
+				
+				if(window.location.href.match(/^.*www\.kaskus\.co\.id\/show_post\/*./g)){
+						NewElement1.appendBefore(listreply[i]);  
+				}
+				else{
+						NewElement1.appendBefore(list[i]);  
+				}
     }
 }
 
@@ -139,7 +146,7 @@ window.onload=function(){
     for (var j = 0; j < reply.length ; j++) {
         reply[j].click();
     }
-    setTimeout(nestedSingleQuote, 2500);
+    setTimeout(nestedSingleQuote, 2000);
 }
 
 getText();
