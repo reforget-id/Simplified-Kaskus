@@ -1,4 +1,4 @@
-! Version: 1.1.5
+! Version: 1.1.8
 ! Title: Simplified Kaskus
 ! Description: Menyederhanakan interface Kaskus Mobile Webview
 ! Last modified: 5 April 2020 00:00 UTC
