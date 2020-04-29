@@ -1,0 +1,130 @@
+! Version: 1.1.8
+! Title: Simplified Kaskus
+! Description: Menyederhanakan interface Kaskus Mobile Web
+! Last modified: 5 April 2020 00:00 UTC
+! Expires: 4 days (update frequency)
+
+! Font Forum & Thread
+m.kaskus.co.id#$#.C\(c-primary\).nightmode_C\(c-primary-night\) {font-size: 14px!important;}
+m.kaskus.co.id#$#.C\(\#4a4a4a\).nightmode_C\(c-primary-night\) {font-size: 14px!important;}
+m.kaskus.co.id#$#.Fz\(16px\).C\(c-primary\).nightmode_C\(c-primary-night\).Lh\(1\.4\).Py\(8px\).Px\(16px\) {font-size: 100%!important;}
+m.kaskus.co.id#$#.Py\(8px\).Fz\(16px\).pagetext {font-size: 100%!important;}
+m.kaskus.co.id#$#.Tweet-text.e-entry-title {font-size: 14px!important;}
+m.kaskus.co.id##.nightmode_Bdt\(borderSolidGray6\).Bdt\(borderSolidGray2\).Py\(16px\) > .Mb\(10px\).Pos\(r\).D\(f\) > .Fx\(flex1Auto\) > .pagetext.Lh\(1\.5\).Wob\(breakWord\).Fz\(16px\).Mt\(5px\):style(font-size: 100% !important)
+
+! Forum
+m.kaskus.co.id##.Ta\(c\).Py\(10px\).Bgc\(bgPrimaryColor\).nightmode_Bgc\(c-dark-grey-2\).Bdb\(BdbThreadItem\).nightmode_Bdb\(night-border\)
+m.kaskus.co.id##.H\(5px\).Bgc\(c-lightgrey\).nightmode_Bgc\(c-tersier-night\)
+m.kaskus.co.id##div.D\(f\):nth-of-type(2) > .Ov\(h\).Pos\(r\).Fx\(flexZero\).H\(88px\).W\(88px\).Bdrsbstart\(0\).Bdrs\(5px\).Mstart\(10px\)
+m.kaskus.co.id#$#.Mx\(10px\).Px\(6px\).Bdb\(gray-border\).Py\(10px\).nightmode_Bdb\(night-border\).Pos\(r\).jsThreadCard {padding-bottom: 1px!important; padding-top: 2px!important;}
+m.kaskus.co.id##.Bdb\(BdbThreadItem\).nightmode_Bdb\(BdbThreadItemNight\).Bgc\(c-white\).P\(16px\).Pb\(0\).nightmode_Bgc\(c-gray-7\)
+m.kaskus.co.id##.Py\(5px\).Jc\(sb\).D\(f\):style(padding-bottom: 10px !important)
+! Margin View post
+m.kaskus.co.id##.is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .Mx\(16px\).Bgc\(c-lightgrey\).H\(16px\).W\(1px\):style(margin-right: 5px !important; margin-left: 5px !important)
+m.kaskus.co.id##.is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .jsWhoPosted.Mend\(16px\).Lh\(10px\).Ai\(c\).D\(f\):style(margin-right: 5px !important)
+
+
+! Thread
+m.kaskus.co.id#$#.D\(f\).Jc\(fs\).Bdb\(borderSolidGray2\).nightmode_Bdbc\(c-gray-6\).Pt\(16px\) {padding-top: 10px!important;}
+m.kaskus.co.id#$#.Pb\(16px\).Mih\(70px\).Fz\(16px\).W\(100\%\) {padding-bottom: 5px!important; min-height: 40px!important;} 
+m.kaskus.co.id##.Ai\(c\).Bgc\(c-white\).C\(c-black\).D\(f\).Jc\(sb\).Maw\(620px\).W\(100\%\).nightmode_Bgc\(c-primary\).nightmode_C\(c-grey-light-3\).Ov\(h\).nightmode_Bdt\(night-border\).Pos\(r\).Bdb\(BdbThreadItem\).nightmode_Bdb\(Bdb000\)
+m.kaskus.co.id##div.nightmode_Bgc\(c-gray-7\).P\(16px\).Bgc\(c-white\).nightmode_Bdb\(BdbThreadItemNight\).Bdb\(BdbThreadItem\) > div.Pos\(r\) > .Pt\(16px\).Jc\(fs\).D\(f\) > .is-no-image_D\(n\)
+m.kaskus.co.id##.whoCendolAjax.Px\(5px\).Fld\(r\).Ai\(c\).Jc\(fs\).D\(f\) > .Ai\(c\).Jc\(fs\).D\(f\)
+m.kaskus.co.id##.whoCendolAjax.Px\(5px\).Fld\(r\).Ai\(c\).Jc\(fs\).D\(f\) > .nightmode_C\(c-secondary\).Fz\(14px\).C\(c-tertiary\).Mx\(16px\):style(font-size: 12px !important; font-style: italic !important; margin-left: 2px !important)
+m.kaskus.co.id###my-ad-slot
+
+! Gambar Forum
+||s.kaskus.id/c200x200/images/*$domain=m.kaskus.co.id
+||s.kaskus.id/c200x200/themes_3.0/img/default-forum-image-doodle-600x315.png$domain=m.kaskus.co.id
+||s.kaskus.id/c60x60/img/hot_thread/$domain=m.kaskus.co.id
+! ------
+
+! Podcast & TV
+||tv.kaskus.co.id/embed-resources/embed-widget
+||s.kaskus.id/ms/assets/kaskus-podcast/js/kaskus_forum.007f623.js$domain=m.kaskus.co.id
+m.kaskus.co.id##.kaskus-tv-widget
+m.kaskus.co.id##div#podcastGlobalWidgetContainer
+m.kaskus.co.id#$#.jsHeaderSeparator {padding-top: 70px!important;}
+! ------
+
+
+! ----- CHANNEL -----
+! Display & Width HT (CH)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(11) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):style(width: 50%; display: inline-block; border-bottom: 1px solid #ebebeb)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(19) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):style(width: 50%; display: inline-block; border-bottom: 1px solid #ebebeb)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(26) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):style(width: 50%; display: inline-block; border-bottom: 1px solid #ebebeb)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(11):style(display: flex !important; flex-wrap: wrap !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(19):style(display: flex !important; flex-wrap: wrap !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(26):style(display: flex !important; flex-wrap: wrap !important)
+! Obrolan Hangat list 10
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(35) > div.jsThreadCard.Ov\(h\).Pos\(r\).nightmode_Bdb\(night-border\).Bdb\(gray-border\).Py\(10px\).Px\(6px\):style(width: 100%)
+! Padding Kiri Kanan HT (CH)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(11):style(padding-left: 3px !important; padding-right: 3px !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(19):style(padding-left: 3px !important; padding-right: 3px !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(26):style(padding-left: 3px !important; padding-right: 3px !important)
+! Bar Cendol HT (CH)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(11) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):nth-of-type(n+2) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .vote-wrapper.c-reputation.Ai\(c\).Jc\(fs\).D\(f\)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(11) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):nth-of-type(n+2) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .Mx\(16px\).Bgc\(c-lightgrey\).H\(16px\).W\(1px\)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(19) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):nth-of-type(n+2) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .vote-wrapper.c-reputation.Ai\(c\).Jc\(fs\).D\(f\)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(19) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):nth-of-type(n+2) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .Mx\(16px\).Bgc\(c-lightgrey\).H\(16px\).W\(1px\)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(26) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):nth-of-type(n+2):nth-of-type(-n+5) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .vote-wrapper.c-reputation.Ai\(c\).Jc\(fs\).D\(f\)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(26) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):nth-of-type(n+7):nth-of-type(-n+10) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .vote-wrapper.c-reputation.Ai\(c\).Jc\(fs\).D\(f\)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(26) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):nth-of-type(n+2):nth-of-type(-n+5) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .Mx\(16px\).Bgc\(c-lightgrey\).H\(16px\).W\(1px\)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(26) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):nth-of-type(n+7):nth-of-type(-n+10) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .Mx\(16px\).Bgc\(c-lightgrey\).H\(16px\).W\(1px\)
+! ----- END OF CHANNEL -----
+
+
+! ----- HOMEPAGE -----
+! Display & Width HT (Homepage)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(9) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):style(width: 50%; display: inline-block; border-bottom: 1px solid #ebebeb)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(15) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):style(width: 50%; display: inline-block; border-bottom: 1px solid #ebebeb)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(22) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):style(width: 50%; display: inline-block; border-bottom: 1px solid #ebebeb)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(9):style(display: flex !important; flex-wrap: wrap !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(15):style(display: flex !important; flex-wrap: wrap !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(22):style(display: flex !important; flex-wrap: wrap !important)
+! Display & Width HT & CH (Homepage & CH)
+m.kaskus.co.id##div.Px\(10px\) > div.jsThreadCard.Ov\(h\).Pos\(r\).nightmode_Bdb\(night-border\).Bdb\(gray-border\).Py\(10px\).Px\(6px\):nth-of-type(1):style(width: 100% !important)
+m.kaskus.co.id##div.jsThreadCard.Ov\(h\).Pos\(r\).nightmode_Bdb\(night-border\).Bdb\(gray-border\).Py\(10px\).Px\(6px\):nth-of-type(6):style(width: 100% !important)
+! Obrolan Hangat list 10 (Homepage)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(33) > div.jsThreadCard.Ov\(h\).Pos\(r\).nightmode_Bdb\(night-border\).Bdb\(gray-border\).Py\(10px\).Px\(6px\):style(width: 100%)
+! Padding Kiri Kanan HT (Homepage)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(9):style(padding-left: 3px !important; padding-right: 3px !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(15):style(padding-left: 3px !important; padding-right: 3px !important)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(22):style(padding-left: 3px !important; padding-right: 3px !important)
+! Font HT (Homepage & CH)
+m.kaskus.co.id##div.Px\(10px\) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\) > .Mb\(10px\).Fz\(18px\).nightmode_C\(c-primary-night\).C\(c-primary\).Fw\(500\) > .nightmode_C\(c-primary-night\).C\(c-primary\):style(font-size: 13px !important; overflow: auto; text-overflow: ellipsis; line-height: 1.3em; height: 3.6em; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3)
+m.kaskus.co.id##div.Px\(10px\) > div.jsThreadCard.Ov\(h\).Pos\(r\).nightmode_Bdb\(night-border\).Bdb\(gray-border\).Py\(10px\).Px\(6px\):nth-of-type(1) > .Mb\(10px\).Fz\(18px\).nightmode_C\(c-primary-night\).C\(c-primary\).Fw\(500\) > .nightmode_C\(c-primary-night\).C\(c-primary\):style(font-size: 14px !important; overflow: hidden; text-overflow: ellipsis; line-height: 1.3em; height: 2.6em; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2)
+m.kaskus.co.id##div.jsThreadCard.Ov\(h\).Pos\(r\).nightmode_Bdb\(night-border\).Bdb\(gray-border\).Py\(10px\).Px\(6px\):nth-of-type(6) > .Mb\(10px\).Fz\(18px\).nightmode_C\(c-primary-night\).C\(c-primary\).Fw\(500\) > .nightmode_C\(c-primary-night\).C\(c-primary\):style(font-size: 14px !important; overflow: hidden; text-overflow: ellipsis; line-height: 1.3em; height: 2.6em; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2)
+m.kaskus.co.id##div.Px\(10px\) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\) > .Mb\(10px\).Fz\(18px\).nightmode_C\(c-primary-night\).C\(c-primary\).Fw\(300\) > .nightmode_C\(c-primary-night\).C\(c-primary\):style(font-size: 13px !important; overflow: auto; text-overflow: ellipsis; line-height: 1.3em; height: 3.6em; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3)
+m.kaskus.co.id##div.Px\(10px\) > div.jsThreadCard.Ov\(h\).Pos\(r\).nightmode_Bdb\(night-border\).Bdb\(gray-border\).Py\(10px\).Px\(6px\):nth-of-type(1) > .Mb\(10px\).Fz\(18px\).nightmode_C\(c-primary-night\).C\(c-primary\).Fw\(300\) > .nightmode_C\(c-primary-night\).C\(c-primary\):style(font-size: 14px !important; overflow: hidden; text-overflow: ellipsis; line-height: 1.3em; height: 2.6em; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2)
+m.kaskus.co.id##div.jsThreadCard.Ov\(h\).Pos\(r\).nightmode_Bdb\(night-border\).Bdb\(gray-border\).Py\(10px\).Px\(6px\):nth-of-type(6) > .Mb\(10px\).Fz\(18px\).nightmode_C\(c-primary-night\).C\(c-primary\).Fw\(300\) > .nightmode_C\(c-primary-night\).C\(c-primary\):style(font-size: 14px !important; overflow: hidden; text-overflow: ellipsis; line-height: 1.3em; height: 2.6em; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2)
+! Bar Cendol HT (Homepage)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(9) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):nth-of-type(n+2) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .vote-wrapper.c-reputation.Ai\(c\).Jc\(fs\).D\(f\)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(9) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):nth-of-type(n+2) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .Mx\(16px\).Bgc\(c-lightgrey\).H\(16px\).W\(1px\)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(15) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):nth-of-type(n+2) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .vote-wrapper.c-reputation.Ai\(c\).Jc\(fs\).D\(f\)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(15) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):nth-of-type(n+2) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .Mx\(16px\).Bgc\(c-lightgrey\).H\(16px\).W\(1px\)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(22) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):nth-of-type(n+2):nth-of-type(-n+5) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .vote-wrapper.c-reputation.Ai\(c\).Jc\(fs\).D\(f\)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(22) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):nth-of-type(n+2):nth-of-type(-n+5) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .Mx\(16px\).Bgc\(c-lightgrey\).H\(16px\).W\(1px\)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(22) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):nth-of-type(n+7):nth-of-type(-n+10) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .vote-wrapper.c-reputation.Ai\(c\).Jc\(fs\).D\(f\)
+m.kaskus.co.id##div.Px\(10px\):nth-of-type(22) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):nth-of-type(n+7):nth-of-type(-n+10) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .Mx\(16px\).Bgc\(c-lightgrey\).H\(16px\).W\(1px\)
+! Padding Bottom HT & Obrolan (Homepage & CH)
+m.kaskus.co.id##div.Px\(10px\) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\) > .is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\):style(padding-bottom: 7px !important)
+m.kaskus.co.id##div.Px\(10px\) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\):style(padding-bottom: 2px !important)
+! Size Tombol Sudut HT (Homepage & CH))
+m.kaskus.co.id##div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\) > .Py\(5px\).Jc\(sb\).D\(f\) > .jsPopover.Pos\(r\).Fx\(flex0Auto\) > div[data-subscribe-label*="hot thread-"]:style(width: 180px !important)
+! Tombol Sudut Obrolan Hangat (Homepage & CH)
+m.kaskus.co.id##div.Px\(10px\) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\) > .Py\(5px\).Jc\(sb\).D\(f\) > .jsPopover.Pos\(r\).Fx\(flex0Auto\) > div[data-subscribe-label*="obrolan hangat-"]:style(z-index: 999999 !important; position: fixed !important; right: 23% !important; top: 35% !important)
+! Padding Kiri Kanan Titik Tombol Sudut (Homepage & Channel)
+m.kaskus.co.id##div.Px\(10px\) > div.jsThreadCard.Ov\(h\).Pos\(r\).Py\(10px\).Px\(6px\) > .Py\(5px\).Jc\(sb\).D\(f\) > .jsPopover.Pos\(r\).Fx\(flex0Auto\):style(padding-right: 7px !important; padding-left: 8px !important)
+! ----- END OF HOMEPAGE -----
+
+
+! --- TEMPORARY ---
+! cendol sticky
+m.kaskus.co.id##.cendolSticky:style(width: 24px!important; height: 50px!important)
+
+
+! --- EXCEPTION ---
+instagram.com#@#body:style(overflow-y: scroll !important;)
+instagram.com#@#[class]:style(-webkit-touch-callout: default !important; -webkit-user-select: text !important;-moz-user-select: text !important;-ms-user-select: text !important;user-select: text !important; -khtml-user-select: text !important; -o-user-select: text !important;)
+! --- --------- ---

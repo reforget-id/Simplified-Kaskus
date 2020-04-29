@@ -11,8 +11,8 @@
 // @include       https://m.kaskus.co.id/show_post/*
 // @include       https://m.kaskus.co.id/lastpost/*
 // @include       https://m.kaskus.co.id/post_reply/*
-// @downloadURL   https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/k-quote.user.js
-// @updateURL     https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/k-quote.user.js
+// @downloadURL   https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/mobile/k-quote.user.js
+// @updateURL     https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/mobile/k-quote.user.js
 // @grant		      GM_addStyle
 // @grant		      GM_setValue
 // @grant		      GM_getValue

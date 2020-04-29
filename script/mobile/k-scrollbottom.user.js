@@ -7,8 +7,8 @@
 // @homepage      https://github.com/reforget-id/Simplified-Kaskus
 // @description   Memindahkan kolom post reply di bawah thread
 // @include       https://m.kaskus.co.id/*
-// @downloadURL   https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/k-scrollbottom.user.js
-// @updateURL     https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/k-scrollbottom.user.js
+// @downloadURL   https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/mobile/k-scrollbottom.user.js
+// @updateURL     https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/mobile/k-scrollbottom.user.js
 
 
 // ==/UserScript==

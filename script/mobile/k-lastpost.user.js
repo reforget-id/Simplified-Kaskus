@@ -8,8 +8,8 @@
 // @description   Tambah tombol last post
 // @include       https://m.kaskus.co.id/forum/*
 // @include       https://m.kaskus.co.id/forum
-// @downloadURL   https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/k-lastpost.user.js
-// @updateURL     https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/k-lastpost.user.js
+// @downloadURL   https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/mobile/k-lastpost.user.js
+// @updateURL     https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/mobile/k-lastpost.user.js
 // @grant		  none
 
 // ==/UserScript==

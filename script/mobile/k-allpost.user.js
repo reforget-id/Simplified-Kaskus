@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Show All Post
-// @version       1.0.1
+// @version       1.0.2
 // @namespace     k-allpost
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
