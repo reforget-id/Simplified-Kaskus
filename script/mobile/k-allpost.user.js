@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name          Kaskus : Show All Post
-// @version       1.0.2
+// @version       1.0.3
 // @namespace     k-allpost
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
 // @homepage      https://github.com/reforget-id/Simplified-Kaskus
 // @description   Otomatis redirect show all post
-// @include       https://*.kaskus.co.id/show_post/*
+// @include       https://m.kaskus.co.id/show_post/*
 // @downloadURL   https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/mobile/k-allpost.user.js
 // @updateURL     https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/mobile/k-allpost.user.js
 // ==/UserScript==
