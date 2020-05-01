@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Insert Quote Button for PC
-// @version       2.0.0
+// @version       2.0.1
 // @namespace     k-quotepc
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
@@ -13,10 +13,10 @@
 // @include       https://www.kaskus.co.id/post_reply/*
 // @downloadURL   https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/pc/k-quotepc.user.js
 // @updateURL     https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/pc/k-quotepc.user.js
-// @grant		  GM_addStyle
-// @grant		  GM_setValue
-// @grant		  GM_getValue
-// @grant		  GM_deleteValue
+// @grant		      GM_addStyle
+// @grant		      GM_setValue
+// @grant		      GM_getValue
+// @grant		      GM_deleteValue
 // @run-at        document-end
 
 // ==/UserScript==
@@ -159,30 +159,51 @@ function nestedHeight() {
 
 
 function getText() {
-	var elem = document.getElementById("reply-messsage").value;
-	var link = document.URL;
+	try {
+		var elem = document.getElementById("reply-messsage").value;
+		var link = document.URL;
 
-	if (link.match(/^.*\/\?post=.*/g)) {
-		GM_setValue("quote", elem);
-		link = link.match(/^.*\//g);
-		window.location.href = link;
-	}
-	if (link.match(/^.*\/$/g)) {
-		document.getElementById("reply-messsage").value = GM_getValue("quote");
-	}
-	GM_deleteValue("quote");
+		if (link.match(/^.*\/\?post=.*/g)) {
+			GM_setValue("quote", elem);
+			link = link.match(/^.*\//g);
+			window.location.href = link;
+		}
+		if (link.match(/^.*\/$/g)) {
+			document.getElementById("reply-messsage").value = GM_getValue("quote");
+		}
+		GM_deleteValue("quote");
+	} catch {}
 }
+
+/*
+window.onload=function(){
+    var reply = document.getElementsByClassName("Fx(flexZero) jsShowNestedTrigger Cur(p)");
+		for (var j = 0; j < reply.length ; j++){
+				reply[j].click();					
+		}
+    setTimeout(nestedSingleQuote, 1000);
+	  setTimeout(nestedMultiQuote, 1500);
+		setTimeout(nestedHeight, 1500);
+}
+*/
 
 window.onload = function () {
-	var reply = document.getElementsByClassName("Fx(flexZero) jsShowNestedTrigger Cur(p)");
-	for (var j = 0; j < reply.length; j++) {
-		reply[j].click();
+	var reply = document.getElementsByClassName("jsShowNestedTrigger");
+	var nestedAD = document.getElementsByClassName("getNestedAD");
+	try {
+		var i = 0;
+		do {
+			reply[i].click();
+			i++;
+		}
+		while (nestedAD == null || "undefined");
+	} catch {} 
+	finally {
+		setTimeout(nestedHeight, 500);
+		setTimeout(nestedSingleQuote, 1000);
+		setTimeout(nestedMultiQuote, 1500);
 	}
-	setTimeout(nestedSingleQuote, 1000);
-	setTimeout(nestedMultiQuote, 1500);
-	setTimeout(nestedHeight, 1500);
 }
-
 
 replaceKutip();
 singleQuote();

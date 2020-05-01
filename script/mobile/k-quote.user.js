@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Insert Quote Button
-// @version       2.2.1
+// @version       2.2.3
 // @namespace     k-quote
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
@@ -64,6 +64,15 @@ font-size: 15px !important;
 }
 .mq-post {
 padding-right: 4px !important; 
+}
+.padbottom {
+padding-bottom: 5px !important;
+}
+.padtop {
+padding-top: 5px !important;
+}
+.minheight {
+min-height: 70px !important;
 }
 `);
 
@@ -168,29 +177,61 @@ document.addEventListener("click", function (e) {
 });
 
 
+function nestedProperty() {
+    var elem1 = document.getElementsByClassName("Py(16px) Bdt(borderSolidGray2) nightmode_Bdt(borderSolidGray6) ");
+    var elem2 = document.getElementsByClassName("D(f) Jc(sb) Ai(c) W(100%) Pstart(36px) Pt(8px) Fz(12px) C(c-normal) nightmode_C(c-normal)");
+    var elem3 = document.getElementsByClassName("D(f) Pos(r) Mb(10px)");
+
+    for (var i = 0; i < elem1.length; i++) {
+        if (elem1[i].className === 'Py(16px) Bdt(borderSolidGray2) nightmode_Bdt(borderSolidGray6) ') {
+            elem1[i].classList.add("padbottom");
+        }
+        if (elem2[i].className === 'D(f) Jc(sb) Ai(c) W(100%) Pstart(36px) Pt(8px) Fz(12px) C(c-normal) nightmode_C(c-normal)') {
+            elem2[i].classList.add("Bdt(borderSolidGray2)", "nightmode_Bdt(borderSolidGray6)", "padtop");
+        }
+        if (elem3[i].className === 'D(f) Pos(r) Mb(10px)') {
+            elem3[i].classList.add("minheight");
+        }
+    }
+}
+
+
 function getText() {
-    var elem = document.getElementById("jsCreateThread").value;
-    var link = document.URL;
-    if (link.match(/^.*\/\?post=.*/g)) {
-        GM_setValue("quote", elem);
-        link = link.match(/^.*\//g);
-        window.location.href = link;
-    }
-    if (link.match(/^.*\/$/g)) {
-        document.getElementById("jsCreateThread").value = GM_getValue("quote");
-    }
-    GM_deleteValue("quote");
+    try {
+        var elem = document.getElementById("jsCreateThread").value;
+        var link = document.URL;
+        if (link.match(/^.*\/\?post=.*/g)) {
+            GM_setValue("quote", elem);
+            link = link.match(/^.*\//g);
+            window.location.href = link;
+        }
+        if (link.match(/^.*\/$/g)) {
+            document.getElementById("jsCreateThread").value = GM_getValue("quote");
+        }
+        GM_deleteValue("quote");
+    } catch {}
+
 };
 
 
 window.onload = function () {
-    var reply = document.getElementsByClassName("Fx(flex0Auto) jsShowNestedTrigger");
-    for (var i = 0; i < reply.length; i++) {
-        reply[i].click();
+    var reply = document.getElementsByClassName("jsShowNestedTrigger");
+    var nestedAD = document.getElementsByClassName("getNestedAD");
+    try {
+        var i = 0;
+        do {
+            reply[i].click();
+            i++;
+        }
+        while (nestedAD == null || "undefined");
+    } catch {} 
+    finally {
+        setTimeout(nestedSingleQuote, 1500);
+        setTimeout(nestedMultiQuote, 2000);
+        setTimeout(nestedProperty, 2500);
     }
-    setTimeout(nestedSingleQuote, 1500);
-    setTimeout(nestedMultiQuote, 2000);
-};
+}
+
 
 singleQuote();
 getText();
