@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Insert Quote Button for PC
-// @version       1.6.0
+// @version       1.6.1
 // @namespace     k-quotepc
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
@@ -29,8 +29,6 @@ font-size: 15px !important;
 }
 `);
 
-
-//var link = document.URL;
 
 /* Adds Element BEFORE NeighborElement */
 Element.prototype.appendBefore = function (element) {
@@ -165,7 +163,7 @@ function getText() {
 window.onload = function () {
 	var reply = document.getElementsByClassName("Fx(flexZero) jsShowNestedTrigger Cur(p)");
 	for (var j = 0; j < reply.length; j++) {
-		//reply[j].click();					
+		reply[j].click();					
 	}
 	setTimeout(nestedSingleQuote, 1000);
 	setTimeout(nestedMultiQuote, 1500);
