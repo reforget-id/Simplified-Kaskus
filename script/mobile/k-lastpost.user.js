@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Insert Last Post Button
-// @version       1.5.2
+// @version       1.5.3
 // @namespace     k-lastpost
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
@@ -14,7 +14,7 @@
 
 // ==/UserScript==
 
-function Main(){
+function Main() {
     Element.prototype.appendBefore = function (element) {
         element.parentNode.insertBefore(this, element);
     }, false;
@@ -35,7 +35,7 @@ function Main(){
     var postedOnes = getElementsByIdStartsWith("div", "menudata-");
     var lp = document.getElementsByClassName("lastpost-btn fa-share-square");
 
-    for (var i = 0; i < list.length ; i++) {
+    for (var i = 0; i < list.length; i++) {
         var NewElement = document.createElement('a');
         var threadid = postedOnes[i].getAttribute("data-threadid");
         var lastpostid = postedOnes[i].getAttribute("data-last-post-id");
@@ -43,8 +43,9 @@ function Main(){
         if (!cl[i].contains(lp[i])) {
             NewElement.setAttribute("class", "lastpost-btn fas fa-share-square");
             NewElement.href = "/lastpost/" + threadid + "#post" + lastpostid;
-            NewElement.style.marginLeft = '20px';
+            NewElement.style.marginLeft = '8px';
             NewElement.style.fontSize = '15px';
+            NewElement.style.padding = '6px 8px 6px 8px';
             NewElement.target = '_blank';
             NewElement.appendBefore(list[i]);
         }
@@ -53,14 +54,13 @@ function Main(){
 
 Main();
 
-window.onscroll = function()
-{
+window.onscroll = function () {
     var scrollHeight, totalHeight;
     scrollHeight = document.body.scrollHeight * 0.95;
     totalHeight = window.scrollY + window.innerHeight;
 
-    if (window.location.href == "https://m.kaskus.co.id/forum"){
-        if (totalHeight >= scrollHeight){
+    if (window.location.href == "https://m.kaskus.co.id/forum") {
+        if (totalHeight >= scrollHeight) {
             setTimeout(Main, 2500);
         }
     }
