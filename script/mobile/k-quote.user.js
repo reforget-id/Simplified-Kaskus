@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Insert Quote Button
-// @version       2.2.0
+// @version       2.2.1
 // @namespace     k-quote
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
@@ -188,8 +188,8 @@ window.onload = function () {
     for (var i = 0; i < reply.length; i++) {
         reply[i].click();
     }
-    setTimeout(nestedSingleQuote, 1000);
-    setTimeout(nestedMultiQuote, 1500);
+    setTimeout(nestedSingleQuote, 1500);
+    setTimeout(nestedMultiQuote, 2000);
 };
 
 singleQuote();
