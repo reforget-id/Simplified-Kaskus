@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Insert Quote Button for PC
-// @version       2.0.1
+// @version       2.1.0
 // @namespace     k-quotepc
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
@@ -13,10 +13,10 @@
 // @include       https://www.kaskus.co.id/post_reply/*
 // @downloadURL   https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/pc/k-quotepc.user.js
 // @updateURL     https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/pc/k-quotepc.user.js
-// @grant		      GM_addStyle
-// @grant		      GM_setValue
-// @grant		      GM_getValue
-// @grant		      GM_deleteValue
+// @grant		  GM_addStyle
+// @grant		  GM_setValue
+// @grant		  GM_getValue
+// @grant		  GM_deleteValue
 // @run-at        document-end
 
 // ==/UserScript==
@@ -108,6 +108,7 @@ function nestedSingleQuote() {
 			NewElement3.innerHTML = "Single Quote";
 		}
 	}
+	setTimeout(nestedMultiQuote, 500);
 }
 
 
@@ -155,7 +156,9 @@ function nestedHeight() {
 			list[i].classList.add("nested-height", "Bdb(borderSolidLightGrey)");
 		}
 	}
+	setTimeout(nestedSingleQuote, 500);
 }
+
 
 
 function getText() {
@@ -175,36 +178,22 @@ function getText() {
 	} catch {}
 }
 
-/*
-window.onload=function(){
-    var reply = document.getElementsByClassName("Fx(flexZero) jsShowNestedTrigger Cur(p)");
-		for (var j = 0; j < reply.length ; j++){
-				reply[j].click();					
-		}
-    setTimeout(nestedSingleQuote, 1000);
-	  setTimeout(nestedMultiQuote, 1500);
-		setTimeout(nestedHeight, 1500);
-}
-*/
 
-window.onload = function () {
+function loading() {
 	var reply = document.getElementsByClassName("jsShowNestedTrigger");
-	var nestedAD = document.getElementsByClassName("getNestedAD");
-	try {
-		var i = 0;
-		do {
-			reply[i].click();
-			i++;
+	setTimeout(function check() {
+		for (var i = 0; i < reply.length; i++) {
+			if (reply[i].classList.contains("getNestedAD")) {
+				reply[i].click();
+			} else {
+				setTimeout(check, 500);
+			}
 		}
-		while (nestedAD == null || "undefined");
-	} catch {} 
-	finally {
-		setTimeout(nestedHeight, 500);
-		setTimeout(nestedSingleQuote, 1000);
-		setTimeout(nestedMultiQuote, 1500);
-	}
+		setTimeout(nestedHeight, 1000);
+	}, 500);
 }
 
-replaceKutip();
-singleQuote();
 getText();
+singleQuote();
+replaceKutip();
+loading();

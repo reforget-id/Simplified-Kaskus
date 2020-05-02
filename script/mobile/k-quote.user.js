@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Insert Quote Button
-// @version       2.2.3
+// @version       2.3.1
 // @namespace     k-quote
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
@@ -92,6 +92,18 @@ function getElementsByIdStartsWith(selectorTag, prefix) {
     return items;
 };
 
+function getElementsByClassStartsWith(selectorTag, prefix) {
+    var items = [];
+    var myPosts = document.getElementsByClassName(selectorTag);
+    for (var i = 0; i < myPosts.length; i++) {
+        var next = myPosts[i].children[0];
+        if ((myPosts[i].className == selectorTag) && (next.id.lastIndexOf(prefix, 0) === 0)) {
+            items.push(next);
+        }
+    }
+    return items;
+};
+
 
 function singleQuote() {
     var list = document.getElementsByClassName("quote-btn");
@@ -120,32 +132,34 @@ function singleQuote() {
 function nestedSingleQuote() {
     var list = document.getElementsByClassName("C(#b3b3b3) reply-btn");
     var thread = document.getElementById("thread_id");
-    var post = getElementsByIdStartsWith("div", "nestedbit-");
+    var post = getElementsByClassStartsWith("D(f) Jc(fs) Ai(c) c-reputation Mend(20px)", "cendol");
+
+
 
     for (var i = 0; i < list.length; i++) {
         var NewElement = document.createElement('a');
         var threadid = thread.getAttribute("value");
-        var postid = post[i].getAttribute("id").match(/[^nestedbit-].*/g);
+        var postid = post[i].getAttribute("id").match(/[^cendol].*/g);
 
         NewElement.setAttribute("class", "sq-nested D(f) Jc(fs) Ai(c) fas fa-comment");
         NewElement.href = "/post_reply/" + threadid + "/?post=" + postid;
         NewElement.appendBefore(list[i]);
-
     }
+    setTimeout(nestedMultiQuote, 500);
 };
 
 
 function nestedMultiQuote() {
     var list = document.getElementsByClassName("C(#b3b3b3) reply-btn");
     var thread = document.getElementById("thread_id");
-    var post = getElementsByIdStartsWith("div", "nestedbit-");
+    var post = getElementsByClassStartsWith("D(f) Jc(fs) Ai(c) c-reputation Mend(20px)", "cendol");
 
     for (var i = 0; i < list.length; i++) {
         var NewElement1 = document.createElement('div');
         var NewElement2 = document.createElement('div');
         var NewElement3 = document.createElement('i');
         var threadid = thread.getAttribute("value");
-        var postid = post[i].getAttribute("id").match(/[^nestedbit-].*/g);
+        var postid = post[i].getAttribute("id").match(/[^cendol].*/g);
         var click = "return false;";
 
         list[i].classList.add("reply-nested");
@@ -193,6 +207,7 @@ function nestedProperty() {
             elem3[i].classList.add("minheight");
         }
     }
+    setTimeout(nestedSingleQuote, 500);
 }
 
 
@@ -214,24 +229,21 @@ function getText() {
 };
 
 
-window.onload = function () {
+function loading() {
     var reply = document.getElementsByClassName("jsShowNestedTrigger");
-    var nestedAD = document.getElementsByClassName("getNestedAD");
-    try {
-        var i = 0;
-        do {
-            reply[i].click();
-            i++;
+    setTimeout(function check() {
+        for (var i = 0; i < reply.length; i++) {
+            if (reply[i].classList.contains("getNestedAD")) {
+                reply[i].click();
+            } else {
+                setTimeout(check, 500);
+            }
         }
-        while (nestedAD == null || "undefined");
-    } catch {} 
-    finally {
-        setTimeout(nestedSingleQuote, 1500);
-        setTimeout(nestedMultiQuote, 2000);
-        setTimeout(nestedProperty, 2500);
-    }
+        setTimeout(nestedProperty, 1000);
+    }, 500);
+
 }
 
-
-singleQuote();
 getText();
+singleQuote();
+loading();
