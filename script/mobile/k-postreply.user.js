@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Bottom Post Reply
-// @version       0.0.1
+// @version       0.0.2
 // @namespace     k-postreply
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
@@ -17,26 +17,24 @@
 // ==/UserScript==
 
 /* Adds Element BEFORE NeighborElement */
-Element.prototype.appendBefore = function(element) {
+Element.prototype.appendBefore = function (element) {
   element.parentNode.insertBefore(this, element);
 }, false;
 
 /* Adds Element AFTER NeighborElement */
-Element.prototype.appendAfter = function(element) {
+Element.prototype.appendAfter = function (element) {
   element.parentNode.insertBefore(this, element.nextSibling);
 }, false;
 
 
 function cloneElement() {
-  var elem = document.getElementById("quick_reply_wrapper");
-  var clone = elem.cloneNode(true);
-  var place = document.getElementsByClassName("c-pagination")[1];
-	clone.appendAfter(place);
-
-  elem.parentNode.removeChild(elem);
-	
+  try {
+    var elem = document.getElementById("quick_reply_wrapper");
+    var clone = elem.cloneNode(true);
+    var place = document.getElementsByClassName("c-pagination")[1];
+    clone.appendAfter(place);
+    elem.parentNode.removeChild(elem);
+  } catch {}
 }
 
 cloneElement();
-
-

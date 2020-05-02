@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Insert Quote Button for PC
-// @version       2.1.0
+// @version       2.2.0
 // @namespace     k-quotepc
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
@@ -18,7 +18,6 @@
 // @grant		  GM_getValue
 // @grant		  GM_deleteValue
 // @run-at        document-end
-
 // ==/UserScript==
 
 
@@ -34,12 +33,12 @@ padding-bottom: 20px !important;
 `);
 
 
-/* Adds Element BEFORE NeighborElement */
+// Adds Element BEFORE NeighborElement 
 Element.prototype.appendBefore = function (element) {
 	element.parentNode.insertBefore(this, element);
 }, false;
 
-/* Adds Element AFTER NeighborElement */
+// Adds Element AFTER NeighborElement 
 Element.prototype.appendAfter = function (element) {
 	element.parentNode.insertBefore(this, element.nextSibling);
 }, false;
@@ -53,7 +52,7 @@ function getElementsByIdStartsWith(selectorTag, prefix) {
 		}
 	}
 	return items;
-}
+};
 
 function singleQuote() {
 	var list = document.getElementsByClassName("jsButtonMultiquote buttonMultiquote");
@@ -82,7 +81,8 @@ function singleQuote() {
 			NewElement1.appendBefore(list[i]);
 		}
 	}
-}
+	console.log("berhasil single quote");
+};
 
 
 function nestedSingleQuote() {
@@ -108,8 +108,9 @@ function nestedSingleQuote() {
 			NewElement3.innerHTML = "Single Quote";
 		}
 	}
+	console.log("berhasil nested single quote");
 	setTimeout(nestedMultiQuote, 500);
-}
+};
 
 
 function nestedMultiQuote() {
@@ -137,7 +138,8 @@ function nestedMultiQuote() {
 			NewElement3.innerHTML = "Multi Quote";
 		}
 	}
-}
+	console.log("berhasil nested multi quote");
+};
 
 
 function replaceKutip() {
@@ -147,26 +149,40 @@ function replaceKutip() {
 			list[i].innerHTML = list[i].innerHTML.replace("Kutip", "Multi Quote");
 		}
 	}
-}
+	console.log("berhasil replace text");
+};
 
-function nestedHeight() {
-	var list = document.getElementsByClassName("C(c-primary) Fz(14px) pagetext");
-	for (var i = 0; i < list.length; i++) {
-		if (list[i].className === 'C(c-primary) Fz(14px) pagetext') {
-			list[i].classList.add("nested-height", "Bdb(borderSolidLightGrey)");
+
+function nestedProperty() {
+		var item = [];
+		var nest = document.getElementsByClassName("statusFetchData");
+		for (var j = 0; j < nest.length; j++) {
+				item.push(nest[j].style.display);
+				console.log(item[j]);
 		}
-	}
-	setTimeout(nestedSingleQuote, 500);
-}
 
+		if (item.includes("")){	
+				console.log("gagal");
+				setTimeout(nestedProperty, 300);
+		}
+		else{
+				var list = document.getElementsByClassName("C(c-primary) Fz(14px) pagetext");
+				for (var i = 0; i < list.length; i++) {
+						if (list[i].className === 'C(c-primary) Fz(14px) pagetext') {
+								list[i].classList.add("nested-height", "Bdb(borderSolidLightGrey)");
+						}
+				}
+				console.log("berhasil property");
+    		nestedSingleQuote(); 
+		}
+};
 
 
 function getText() {
-	try {
-		var elem = document.getElementById("reply-messsage").value;
+	try{
 		var link = document.URL;
-
 		if (link.match(/^.*\/\?post=.*/g)) {
+			var elem = document.getElementById("reply-messsage").value;
 			GM_setValue("quote", elem);
 			link = link.match(/^.*\//g);
 			window.location.href = link;
@@ -175,23 +191,33 @@ function getText() {
 			document.getElementById("reply-messsage").value = GM_getValue("quote");
 		}
 		GM_deleteValue("quote");
-	} catch {}
-}
+	}
+	catch{}
+};
 
 
 function loading() {
-	var reply = document.getElementsByClassName("jsShowNestedTrigger");
-	setTimeout(function check() {
-		for (var i = 0; i < reply.length; i++) {
-			if (reply[i].classList.contains("getNestedAD")) {
-				reply[i].click();
-			} else {
-				setTimeout(check, 500);
-			}
+		var item = [];
+		var balas = document.getElementsByClassName("jsShowNestedTrigger");
+		for (var i = 0; i < balas.length; i++) {
+        if (balas[i].classList.contains("getNestedAD")) {
+        		balas[i].click();
+						console.log("klik " + i);
+        } 
+    }
+		for (var j = 0; j < balas.length; j++) {
+				item.push(balas[j].className);
+				console.log(item[j]);
 		}
-		setTimeout(nestedHeight, 1000);
-	}, 500);
-}
+		if (item.includes("Fx(flexZero) jsShowNestedTrigger getNestedAD Cur(p)")){	
+				console.log("gagal");	
+				setTimeout(loading, 500);
+		}
+		else{
+				console.log("berhasil loading");	
+				nestedProperty();
+		}
+};
 
 getText();
 singleQuote();

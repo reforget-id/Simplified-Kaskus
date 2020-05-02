@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Insert Quote Button
-// @version       2.3.2
+// @version       2.4.0
 // @namespace     k-quote
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
@@ -18,7 +18,6 @@
 // @grant		  GM_getValue
 // @grant		  GM_deleteValue
 // @run-at        document-end
-
 // ==/UserScript==
 
 
@@ -126,6 +125,7 @@ function singleQuote() {
             NewElement.appendBefore(list[i]);
         }
     }
+    console.log("berhasil single quote");
 };
 
 
@@ -133,8 +133,6 @@ function nestedSingleQuote() {
     var list = document.getElementsByClassName("C(#b3b3b3) reply-btn");
     var thread = document.getElementById("thread_id");
     var post = getElementsByClassStartsWith("D(f) Jc(fs) Ai(c) c-reputation Mend(20px)", "cendol");
-
-
 
     for (var i = 0; i < list.length; i++) {
         var NewElement = document.createElement('a');
@@ -145,7 +143,8 @@ function nestedSingleQuote() {
         NewElement.href = "/post_reply/" + threadid + "/?post=" + postid;
         NewElement.appendBefore(list[i]);
     }
-    setTimeout(nestedMultiQuote, 300);
+    console.log("berhasil nested single quote")
+    setTimeout(nestedMultiQuote, 100);
 };
 
 
@@ -170,6 +169,7 @@ function nestedMultiQuote() {
         NewElement1.id = "mq_" + postid;
         NewElement1.appendBefore(list[i]);
     }
+    console.log("berhasil multi quote")
 };
 
 
@@ -192,30 +192,43 @@ document.addEventListener("click", function (e) {
 
 
 function nestedProperty() {
-    var elem1 = document.getElementsByClassName("Py(16px) Bdt(borderSolidGray2) nightmode_Bdt(borderSolidGray6) ");
-    var elem2 = document.getElementsByClassName("D(f) Jc(sb) Ai(c) W(100%) Pstart(36px) Pt(8px) Fz(12px) C(c-normal) nightmode_C(c-normal)");
-    var elem3 = document.getElementsByClassName("D(f) Pos(r) Mb(10px)");
-
-    for (var i = 0; i < elem1.length; i++) {
-        if (elem1[i].className === 'Py(16px) Bdt(borderSolidGray2) nightmode_Bdt(borderSolidGray6) ') {
-            elem1[i].classList.add("padbottom");
-        }
-        if (elem2[i].className === 'D(f) Jc(sb) Ai(c) W(100%) Pstart(36px) Pt(8px) Fz(12px) C(c-normal) nightmode_C(c-normal)') {
-            elem2[i].classList.add("Bdt(borderSolidGray2)", "nightmode_Bdt(borderSolidGray6)", "padtop");
-        }
-        if (elem3[i].className === 'D(f) Pos(r) Mb(10px)') {
-            elem3[i].classList.add("minheight");
-        }
+    var item = [];
+    var nest = document.getElementsByClassName("jsNestedItem statusFetchData");
+    for (var j = 0; j < nest.length; j++) {
+        item.push(nest[j].style.display);
+        console.log(item[j]);
     }
-    setTimeout(nestedSingleQuote, 300);
-}
+
+    if (item.includes("")) {
+        console.log("gagal");
+        setTimeout(nestedProperty, 300);
+    } else {
+        var elem1 = document.getElementsByClassName("Py(16px) Bdt(borderSolidGray2) nightmode_Bdt(borderSolidGray6) ");
+        var elem2 = document.getElementsByClassName("D(f) Jc(sb) Ai(c) W(100%) Pstart(36px) Pt(8px) Fz(12px) C(c-normal) nightmode_C(c-normal)");
+        var elem3 = document.getElementsByClassName("D(f) Pos(r) Mb(10px)");
+
+        for (var i = 0; i < elem1.length; i++) {
+            if (elem1[i].className === 'Py(16px) Bdt(borderSolidGray2) nightmode_Bdt(borderSolidGray6) ') {
+                elem1[i].classList.add("padbottom");
+            }
+            if (elem2[i].className === 'D(f) Jc(sb) Ai(c) W(100%) Pstart(36px) Pt(8px) Fz(12px) C(c-normal) nightmode_C(c-normal)') {
+                elem2[i].classList.add("Bdt(borderSolidGray2)", "nightmode_Bdt(borderSolidGray6)", "padtop");
+            }
+            if (elem3[i].className === 'D(f) Pos(r) Mb(10px)') {
+                elem3[i].classList.add("minheight");
+            }
+        }
+        console.log("berhasil property");
+        nestedSingleQuote();
+    }
+};
 
 
 function getText() {
     try {
-        var elem = document.getElementById("jsCreateThread").value;
         var link = document.URL;
         if (link.match(/^.*\/\?post=.*/g)) {
+            var elem = document.getElementById("jsCreateThread").value;
             GM_setValue("quote", elem);
             link = link.match(/^.*\//g);
             window.location.href = link;
@@ -225,24 +238,30 @@ function getText() {
         }
         GM_deleteValue("quote");
     } catch {}
-
 };
 
 
 function loading() {
-    var reply = document.getElementsByClassName("jsShowNestedTrigger");
-    setTimeout(function check() {
-        for (var i = 0; i < reply.length; i++) {
-            if (reply[i].classList.contains("getNestedAD")) {
-                reply[i].click();
-            } else {
-                setTimeout(check, 300);
-            }
+    var item = [];
+    var balas = document.getElementsByClassName("jsShowNestedTrigger");
+    for (var i = 0; i < balas.length; i++) {
+        if (balas[i].classList.contains("getNestedAD")) {
+            balas[i].click();
+            console.log("klik " + i);
         }
-        setTimeout(nestedProperty, 500);
-    }, 300);
-
-}
+    }
+    for (var j = 0; j < balas.length; j++) {
+        item.push(balas[j].className);
+        console.log(item[j]);
+    }
+    if (item.includes("Fx(flex0Auto) jsShowNestedTrigger getNestedAD")) {
+        console.log("gagal");
+        setTimeout(loading, 500);
+    } else {
+        console.log("berhasil loading");
+        nestedProperty();
+    }
+};
 
 getText();
 singleQuote();
