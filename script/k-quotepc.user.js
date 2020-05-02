@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Insert Quote Button for PC
-// @version       1.5.2
+// @version       1.5.3
 // @namespace     k-quotepc
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
@@ -18,10 +18,11 @@
 // @grant		      GM_getValue
 // @grant		      GM_deleteValue
 // @run-at        document-end
+// @require       https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/pc/k-quotepc.user.js
 
 // ==/UserScript==
 
-
+/*
 GM_addStyle(`
 .single-quote {
 padding-right: 3px !important;
@@ -152,5 +153,5 @@ window.onload=function(){
 getText();
 
 
-
+*/
 
