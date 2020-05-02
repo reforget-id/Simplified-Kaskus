@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Insert Quote Button
-// @version       2.3.1
+// @version       2.3.2
 // @namespace     k-quote
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
@@ -145,7 +145,7 @@ function nestedSingleQuote() {
         NewElement.href = "/post_reply/" + threadid + "/?post=" + postid;
         NewElement.appendBefore(list[i]);
     }
-    setTimeout(nestedMultiQuote, 500);
+    setTimeout(nestedMultiQuote, 300);
 };
 
 
@@ -207,7 +207,7 @@ function nestedProperty() {
             elem3[i].classList.add("minheight");
         }
     }
-    setTimeout(nestedSingleQuote, 500);
+    setTimeout(nestedSingleQuote, 300);
 }
 
 
@@ -236,11 +236,11 @@ function loading() {
             if (reply[i].classList.contains("getNestedAD")) {
                 reply[i].click();
             } else {
-                setTimeout(check, 500);
+                setTimeout(check, 300);
             }
         }
-        setTimeout(nestedProperty, 1000);
-    }, 500);
+        setTimeout(nestedProperty, 500);
+    }, 300);
 
 }
 
