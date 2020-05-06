@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name          Kaskus : Show All Post
-// @version       1.0.3
-// @namespace     k-allpost
+// @name          Kaskus : Show All Post for PC
+// @version       1.0.4
+// @namespace     k-allpostpc
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
 // @homepage      https://github.com/reforget-id/Simplified-Kaskus
@@ -14,6 +14,7 @@
 
 
 function showPost() {
+    document.body.style.display = "none";
     var allpost = document.getElementsByClassName("Mend(15px)");
     for (var i = 0; i < allpost.length; i++) {
         if (allpost[i].className == "Mend(15px)") {
