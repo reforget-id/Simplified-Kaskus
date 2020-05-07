@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Insert Quote Button 
-// @version       2.5.1
+// @version       2.5.2
 // @namespace     k-quote
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
@@ -194,6 +194,7 @@ function nestedMultiQuote() {
         });
     }
     console.log("berhasil multi quote")
+	setTimeout(focus, 700);
 };
 
 
@@ -278,6 +279,27 @@ function loading() {
         console.log("berhasil loading");
         nestedProperty();
     }
+};
+
+
+function focus(){
+	var url = window.location.href;
+	if (url.match(/.*\/(lastpost|post)\/.*/)){
+		var post = url.match(/(?!#post)\w{24}$/);
+		var postid = "postcontent" + post;
+    	var element = document.getElementById(postid);
+		var headerOffset = 85;
+		var bodyRect = document.body.getBoundingClientRect().top;
+		var elementRect = element.getBoundingClientRect().top;
+		var elementPosition = elementRect - bodyRect;
+		var offsetPosition = elementPosition - headerOffset;
+
+		window.scrollTo({
+			top: offsetPosition,
+			behavior: "smooth"
+		});
+		console.log("focus berhasil");
+	}
 };
 
 setText();
