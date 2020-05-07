@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name          Kaskus : Insert Quote Button for PC
-// @version       2.2.0
+// @name          Kaskus : Insert Quote Button for PC 
+// @version       2.3.1
 // @namespace     k-quotepc
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
@@ -68,12 +68,22 @@ function singleQuote() {
 		var postid = post[i].getAttribute("id").match(/[^post].*/g);
 
 		NewElement1.setAttribute("class", "D(ib) Td(n):h Fz(16px) Mend(15px) Px(8px) Py(3px) Bdrs(8px) buttonMultiquote");
-		NewElement1.href = "/post_reply/" + threadid + "/?post=" + postid;
+		NewElement1.setAttribute("postid", postid);
 		NewElement1.appendChild(NewElement2);
 		NewElement1.appendChild(NewElement3);
 		NewElement2.setAttribute("class", "single-quote fas C(c-secondary) fa-comment Mend(2px)");
+		NewElement2.setAttribute("postid", postid);
 		NewElement3.setAttribute("class", "C(c-secondary) Fz(12px)");
 		NewElement3.innerHTML = "Single Quote";
+		NewElement3.setAttribute("postid", postid);
+		NewElement1.addEventListener("click", function (e) {
+			var frame = document.createElement('iframe');
+			frame.style.display = "none";
+			frame.src = "/post_reply/" + threadid + "/?post=" + e.target.getAttribute("postid");
+			frame.setAttribute("id", "openiframe");
+			document.body.appendChild(frame);
+			getIframe();
+		});
 
 		if (document.URL.match(/^.*\/show_post\/*./g)) {
 			NewElement1.appendBefore(listreply[i]);
@@ -99,13 +109,23 @@ function nestedSingleQuote() {
 
 		if (list[i].className == 'jsButtonReply buttonReply') {
 			NewElement1.setAttribute("class", "buttonMultiquote Mend(15px) Px(8px)");
-			NewElement1.href = "/post_reply/" + threadid + "/?post=" + postid;
+			NewElement1.setAttribute("postid", postid);
 			NewElement1.appendBefore(list[i]);
 			NewElement1.appendChild(NewElement2);
 			NewElement1.appendChild(NewElement3);
 			NewElement2.setAttribute("class", "single-quote fas C(c-secondary) fa-comment Mend(2px)");
+			NewElement2.setAttribute("postid", postid);
 			NewElement3.setAttribute("class", "C(c-secondary) Fz(12px)");
 			NewElement3.innerHTML = "Single Quote";
+			NewElement3.setAttribute("postid", postid);
+			NewElement1.addEventListener("click", function (e) {
+				var frame = document.createElement('iframe');
+				frame.style.display = "none";
+				frame.src = "/post_reply/" + threadid + "/?post=" + e.target.getAttribute("postid");
+				frame.setAttribute("id", "openiframe");
+				document.body.appendChild(frame);
+				getIframe();
+			});
 		}
 	}
 	console.log("berhasil nested single quote");
@@ -154,72 +174,79 @@ function replaceKutip() {
 
 
 function nestedProperty() {
-		var item = [];
-		var nest = document.getElementsByClassName("statusFetchData");
-		for (var j = 0; j < nest.length; j++) {
-				item.push(nest[j].style.display);
-				console.log(item[j]);
-		}
+	var item = [];
+	var nest = document.getElementsByClassName("statusFetchData");
+	for (var j = 0; j < nest.length; j++) {
+		item.push(nest[j].style.display);
+		console.log(item[j]);
+	}
 
-		if (item.includes("")){	
-				console.log("gagal");
-				setTimeout(nestedProperty, 300);
+	if (item.includes("")) {
+		console.log("gagal");
+		setTimeout(nestedProperty, 300);
+	} else {
+		var list = document.getElementsByClassName("C(c-primary) Fz(14px) pagetext");
+		for (var i = 0; i < list.length; i++) {
+			if (list[i].className === 'C(c-primary) Fz(14px) pagetext') {
+				list[i].classList.add("nested-height", "Bdb(borderSolidLightGrey)");
+			}
 		}
-		else{
-				var list = document.getElementsByClassName("C(c-primary) Fz(14px) pagetext");
-				for (var i = 0; i < list.length; i++) {
-						if (list[i].className === 'C(c-primary) Fz(14px) pagetext') {
-								list[i].classList.add("nested-height", "Bdb(borderSolidLightGrey)");
-						}
-				}
-				console.log("berhasil property");
-    		nestedSingleQuote(); 
-		}
+		console.log("berhasil property");
+		nestedSingleQuote();
+	}
 };
 
 
-function getText() {
-	try{
-		var link = document.URL;
-		if (link.match(/^.*\/\?post=.*/g)) {
-			var elem = document.getElementById("reply-messsage").value;
-			GM_setValue("quote", elem);
-			link = link.match(/^.*\//g);
-			window.location.href = link;
-		}
-		if (link.match(/^.*\/$/g)) {
-			document.getElementById("reply-messsage").value = GM_getValue("quote");
-		}
-		GM_deleteValue("quote");
+function getIframe() {
+	var frame = document.getElementById("openiframe");
+	var link = frame.src.match(/^.*post_reply.*\//g);
+	var elem = frame.contentWindow.document.getElementById("reply-messsage");
+	if (typeof (elem) == 'undefined' || elem == null) {
+		console.log("element kosong");
+		setTimeout(getIframe, 200);
+	} else {
+		var val = elem.value;
+		GM_setValue("quote", val);
+		console.log(GM_getValue("quote"));
+		console.log(link);
+		window.location.href = link;
 	}
-	catch{}
+};
+
+
+function setText() {
+	if (window.location.href.match(/^.*post_reply.*\/$/g)) {
+		console.log(GM_getValue("quote"));
+		document.getElementById("reply-messsage").value = GM_getValue("quote");
+		//GM_deleteValue("quote");
+	}
+
 };
 
 
 function loading() {
-		var item = [];
-		var balas = document.getElementsByClassName("jsShowNestedTrigger");
-		for (var i = 0; i < balas.length; i++) {
-        if (balas[i].classList.contains("getNestedAD")) {
-        		balas[i].click();
-						console.log("klik " + i);
-        } 
-    }
-		for (var j = 0; j < balas.length; j++) {
-				item.push(balas[j].className);
-				console.log(item[j]);
+	var item = [];
+	var balas = document.getElementsByClassName("jsShowNestedTrigger");
+	for (var i = 0; i < balas.length; i++) {
+		if (balas[i].classList.contains("getNestedAD")) {
+			balas[i].click();
+			console.log("klik " + i);
 		}
-		if (item.includes("Fx(flexZero) jsShowNestedTrigger getNestedAD Cur(p)")){	
-				console.log("gagal");	
-				setTimeout(loading, 500);
-		}
-		else{
-				console.log("berhasil loading");	
-				nestedProperty();
-		}
+	}
+	for (var j = 0; j < balas.length; j++) {
+		item.push(balas[j].className);
+		console.log(item[j]);
+	}
+	if (item.includes("Fx(flexZero) jsShowNestedTrigger getNestedAD Cur(p)")) {
+		console.log("gagal");
+		setTimeout(loading, 500);
+	} else {
+		console.log("berhasil loading");
+		nestedProperty();
+	}
 };
 
-getText();
+setText();
 singleQuote();
 replaceKutip();
 loading();

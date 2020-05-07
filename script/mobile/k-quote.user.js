@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name          Kaskus : Insert Quote Button
-// @version       2.4.0
+// @name          Kaskus : Insert Quote Button 
+// @version       2.5.1
 // @namespace     k-quote
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
@@ -116,7 +116,15 @@ function singleQuote() {
         var postid = post[i].getAttribute("id").match(/[^cendol].*/g);
 
         NewElement.setAttribute("class", "sq-post D(f) Jc(fs) Ai(c) fas fa-comment Fz(20px)");
-        NewElement.href = "/post_reply/" + threadid + "/?post=" + postid;
+        NewElement.setAttribute("postid", postid);
+        NewElement.addEventListener("click", function (e) {
+            var frame = document.createElement('iframe');
+            frame.style.display = "none";
+            frame.src = "/post_reply/" + threadid + "/?post=" + e.target.getAttribute("postid");
+            frame.setAttribute("id", "openiframe");
+            document.body.appendChild(frame);
+            getIframe();
+        });
 
         if (document.URL.match(/^.*\/show_post\/*./g)) {
             NewElement.appendBefore(listreply[i]);
@@ -140,8 +148,16 @@ function nestedSingleQuote() {
         var postid = post[i].getAttribute("id").match(/[^cendol].*/g);
 
         NewElement.setAttribute("class", "sq-nested D(f) Jc(fs) Ai(c) fas fa-comment");
-        NewElement.href = "/post_reply/" + threadid + "/?post=" + postid;
         NewElement.appendBefore(list[i]);
+        NewElement.setAttribute("postid", postid);
+        NewElement.addEventListener("click", function (e) {
+            var frame = document.createElement('iframe');
+            frame.style.display = "none";
+            frame.src = "/post_reply/" + threadid + "/?post=" + e.target.getAttribute("postid");
+            frame.setAttribute("id", "openiframe");
+            document.body.appendChild(frame);
+            getIframe();
+        });
     }
     console.log("berhasil nested single quote")
     setTimeout(nestedMultiQuote, 100);
@@ -168,27 +184,17 @@ function nestedMultiQuote() {
         NewElement1.setAttribute("data-postid", postid);
         NewElement1.id = "mq_" + postid;
         NewElement1.appendBefore(list[i]);
+        NewElement1.addEventListener("click", function (e) {
+            var anchor = e.target;
+            if (anchor.classList.contains("mq-color")) {
+                anchor.classList.remove("mq-color");
+            } else {
+                anchor.classList.add("mq-color");
+            }
+        });
     }
     console.log("berhasil multi quote")
 };
-
-
-function getAnchor(element) {
-    while (element && element.nodeName != "DIV") {
-        element = element.parentNode;
-    }
-    return element;
-};
-
-document.addEventListener("click", function (e) {
-    var anchor = getAnchor(e.target);
-
-    if (anchor.classList.contains("mq-nested") && !anchor.classList.contains("mq-color")) {
-        anchor.classList.add("mq-color");
-    } else if (anchor.classList.contains("mq-nested") && anchor.classList.contains("mq-color")) {
-        anchor.classList.remove("mq-color");
-    } else {};
-});
 
 
 function nestedProperty() {
@@ -224,20 +230,31 @@ function nestedProperty() {
 };
 
 
-function getText() {
-    try {
-        var link = document.URL;
-        if (link.match(/^.*\/\?post=.*/g)) {
-            var elem = document.getElementById("jsCreateThread").value;
-            GM_setValue("quote", elem);
-            link = link.match(/^.*\//g);
-            window.location.href = link;
-        }
-        if (link.match(/^.*\/$/g)) {
-            document.getElementById("jsCreateThread").value = GM_getValue("quote");
-        }
-        GM_deleteValue("quote");
-    } catch {}
+function getIframe() {
+    document.body.style.opacity = "0.5";
+    var frame = document.getElementById("openiframe");
+    var link = frame.src.match(/^.*post_reply.*\//g);
+    var elem = frame.contentWindow.document.getElementById("jsCreateThread");
+    if (typeof (elem) == 'undefined' || elem == null) {
+        console.log("element kosong");
+        setTimeout(getIframe, 200);
+    } else {
+        var val = elem.value;
+        GM_setValue("quote", val);
+        console.log(GM_getValue("quote"));
+        console.log(link);
+        window.location.href = link;
+    }
+};
+
+
+function setText() {
+    if (window.location.href.match(/^.*post_reply.*\/$/g)) {
+        console.log(GM_getValue("quote"));
+        document.getElementById("jsCreateThread").value = GM_getValue("quote");
+        //GM_deleteValue("quote");
+    }
+
 };
 
 
@@ -263,6 +280,6 @@ function loading() {
     }
 };
 
-getText();
+setText();
 singleQuote();
 loading();

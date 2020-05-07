@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Show All Post
-// @version       1.0.4
+// @version       1.0.5
 // @namespace     k-allpost
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
@@ -14,10 +14,10 @@
 
 
 function showPost() {
-	document.body.style.display = "none";
-	var allpost = document.getElementsByClassName("Mend(15px)");
+	document.body.style.opacity = "0.0";
+	var allpost = document.getElementsByClassName("Mend(5px) linkWithIcon:h_Td(u)");
 	for (var i = 0; i < allpost.length; i++) {
-		if (allpost[i].className == "Mend(15px)") {
+		if (allpost[i].className == "Mend(5px) linkWithIcon:h_Td(u)") {
 			allpost[i].click();
 		}
 	}
