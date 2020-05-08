@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Insert Quote Button for PC 
-// @version       2.3.2
+// @version       2.4.0
 // @namespace     k-quotepc
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
@@ -65,24 +65,33 @@ function singleQuote() {
 		var NewElement2 = document.createElement('i');
 		var NewElement3 = document.createElement('span');
 		var threadid = thread.getAttribute("value");
-		var postid = post[i].getAttribute("id").match(/[^post].*/g);
+		var postid = post[i].getAttribute("id");
+		var btnid = "quote" + postid;
+		var click = "quote('" + threadid + "', '" + postid.match(/[^post].*/g) + "');return false;";
 
 		NewElement1.setAttribute("class", "D(ib) Td(n):h Fz(16px) Mend(15px) Px(8px) Py(3px) Bdrs(8px) buttonMultiquote");
-		NewElement1.setAttribute("postid", postid);
+		NewElement1.setAttribute("onclick", click);
+		NewElement1.href = "javascript:void(0);";
+		NewElement1.id = btnid;
+		NewElement1.setAttribute("postid", btnid);
 		NewElement1.appendChild(NewElement2);
 		NewElement1.appendChild(NewElement3);
 		NewElement2.setAttribute("class", "single-quote fas C(c-secondary) fa-comment Mend(2px)");
-		NewElement2.setAttribute("postid", postid);
+		NewElement2.setAttribute("postid", btnid);
 		NewElement3.setAttribute("class", "C(c-secondary) Fz(12px)");
 		NewElement3.innerHTML = "Single Quote";
-		NewElement3.setAttribute("postid", postid);
+		NewElement3.setAttribute("postid", btnid);
 		NewElement1.addEventListener("click", function (e) {
-			var frame = document.createElement('iframe');
-			frame.style.display = "none";
-			frame.src = "/post_reply/" + threadid + "/?post=" + e.target.getAttribute("postid");
-			frame.setAttribute("id", "openiframe");
-			document.body.appendChild(frame);
-			getIframe();
+			var check = document.getElementById("openiframe");
+			if (typeof (check) == 'undefined' || check == null) {
+				var frame = document.createElement('iframe');
+				frame.style.display = "none";
+				frame.src = "/post_reply/" + threadid;
+				frame.setAttribute("id", "openiframe");
+				frame.setAttribute("frameid", e.target.getAttribute("postid"));
+				document.body.appendChild(frame);
+				getIframe();
+			}
 		});
 
 		if (document.URL.match(/^.*\/show_post\/*./g)) {
@@ -105,26 +114,35 @@ function nestedSingleQuote() {
 		var NewElement2 = document.createElement('i');
 		var NewElement3 = document.createElement('span');
 		var threadid = thread.getAttribute("value");
-		var postid = post[i].getAttribute("id").match(/[^post].*/g);
+		var postid = post[i].getAttribute("id");
+		var btnid = "quote" + postid;
+		var click = "quote('" + threadid + "', '" + postid.match(/[^post].*/g) + "');return false;";
 
 		if (list[i].className == 'jsButtonReply buttonReply') {
 			NewElement1.setAttribute("class", "buttonMultiquote Mend(15px) Px(8px)");
-			NewElement1.setAttribute("postid", postid);
+			NewElement1.setAttribute("onclick", click);
+			NewElement1.href = "javascript:void(0);";
+			NewElement1.id = btnid;
+			NewElement1.setAttribute("postid", btnid);
 			NewElement1.appendBefore(list[i]);
 			NewElement1.appendChild(NewElement2);
 			NewElement1.appendChild(NewElement3);
 			NewElement2.setAttribute("class", "single-quote fas C(c-secondary) fa-comment Mend(2px)");
-			NewElement2.setAttribute("postid", postid);
+			NewElement2.setAttribute("postid", btnid);
 			NewElement3.setAttribute("class", "C(c-secondary) Fz(12px)");
 			NewElement3.innerHTML = "Single Quote";
-			NewElement3.setAttribute("postid", postid);
+			NewElement3.setAttribute("postid", btnid);
 			NewElement1.addEventListener("click", function (e) {
-				var frame = document.createElement('iframe');
-				frame.style.display = "none";
-				frame.src = "/post_reply/" + threadid + "/?post=" + e.target.getAttribute("postid");
-				frame.setAttribute("id", "openiframe");
-				document.body.appendChild(frame);
-				getIframe();
+				var check = document.getElementById("openiframe");
+				if (typeof (check) == 'undefined' || check == null) {
+					var frame = document.createElement('iframe');
+					frame.style.display = "none";
+					frame.src = "/post_reply/" + threadid;
+					frame.setAttribute("id", "openiframe");
+					frame.setAttribute("frameid", e.target.getAttribute("postid"));
+					document.body.appendChild(frame);
+					getIframe();
+				}
 			});
 		}
 	}
@@ -198,10 +216,22 @@ function nestedProperty() {
 };
 
 
+function removeMultiquote() {
+	var selected = document.getElementsByClassName("jsButtonMultiquote");
+	for (var i = 0; i < selected.length; i++) {
+		if (selected[i].classList.contains("is-selected")) {
+			selected[i].click();
+			console.log("multi quote dihapus");
+		}
+	}
+}
+
+
 function getIframe() {
 	var frame = document.getElementById("openiframe");
-	var link = frame.src.match(/^.*post_reply.*\//g);
+	var link = frame.src;
 	var elem = frame.contentWindow.document.getElementById("reply-messsage");
+	var postid = frame.getAttribute("frameid");
 	if (typeof (elem) == 'undefined' || elem == null) {
 		console.log("element kosong");
 		setTimeout(getIframe, 200);
@@ -210,7 +240,10 @@ function getIframe() {
 		GM_setValue("quote", val);
 		console.log(GM_getValue("quote"));
 		console.log(link);
-		window.location.href = link;
+		removeMultiquote();
+		document.getElementById(postid).click();
+		console.log("single quote dihapus");
+		window.location.href = link + "/";
 	}
 };
 
@@ -248,12 +281,12 @@ function loading() {
 };
 
 
-function focus(){
+function focus() {
 	var url = window.location.href;
-	if (url.match(/.*\/(lastpost|post)\/.*/)){
+	if (url.match(/.*\/(lastpost|post)\/.*/)) {
 		var post = url.match(/(?!#post)\w{24}$/);
 		var postid = "post" + post;
-    	var element = document.getElementById(postid);
+		var element = document.getElementById(postid);
 		var headerOffset = 60;
 		var bodyRect = document.body.getBoundingClientRect().top;
 		var elementRect = element.getBoundingClientRect().top;
