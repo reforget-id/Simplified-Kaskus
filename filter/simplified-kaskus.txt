@@ -1,7 +1,7 @@
-! Version: 1.1.8
+! Version: 1.1.9
 ! Title: Simplified Kaskus
 ! Description: Menyederhanakan interface Kaskus Mobile Web
-! Last modified: 5 April 2020 00:00 UTC
+! Last modified: 9 May 2020 00:00 UTC
 ! Expires: 4 days (update frequency)
 
 ! Font Forum & Thread
@@ -40,6 +40,7 @@ m.kaskus.co.id###my-ad-slot
 ! ------
 
 ! Podcast & TV
+||c.kaskus.id/kaskus-tv/embed-resources/
 ||tv.kaskus.co.id/embed-resources/embed-widget
 ||s.kaskus.id/ms/assets/kaskus-podcast/js/kaskus_forum.007f623.js$domain=m.kaskus.co.id
 m.kaskus.co.id##.kaskus-tv-widget
