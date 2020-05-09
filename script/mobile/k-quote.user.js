@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Insert Quote Button 
-// @version       2.5.2
+// @version       2.6.0
 // @namespace     k-quote
 // @author        ffsuperteam
 // @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
@@ -114,16 +114,23 @@ function singleQuote() {
         var NewElement = document.createElement('a');
         var threadid = thread.getAttribute("value");
         var postid = post[i].getAttribute("id").match(/[^cendol].*/g);
+        var click = "quote('" + threadid + "', '" + postid + "');return false;";
 
         NewElement.setAttribute("class", "sq-post D(f) Jc(fs) Ai(c) fas fa-comment Fz(20px)");
-        NewElement.setAttribute("postid", postid);
+        NewElement.setAttribute("onclick", click);
+        NewElement.id = "sq" + postid;
+        NewElement.href = "javascript:void(0);";
         NewElement.addEventListener("click", function (e) {
-            var frame = document.createElement('iframe');
-            frame.style.display = "none";
-            frame.src = "/post_reply/" + threadid + "/?post=" + e.target.getAttribute("postid");
-            frame.setAttribute("id", "openiframe");
-            document.body.appendChild(frame);
-            getIframe();
+            var check = document.getElementById("openiframe");
+            if (typeof (check) == 'undefined' || check == null) {
+                var frame = document.createElement('iframe');
+                frame.style.display = "none";
+                frame.src = "/post_reply/" + threadid;
+                frame.setAttribute("id", "openiframe");
+                frame.setAttribute("frameid", e.target.id);
+                document.body.appendChild(frame);
+                getIframe();
+            }
         });
 
         if (document.URL.match(/^.*\/show_post\/*./g)) {
@@ -146,17 +153,24 @@ function nestedSingleQuote() {
         var NewElement = document.createElement('a');
         var threadid = thread.getAttribute("value");
         var postid = post[i].getAttribute("id").match(/[^cendol].*/g);
+        var click = "quote('" + threadid + "', '" + postid + "');return false;";
 
         NewElement.setAttribute("class", "sq-nested D(f) Jc(fs) Ai(c) fas fa-comment");
         NewElement.appendBefore(list[i]);
-        NewElement.setAttribute("postid", postid);
+        NewElement.setAttribute("onclick", click);
+        NewElement.id = "nsq" + postid;
+        NewElement.href = "javascript:void(0);";
         NewElement.addEventListener("click", function (e) {
-            var frame = document.createElement('iframe');
-            frame.style.display = "none";
-            frame.src = "/post_reply/" + threadid + "/?post=" + e.target.getAttribute("postid");
-            frame.setAttribute("id", "openiframe");
-            document.body.appendChild(frame);
-            getIframe();
+            var check = document.getElementById("openiframe");
+            if (typeof (check) == 'undefined' || check == null) {
+                var frame = document.createElement('iframe');
+                frame.style.display = "none";
+                frame.src = "/post_reply/" + threadid;
+                frame.setAttribute("id", "openiframe");
+                frame.setAttribute("frameid", e.target.id);
+                document.body.appendChild(frame);
+                getIframe();
+            }
         });
     }
     console.log("berhasil nested single quote")
@@ -171,9 +185,6 @@ function nestedMultiQuote() {
 
     for (var i = 0; i < list.length; i++) {
         var NewElement1 = document.createElement('div');
-        var NewElement2 = document.createElement('div');
-        var NewElement3 = document.createElement('i');
-        var threadid = thread.getAttribute("value");
         var postid = post[i].getAttribute("id").match(/[^cendol].*/g);
         var click = "return false;";
 
@@ -185,16 +196,11 @@ function nestedMultiQuote() {
         NewElement1.id = "mq_" + postid;
         NewElement1.appendBefore(list[i]);
         NewElement1.addEventListener("click", function (e) {
-            var anchor = e.target;
-            if (anchor.classList.contains("mq-color")) {
-                anchor.classList.remove("mq-color");
-            } else {
-                anchor.classList.add("mq-color");
-            }
+            e.target.classList.toggle("mq-color");
         });
     }
     console.log("berhasil multi quote")
-	setTimeout(focus, 700);
+    setTimeout(focus, 700);
 };
 
 
@@ -231,11 +237,25 @@ function nestedProperty() {
 };
 
 
+function removeMultiquote() {
+    var selected = document.getElementsByClassName("quote-btn");
+    for (var i = 0; i < selected.length; i++) {
+        var style = getComputedStyle(selected[i]);
+        var backgroundColor = style.backgroundColor;
+        if (backgroundColor == "rgb(253, 186, 77)") {
+            selected[i].click();
+            console.log("multi quote dihapus");
+        }
+    }
+};
+
+
 function getIframe() {
     document.body.style.opacity = "0.5";
     var frame = document.getElementById("openiframe");
-    var link = frame.src.match(/^.*post_reply.*\//g);
+    var link = frame.src;
     var elem = frame.contentWindow.document.getElementById("jsCreateThread");
+    var btnid = frame.getAttribute("frameid");
     if (typeof (elem) == 'undefined' || elem == null) {
         console.log("element kosong");
         setTimeout(getIframe, 200);
@@ -243,8 +263,10 @@ function getIframe() {
         var val = elem.value;
         GM_setValue("quote", val);
         console.log(GM_getValue("quote"));
-        console.log(link);
-        window.location.href = link;
+        removeMultiquote();
+        document.getElementById(btnid).click();
+        console.log("single quote dihapus");
+        window.location.href = link + "/";
     }
 };
 
@@ -282,24 +304,24 @@ function loading() {
 };
 
 
-function focus(){
-	var url = window.location.href;
-	if (url.match(/.*\/(lastpost|post)\/.*/)){
-		var post = url.match(/(?!#post)\w{24}$/);
-		var postid = "postcontent" + post;
-    	var element = document.getElementById(postid);
-		var headerOffset = 85;
-		var bodyRect = document.body.getBoundingClientRect().top;
-		var elementRect = element.getBoundingClientRect().top;
-		var elementPosition = elementRect - bodyRect;
-		var offsetPosition = elementPosition - headerOffset;
+function focus() {
+    var url = window.location.href;
+    if (url.match(/.*\/(lastpost|post)\/.*/)) {
+        var post = url.match(/(?!#post)\w{24}$/);
+        var postid = "postcontent" + post;
+        var element = document.getElementById(postid);
+        var headerOffset = 85;
+        var bodyRect = document.body.getBoundingClientRect().top;
+        var elementRect = element.getBoundingClientRect().top;
+        var elementPosition = elementRect - bodyRect;
+        var offsetPosition = elementPosition - headerOffset;
 
-		window.scrollTo({
-			top: offsetPosition,
-			behavior: "smooth"
-		});
-		console.log("focus berhasil");
-	}
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
+        console.log("focus berhasil");
+    }
 };
 
 setText();
