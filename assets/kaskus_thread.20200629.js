@@ -205,7 +205,7 @@ function createNestedReplyForm(t) {
             e.focus()
         }, 5)
     }
-    ///
+    /*
     if (!e.parents("form").hasClass("form-reply-message")) {
         var a = e.attr("id").split("-")[2],
             s = $jQ("#qr" + a),
@@ -213,7 +213,7 @@ function createNestedReplyForm(t) {
         formString = '<form class="form-reply-message" role="form" action="/post_reply/' + __thread_id + '" method="post" name="qr_form" ></form>', e.after('<input type="hidden" name="securitytoken" value="' + i + '" class="sctoken">'), e.after('<input id="parent_post" type="hidden" name="parent_post" value="' + a + '">'), e.after('<input type="hidden" name="thread_id" value="' + __thread_id + '" id="qr_threadid">'), s.wrap(formString), setTimeout(function () {
             e.focus()
         }, 5)
-    }
+    }*/
 }
 
 function createQuickReplyForm(t) {
@@ -244,7 +244,7 @@ function moveReplyForm(t) {
                 l = getPageTextMentionList($jQ(t).closest(".postbody").find(".pagetext"), o), $jQ(".qr-section").find("textarea").val(l)
             }
             $jQ(".qr-first-post").val(from_first_post), $jQ(".qr-section").show(), $jQ(".qr-message").focus(), autosize.update($jQ(".qr-section").find("textarea")[0])
-        }  ///
+        }  /*
         else {
             $(".smallReply").hide();
             var r = $jQ(t),
@@ -256,7 +256,7 @@ function moveReplyForm(t) {
             d.find(".totalNestedOf").text("1 dari " + e), d.show(), $(".statusFetchData").hide(), $jQ("html, body").animate({
                 scrollTop: $jQ("#qr-message-" + n).offset().top - $jQ(".jsNavHeader").outerHeight() - 10
             }, 1e3), $jQ("#qr-message-" + n).focus(), $jQ("#qr" + n).find("input[name=parent_post]").val(s)
-        }
+        }*/
     }
 }
 
