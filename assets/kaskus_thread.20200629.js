@@ -196,15 +196,6 @@ function spoiler(t) {
 
 function createNestedReplyForm(t) {
     var e = $(t);
-    if (!e.parents("form").hasClass("form-reply-message")) {
-        var a = e.parents(".qr-section"),
-            s = a.data("postid"),
-            i = $jQ("#securitytoken").val(),
-            o = $jQ("#thread_id").val();
-        $jQ("#captcha-wrapper").css("display", "block"), formString = '<form class="form-reply-message" onsubmit="return quick_reply(this);" role="form" action="/post_reply/' + o + '" method="post" name="qr_form"></form>', e.after('<input type="hidden" name="securitytoken" value="' + i + '" class="sctoken">'), e.after('<input type="hidden" name="fromquickreply" value="1">'), e.after('<input type="hidden" name="do" value="postreply">'), e.after('<input type="hidden" name="parseurl" value="1">'), e.after('<input id="parent_post" type="hidden" name="parent_post" value="' + s + '">'), e.after('<input type="hidden" name="thread_id" value="' + o + '" id="qr_threadid">'), e.after('<input type="hidden" name="post_id" value="' + s + '">'), s == FIRST_POST_ID ? from_first_post = "1" : from_first_post = "0", e.after('<input type="hidden" class="qr-first-post" name="qr_first_post" value="' + from_first_post + '" id="qr_threadid">'), a.wrap(formString), $jQ(".qr-button").show(), $jQ(".qr-message").focus(), setTimeout(function () {
-            e.focus()
-        }, 5)
-    }
     /*
     if (!e.parents("form").hasClass("form-reply-message")) {
         var a = e.attr("id").split("-")[2],
@@ -217,7 +208,7 @@ function createNestedReplyForm(t) {
 }
 
 function createQuickReplyForm(t) {
-    var e = $(t);
+    var e = $(t);/*
     if (!e.parents("form").hasClass("form-reply-message")) {
         var a = e.parents(".qr-section"),
             s = a.data("postid"),
@@ -226,7 +217,7 @@ function createQuickReplyForm(t) {
         $jQ("#captcha-wrapper").css("display", "block"), formString = '<form class="form-reply-message" onsubmit="return quick_reply(this);" role="form" action="/post_reply/' + o + '" method="post" name="qr_form"></form>', e.after('<input type="hidden" name="securitytoken" value="' + i + '" class="sctoken">'), e.after('<input type="hidden" name="fromquickreply" value="1">'), e.after('<input type="hidden" name="do" value="postreply">'), e.after('<input type="hidden" name="parseurl" value="1">'), e.after('<input id="parent_post" type="hidden" name="parent_post" value="' + s + '">'), e.after('<input type="hidden" name="thread_id" value="' + o + '" id="qr_threadid">'), e.after('<input type="hidden" name="post_id" value="' + s + '">'), s == FIRST_POST_ID ? from_first_post = "1" : from_first_post = "0", e.after('<input type="hidden" class="qr-first-post" name="qr_first_post" value="' + from_first_post + '" id="qr_threadid">'), a.wrap(formString), $jQ(".qr-button").show(), $jQ(".qr-message").focus(), setTimeout(function () {
             e.focus()
         }, 5)
-    }
+    }*/
 }
 
 function moveReplyForm(t) {
@@ -244,7 +235,7 @@ function moveReplyForm(t) {
                 l = getPageTextMentionList($jQ(t).closest(".postbody").find(".pagetext"), o), $jQ(".qr-section").find("textarea").val(l)
             }
             $jQ(".qr-first-post").val(from_first_post), $jQ(".qr-section").show(), $jQ(".qr-message").focus(), autosize.update($jQ(".qr-section").find("textarea")[0])
-        }  /*
+        }  
         else {
             $(".smallReply").hide();
             var r = $jQ(t),
@@ -256,7 +247,7 @@ function moveReplyForm(t) {
             d.find(".totalNestedOf").text("1 dari " + e), d.show(), $(".statusFetchData").hide(), $jQ("html, body").animate({
                 scrollTop: $jQ("#qr-message-" + n).offset().top - $jQ(".jsNavHeader").outerHeight() - 10
             }, 1e3), $jQ("#qr-message-" + n).focus(), $jQ("#qr" + n).find("input[name=parent_post]").val(s)
-        }*/
+        }
     }
 }
 
