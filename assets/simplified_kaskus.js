@@ -27,7 +27,7 @@ function get_revamp_smiliesSK() {
         method: "POST",
         url: "/misc/get_smilies/0",
         data: t || {}
-    }).done(get_revamp_smilies_successSK) : $("#jsSmiliesWrapper8").toggleClass("is-open")
+    }).done(get_revamp_smilies_successSK) : $("#jsSmiliesWrapper7").toggleClass("is-open")
 }
 
 function get_revamp_smilies_successSK(t) {
