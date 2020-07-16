@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name          Kaskus : Show All Post for PC
-// @version       2.0.1
+// @version       2.0.2
 // @namespace     k-allpostpc
 // @author        ffsuperteam
-// @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
+// @icon          https://s.kaskus.id/themes_3.0/mobile/images/logo-n.svg
 // @homepage      https://github.com/reforget-id/Simplified-Kaskus
 // @description   Otomatis redirect show all post
 // @match		  https://www.kaskus.co.id/show_post/*/-/*

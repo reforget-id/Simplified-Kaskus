@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name          Kaskus : Insert Quote Button for PC 
-// @version       2.5.1
+// @version       2.5.2
 // @namespace     k-quotepc
 // @author        ffsuperteam
-// @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
+// @icon          https://s.kaskus.id/themes_3.0/mobile/images/logo-n.svg
 // @homepage      https://github.com/reforget-id/Simplified-Kaskus
 // @description   Tambah tombol quote di nested reply di PC
 // @include       https://www.kaskus.co.id/thread/*

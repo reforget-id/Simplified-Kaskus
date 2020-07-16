@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name          Kaskus : Insert Last Post Button
-// @version       1.5.3
+// @version       1.5.4
 // @namespace     k-lastpost
 // @author        ffsuperteam
-// @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
+// @icon          https://s.kaskus.id/themes_3.0/mobile/images/logo-n.svg
 // @homepage      https://github.com/reforget-id/Simplified-Kaskus
 // @description   Tambah tombol last post
 // @include       https://m.kaskus.co.id/forum/*

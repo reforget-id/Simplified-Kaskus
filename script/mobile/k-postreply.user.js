@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name          Kaskus : Bottom Post Reply
-// @version       0.0.2
+// @version       0.0.3
 // @namespace     k-postreply
 // @author        ffsuperteam
-// @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
+// @icon          https://s.kaskus.id/themes_3.0/mobile/images/logo-n.svg
 // @homepage      https://github.com/reforget-id/Simplified-Kaskus
 // @description   Memindahkan kolom post reply di bawah thread
 // @include       https://m.kaskus.co.id/thread/*

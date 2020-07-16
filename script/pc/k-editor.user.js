@@ -2,10 +2,10 @@
 // @name        Kaskus : Enhanced Thread Editor  
 // @namespace   k-enhanced editor
 // @homepage    https://github.com/reforget-id/Simplified-Kaskus
-// @version     1.1.2
+// @version     1.1.3
 // @author      ffsuperteam
 // @description Mengubah tampilan lama thread editor agar lebih nyaman digunakan
-// @icon        https://www.google.com/s2/favicons?domain=m.kaskus.co.id
+// @icon        https://s.kaskus.id/themes_3.0/mobile/images/logo-n.svg
 // @include     https://www.kaskus.co.id/post_reply/*
 // @downloadURL https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/pc/k-editor.user.js
 // @updateURL   https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/pc/k-editor.user.js

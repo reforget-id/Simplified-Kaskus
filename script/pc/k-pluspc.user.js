@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name          Kaskus : Plus Smilies for PC
-// @version       1.0.0
+// @version       1.0.1
 // @namespace     k-pluspc
 // @author        ffsuperteam
-// @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
+// @icon          https://s.kaskus.id/themes_3.0/mobile/images/logo-n.svg
 // @homepage      https://github.com/reforget-id/Simplified-Kaskus
 // @description   Gunakan smilies kaskus plus tanpa perlu kaskus plus
 // @include       https://www.kaskus.co.id/thread/*

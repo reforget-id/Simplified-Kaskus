@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name          Kaskus : Insert Quote Button 
-// @version       2.7.0
+// @version       2.7.1
 // @namespace     k-quote
 // @author        ffsuperteam
-// @icon          https://www.google.com/s2/favicons?domain=m.kaskus.co.id
+// @icon          https://s.kaskus.id/themes_3.0/mobile/images/logo-n.svg
 // @homepage      https://github.com/reforget-id/Simplified-Kaskus
 // @description   Tambah tombol quote di nested reply
 // @include       https://m.kaskus.co.id/thread/*

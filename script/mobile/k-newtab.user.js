@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Kaskus : Open in New Tab
-// @version     1.1.0
-// @icon        https://www.google.com/s2/favicons?domain=m.kaskus.co.id
+// @version     1.1.1
+// @icon        https://s.kaskus.id/themes_3.0/mobile/images/logo-n.svg
 // @namespace   k-newtab
 // @author      ffsuperteam
 // @homepage    https://github.com/reforget-id/Simplified-Kaskus
