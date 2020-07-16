@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Insert Quote Button 
-// @version       2.7.1
+// @version       2.7.2
 // @namespace     k-quote
 // @author        ffsuperteam
 // @icon          https://s.kaskus.id/themes_3.0/mobile/images/logo-n.svg
@@ -463,47 +463,47 @@ function replyTools() {
 				smilediv.innerHTML = `
 <div class="Pos(a) T(37px) Start(0) W(100%) Bgc(c-white) nightmode_Bgc(c-gray-7) Bd(light-grey-border) nightmode_Bdc(c-dark-grey-2) nightmode_Bxsh(shadowShare) Z(99) D(n) smilieswrapper" style="position: absolute; display: block"><div class="jsSmiliesTabNav"><ul class="Ov(h) Maw(100%) Whs(nw) D(f) Jc(fs) Ovx(a) Ai(c)" id="jsSmiliesTabNavHead">
 <li class="Px(13px) Py(5px)">
-<a href="#" class="smilies-tab" onclick="return false" data-id="#tab0" data-categoryname="Plus Exclusive">
+<a href="#" class="smilies-tab" onclick="return false" data-id="#tab00" data-categoryname="Plus Exclusive">
 <img class="Grayscale(100%) W(28px) H(auto) Maw(28px) Mah(28px)" src="https://s.kaskus.id/img/seasonal/february2016/smilie_group_fbekaqurkkof.gif" alt="Plus Exclusive">
 </a>
 </li>
 <li class="Px(13px) Py(5px)">
-<a href="#" class="smilies-tab" onclick="return false" data-id="#tab1" data-categoryname="Smilies 3.0">
+<a href="#" class="smilies-tab" onclick="return false" data-id="#tab11" data-categoryname="Smilies 3.0">
 <img class="Grayscale(100%) W(28px) H(auto) Maw(28px) Mah(28px)" src="https://s.kaskus.id/img/seasonal/march2017/smilie_group_fbohhwkox78o.gif" alt="Smilies 3.0">
 </a>
 </li>
 <li class="Px(13px) Py(5px) active">
-<a href="#" class="smilies-tab" onclick="return false" data-id="#tab2" data-categoryname="Only in KASKUS">
+<a href="#" class="smilies-tab" onclick="return false" data-id="#tab22" data-categoryname="Only in KASKUS">
 <img class="Grayscale(100%) W(28px) H(auto) Maw(28px) Mah(28px)" src="https://s.kaskus.id/img/seasonal/february2016/smilie_group_fbekaqv1h9do.gif" alt="Only in KASKUS">
 </a>
 </li>
 <li class="Px(13px) Py(5px)">
-<a href="#" class="smilies-tab" onclick="return false" data-id="#tab3" data-categoryname="Only in KASKUS(small)">
+<a href="#" class="smilies-tab" onclick="return false" data-id="#tab33" data-categoryname="Only in KASKUS(small)">
 <img class="Grayscale(100%) W(28px) H(auto) Maw(28px) Mah(28px)" src="https://s.kaskus.id/img/seasonal/february2016/smilie_group_fbekaquwaje1.gif" alt="Only in KASKUS(small)">
 </a>
 </li>
 <li class="Px(13px) Py(5px)">
-<a href="#" class="smilies-tab" onclick="return false" data-id="#tab4" data-categoryname="Standart Smilies">
+<a href="#" class="smilies-tab" onclick="return false" data-id="#tab44" data-categoryname="Standart Smilies">
 <img class="Grayscale(100%) W(28px) H(auto) Maw(28px) Mah(28px)" src="https://s.kaskus.id/img/seasonal/february2016/smilie_group_fbekaqv2cprr.gif" alt="Standart Smilies">
 </a>
 </li>
 <li class="Px(13px) Py(5px)">
-<a href="#" class="smilies-tab" onclick="return false" data-id="#tab5" data-categoryname="RaisaxOPPO">
+<a href="#" class="smilies-tab" onclick="return false" data-id="#tab55" data-categoryname="RaisaxOPPO">
 <img class="Grayscale(100%) W(28px) H(auto) Maw(28px) Mah(28px)" src="https://s.kaskus.id/img/seasonal/december2016/smilie_group_fbfj6i47tv7j.gif" alt="RaisaxOPPO">
 </a>
 </li>
 <li class="Px(13px) Py(5px)">
-<a href="#" class="smilies-tab" onclick="return false" data-id="#tab6" data-categoryname="Sundul Dunia">
+<a href="#" class="smilies-tab" onclick="return false" data-id="#tab66" data-categoryname="Sundul Dunia">
 <img class="Grayscale(100%) W(28px) H(auto) Maw(28px) Mah(28px)" src="https://s.kaskus.id/img/seasonal/july2018/smilie_group_fbyqecle0wyv.gif" alt="Sundul Dunia">
 </a>
 </li>
 <li class="Px(13px) Py(5px)">
-<a href="#" class="smilies-tab" onclick="return false" data-id="#tab7" data-categoryname="Giphy">
+<a href="#" class="smilies-tab" onclick="return false" data-id="#tab77" data-categoryname="Giphy">
 <img class="Grayscale(100%) W(28px) H(auto) Maw(28px) Mah(28px)" src="https://s.kaskus.id/img/seasonal/june2018/smilie_group_fbynlhikkobq.png" alt="Giphy">
 </a>
 </li>
 </ul></div><div class="Ovy(a) Ov(h) Px(16px) Py(5px) Mah(230px)" id="jsSmiliesTabContent" textareaid=${textareaId}>
-<div class="D(n) tabcontent" style="display:none" id="tab0">
+<div class="D(n) tabcontent" style="display:none" id="tab00">
 <div class="My(10px) D(f) Jc(fs) Fld(r) Flw(w)">
 <div class="Mend(10px) My(5px)">
 <img class="Maw(54px) Maw(54px)--md Maw(66px)--sm Maw(73px)--ms Maw(59px)--xs" src="https://s.kaskus.id/images/smilies/smilies_fbeo3cobwwnh.gif" data-src=":welcome">
@@ -603,7 +603,7 @@ function replyTools() {
 </div>
 </div>
 </div>
-<div class="D(n) tabcontent" style="display:none" id="tab1">
+<div class="D(n) tabcontent" style="display:none" id="tab11">
 <div class="My(10px) D(f) Jc(fs) Fld(r) Flw(w)">
 <div class="Mend(10px) My(5px)">
 <img class="Maw(54px) Maw(54px)--md Maw(66px)--sm Maw(73px)--ms Maw(59px)--xs" src="https://s.kaskus.id/images/smilies/smilies_fbohhx46ijiq.gif" data-src=":ngamuk">
@@ -625,7 +625,7 @@ function replyTools() {
 </div>
 </div>
 </div>
-<div class="D(n) tabcontent" style="display:block" id="tab2">
+<div class="D(n) tabcontent" style="display:block" id="tab22">
 <div class="My(10px) D(f) Jc(fs) Fld(r) Flw(w)">
 <div class="Mend(10px) My(5px)">
 <img class="Maw(54px) Maw(54px)--md Maw(66px)--sm Maw(73px)--ms Maw(59px)--xs" src="https://s.kaskus.id/images/smilies/smilies_fb5p7bhjffzl.gif" data-src=":xmas">
@@ -893,7 +893,7 @@ function replyTools() {
 </div>
 </div>
 </div>
-<div class="D(n) tabcontent" style="display:none" id="tab3">
+<div class="D(n) tabcontent" style="display:none" id="tab33">
 <div class="My(10px) D(f) Jc(fs) Fld(r) Flw(w)">
 <div class="Mend(10px) My(5px)">
 <img class="Maw(54px) Maw(54px)--md Maw(66px)--sm Maw(73px)--ms Maw(59px)--xs" src="https://s.kaskus.id/images/smilies/s_sm_peace.gif" data-src=":Yb">
@@ -978,7 +978,7 @@ function replyTools() {
 </div>
 </div>
 </div>
-<div class="D(n) tabcontent" style="display:none" id="tab4">
+<div class="D(n) tabcontent" style="display:none" id="tab44">
 <div class="My(10px) D(f) Jc(fs) Fld(r) Flw(w)">
 <div class="Mend(10px) My(5px)">
 <img class="Maw(54px) Maw(54px)--md Maw(66px)--sm Maw(73px)--ms Maw(59px)--xs" src="https://s.kaskus.id/images/smilies/sumbangan/13.gif" alt=";)">
@@ -1213,7 +1213,7 @@ function replyTools() {
 </div>
 </div>
 </div>
-<div class="D(n) tabcontent" style="display:none" id="tab5">
+<div class="D(n) tabcontent" style="display:none" id="tab55">
 <div class="My(10px) D(f) Jc(fs) Fld(r) Flw(w)">
 <div class="Mend(10px) My(5px)">
 <img class="Maw(54px) Maw(54px)--md Maw(66px)--sm Maw(73px)--ms Maw(59px)--xs" src="https://s.kaskus.id/images/smilies/smilies_fbfj6i4cagtf.gif" data-src=":tempted">
@@ -1232,7 +1232,7 @@ function replyTools() {
 </div>
 </div>
 </div>
-<div class="D(n) tabcontent" style="display:none" id="tab6">
+<div class="D(n) tabcontent" style="display:none" id="tab66">
 <div class="My(10px) D(f) Jc(fs) Fld(r) Flw(w)">
 <div class="Mend(10px) My(5px)">
 <img class="Maw(54px) Maw(54px)--md Maw(66px)--sm Maw(73px)--ms Maw(59px)--xs" src="https://s.kaskus.id/images/smilies/smilies_fbynlheek6ga.gif" data-src=":xabi">
@@ -1281,7 +1281,7 @@ function replyTools() {
 </div>
 </div>
 </div>
-<div class="D(n) tabcontent" style="display:none" id="tab7" textareaid=${textareaId}>
+<div class="D(n) tabcontent" style="display:none" id="tab77" textareaid=${textareaId}>
 </div>
 </div></div>
 `			}
@@ -1312,7 +1312,7 @@ function insertSmilies() {
 		
 		let tabId = anchor.parentNode.parentNode.parentNode.getAttribute('id')
 		let smiley
-		if (tabId == 'tab0'){
+		if (tabId == 'tab00'){
 			smiley = `[IMG]${anchor.getAttribute('src')}[/IMG]`
 		}
 		else{

@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Insert Quote Button for PC 
-// @version       2.5.2
+// @version       2.5.3
 // @namespace     k-quotepc
 // @author        ffsuperteam
 // @icon          https://s.kaskus.id/themes_3.0/mobile/images/logo-n.svg
@@ -376,8 +376,6 @@ function replyTools() {
 
     for (let i = 0; i < position.length; i++) {
         let NE0 = document.createElement('div')
-        let NE1 = document.createElement('button')
-        let NE2 = document.createElement('i')
         let textareaId = textarea[i].getAttribute("id")
         let click = (x) => `insertBBCode('[${x}]','[/${x}]','#${textareaId}');return false;`
         let classAtt = `C(c-grey) C(c-normal):h toolbox jsTippy`
@@ -487,28 +485,28 @@ function replyTools() {
 				position[i].appendChild(smilediv)
 				smilediv.innerHTML = ` 
 <div class="D(f) Pos(r) Bgc(c-semiwhite) tabNav" id="smiliesBoxTabNavHead">
-<div onclick="open_smiley_tab('#tab0',this,'Plus Exclusive');return false" class="W(50px) H(40px) D(f) Ai(c) Jc(c) tabNavItem Cur(p)">
+<div onclick="open_smiley_tab('#tab00',this,'Plus Exclusive');return false" class="W(50px) H(40px) D(f) Ai(c) Jc(c) tabNavItem Cur(p)">
 <div class="W(25px) H(20px) Bg(bgImageProps) tabNavIcon" style="background-image:url(https://s.kaskus.id/img/seasonal/february2016/smilie_group_fbekaqurkkof.gif)" data-title="Plus Exclusive"></div>
 </div>
-<div onclick="open_smiley_tab('#tab1',this,'Smilies 3.0');return false" class="W(50px) H(40px) D(f) Ai(c) Jc(c) tabNavItem Cur(p)">
+<div onclick="open_smiley_tab('#tab11',this,'Smilies 3.0');return false" class="W(50px) H(40px) D(f) Ai(c) Jc(c) tabNavItem Cur(p)">
 <div class="W(25px) H(20px) Bg(bgImageProps) tabNavIcon" style="background-image:url(https://s.kaskus.id/img/seasonal/march2017/smilie_group_fbohhwkox78o.gif)" data-title="Smilies 3.0"></div>
 </div>
-<div onclick="open_smiley_tab('#tab2',this,'Only in KASKUS');return false" class="W(50px) H(40px) D(f) Ai(c) Jc(c) tabNavItem Cur(p) is-active">
+<div onclick="open_smiley_tab('#tab22',this,'Only in KASKUS');return false" class="W(50px) H(40px) D(f) Ai(c) Jc(c) tabNavItem Cur(p) is-active">
 <div class="W(25px) H(20px) Bg(bgImageProps) tabNavIcon" style="background-image:url(https://s.kaskus.id/img/seasonal/february2016/smilie_group_fbekaqv1h9do.gif)" data-title="Only in KASKUS"></div>
 </div>
-<div onclick="open_smiley_tab('#tab3',this,'Only in KASKUS(small)');return false" class="W(50px) H(40px) D(f) Ai(c) Jc(c) tabNavItem Cur(p)">
+<div onclick="open_smiley_tab('#tab33',this,'Only in KASKUS(small)');return false" class="W(50px) H(40px) D(f) Ai(c) Jc(c) tabNavItem Cur(p)">
 <div class="W(25px) H(20px) Bg(bgImageProps) tabNavIcon" style="background-image:url(https://s.kaskus.id/img/seasonal/february2016/smilie_group_fbekaquwaje1.gif)" data-title="Only in KASKUS(small)"></div>
 </div>
-<div onclick="open_smiley_tab('#tab4',this,'Standart Smilies');return false" class="W(50px) H(40px) D(f) Ai(c) Jc(c) tabNavItem Cur(p)">
+<div onclick="open_smiley_tab('#tab44',this,'Standart Smilies');return false" class="W(50px) H(40px) D(f) Ai(c) Jc(c) tabNavItem Cur(p)">
 <div class="W(25px) H(20px) Bg(bgImageProps) tabNavIcon" style="background-image:url(https://s.kaskus.id/img/seasonal/february2016/smilie_group_fbekaqv2cprr.gif)" data-title="Standart Smilies"></div>
 </div>
-<div onclick="open_smiley_tab('#tab5',this,'RaisaxOPPO');return false" class="W(50px) H(40px) D(f) Ai(c) Jc(c) tabNavItem Cur(p)">
+<div onclick="open_smiley_tab('#tab55',this,'RaisaxOPPO');return false" class="W(50px) H(40px) D(f) Ai(c) Jc(c) tabNavItem Cur(p)">
 <div class="W(25px) H(20px) Bg(bgImageProps) tabNavIcon" style="background-image:url(https://s.kaskus.id/img/seasonal/december2016/smilie_group_fbfj6i47tv7j.gif)" data-title="RaisaxOPPO"></div>
 </div>
-<div onclick="open_smiley_tab('#tab6',this,'Sundul Dunia');return false" class="W(50px) H(40px) D(f) Ai(c) Jc(c) tabNavItem Cur(p)">
+<div onclick="open_smiley_tab('#tab66',this,'Sundul Dunia');return false" class="W(50px) H(40px) D(f) Ai(c) Jc(c) tabNavItem Cur(p)">
 <div class="W(25px) H(20px) Bg(bgImageProps) tabNavIcon" style="background-image:url(https://s.kaskus.id/img/seasonal/july2018/smilie_group_fbyqecle0wyv.gif)" data-title="Sundul Dunia"></div>
 </div>
-<div onclick="open_smiley_tab('#tab7',this,'Giphy');return false" class="W(50px) H(40px) D(f) Ai(c) Jc(c) tabNavItem Cur(p)">
+<div onclick="open_smiley_tab('#tab77',this,'Giphy');return false" class="W(50px) H(40px) D(f) Ai(c) Jc(c) tabNavItem Cur(p)">
 <div class="W(25px) H(20px) Bg(bgImageProps) tabNavIcon" style="background-image:url(https://s.kaskus.id/img/seasonal/june2018/smilie_group_fbynlhikkobq.png)" data-title="Giphy"></div>
 </div>
 </div>
@@ -516,7 +514,7 @@ function replyTools() {
 <div class="Ov(h)">
 <div class="Pos(r) Whs(nw) Fz(0) tabContent" style="transform:translateX(0%)">
 <div class="W(100%) D(ib) Va(t) Whs(n) H(180px) Ovy(a)" id="smiliesBoxTabContent" style="width:498px;height:180px">
-<div class="D(n) tabcontent" style="display:none" id="tab0">
+<div class="D(n) tabcontent" style="display:none" id="tab00">
 <div class="My(10px) D(f) Jc(fs) Fld(r) Flw(w) D(b) Bgc(c-lightgrey-2):h" textareaId="${textareaId}">
 <ul class="D(f) Fxf(w)">
 <li class="W(1/5) P(5px)">
@@ -682,7 +680,7 @@ function replyTools() {
 </ul>
 </div>
 </div>
-<div class="D(n) tabcontent" style="display:none" id="tab1">
+<div class="D(n) tabcontent" style="display:none" id="tab11">
 <div class="My(10px) D(f) Jc(fs) Fld(r) Flw(w)" textareaId="${textareaId}">
 <ul class="D(f) Fxf(w)">
 <li class="W(1/5) P(5px)">
@@ -718,7 +716,7 @@ function replyTools() {
 </ul>
 </div>
 </div>
-<div class="D(n) tabcontent" style="display:block" id="tab2">
+<div class="D(n) tabcontent" style="display:block" id="tab22">
 <div class="My(10px) D(f) Jc(fs) Fld(r) Flw(w)" textareaId="${textareaId}">
 <ul class="D(f) Fxf(w)">
 <li class="W(1/5) P(5px)">
@@ -1164,7 +1162,7 @@ function replyTools() {
 </ul>
 </div>
 </div>
-<div class="D(n) tabcontent" style="display:none" id="tab3">
+<div class="D(n) tabcontent" style="display:none" id="tab33">
 <div class="My(10px) D(f) Jc(fs) Fld(r) Flw(w)" textareaId="${textareaId}">
 <ul class="D(f) Fxf(w)">
 <li class="W(1/5) P(5px)">
@@ -1305,7 +1303,7 @@ function replyTools() {
 </ul>
 </div>
 </div>
-<div class="D(n) tabcontent" style="display:none" id="tab4">
+<div class="D(n) tabcontent" style="display:none" id="tab44">
 <div class="My(10px) D(f) Jc(fs) Fld(r) Flw(w)" textareaId="${textareaId}">
 <ul class="D(f) Fxf(w)">
 <li class="W(1/5) P(5px)">
@@ -1696,7 +1694,7 @@ function replyTools() {
 </ul>
 </div>
 </div>
-<div class="D(n) tabcontent" style="display:none" id="tab5">
+<div class="D(n) tabcontent" style="display:none" id="tab55">
 <div class="My(10px) D(f) Jc(fs) Fld(r) Flw(w)" textareaId="${textareaId}">
 <ul class="D(f) Fxf(w)">
 <li class="W(1/5) P(5px)">
@@ -1727,7 +1725,7 @@ function replyTools() {
 </ul>
 </div>
 </div>
-<div class="D(n) tabcontent" style="display:none" id="tab6">
+<div class="D(n) tabcontent" style="display:none" id="tab66">
 <div class="My(10px) D(f) Jc(fs) Fld(r) Flw(w)" textareaId="${textareaId}">
 <ul class="D(f) Fxf(w)">
 <li class="W(1/5) P(5px)">
@@ -1804,7 +1802,7 @@ function replyTools() {
 <a href="#" onclick="return false">
 <img class="Mx(a) D(b)" src="https://s.kaskus.id/images/smilies/smilies_fbynlit7ubyb.gif" title="Argentina" data-src=":argentina">
 </a></li></ul></div></div>
-<div class="D(n) tabcontent" style="display:none" id="tab7" textareaId="${textareaId}">
+<div class="D(n) tabcontent" style="display:none" id="tab77" textareaId="${textareaId}">
 </div></div></div></div></div></div>
 `
 			}		 
@@ -1830,12 +1828,12 @@ function insertSmilies() {
 		
 		let textareaId = anchor.parentNode.parentNode.parentNode.parentNode.getAttribute('textareaId')
 		let tabId = anchor.parentNode.parentNode.parentNode.parentNode.parentNode.getAttribute('id')
-		if (textareaId == 'undefined' || textareaId == null) {
+		if (typeof(textareaId) == 'undefined' || textareaId == null) {
 			return;
 		}
 		
 		let smiley
-		if (tabId == 'tab0'){
+		if (tabId == 'tab00'){
 			smiley = `[IMG]${anchor.getAttribute('src')}[/IMG]`
 		}
 		else{
