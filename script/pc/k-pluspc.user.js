@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Plus Smilies for PC
-// @version       1.0.1
+// @version       1.0.2
 // @namespace     k-pluspc
 // @author        ffsuperteam
 // @icon          https://s.kaskus.id/themes_3.0/mobile/images/logo-n.svg
@@ -63,38 +63,40 @@ function insertSmilies() {
 function thread() {
     let url = window.location.pathname
     if (!url.match(/post_reply\//g)) {
-        let smilebtn = document.getElementsByClassName('jsButtonSmilies')[0]
-        smilebtn.addEventListener("click", function check() {
-            let tabMRU = document.getElementById('content-mru')
-            if (typeof (tabMRU) == 'undefined' || tabMRU == null) {
-                setTimeout(check, 1000)
-            } else {
-                let img = tabMRU.querySelectorAll('img.loadMRU')
-                for (let i = 0; i < img.length; i++) {
-                    if (!img[i].hasAttribute('src')) {
-                        let datasrc = img[i].getAttribute('data-src').match(/https.*\.gif/g)
-                        img[i].setAttribute('src', datasrc)
-                    }
-                }
-            }
-
-            let tab0 = document.getElementById('tab0')
-            if (typeof (tab0) == 'undefined' || tab0 == null) {
-                setTimeout(check, 1000)
-            } else {
-                tab0.lastElementChild.classList.remove('Fil(filterGrayscale)')
-                let fec = tab0.firstElementChild
-                if (fec.classList == 'D(f) Mb(10px) Bgc(c-white) Bdb(borderSolidGrey) P(10px)') {
-                    fec.remove()
-
-                    let img = tab0.querySelectorAll('img.loadSmilies')
+        let smiliesBtn = document.getElementsByClassName('jsButtonSmilies')
+        for (let i = 0; i < smiliesBtn.length; i++) {
+            smiliesBtn[i].addEventListener("click", function check() {
+                let tabMRU = document.getElementById('content-mru')
+                if (typeof (tabMRU) == 'undefined' || tabMRU == null) {
+                    setTimeout(check, 1000)
+                } else {
+                    let img = tabMRU.querySelectorAll('img.loadMRU')
                     for (let i = 0; i < img.length; i++) {
-                        let src = img[i].getAttribute('src')
-                        img[i].setAttribute('data-src', `[IMG]${src}[/IMG]`)
+                        if (!img[i].hasAttribute('src')) {
+                            let datasrc = img[i].getAttribute('data-src').match(/https.*\.gif/g)
+                            img[i].setAttribute('src', datasrc)
+                        }
                     }
                 }
-            }
-        })
+
+                let tab0 = document.getElementById('tab0')
+                if (typeof (tab0) == 'undefined' || tab0 == null) {
+                    setTimeout(check, 1000)
+                } else {
+                    tab0.lastElementChild.classList.remove('Fil(filterGrayscale)')
+                    let fec = tab0.firstElementChild
+                    if (fec.classList == 'D(f) Mb(10px) Bgc(c-white) Bdb(borderSolidGrey) P(10px)') {
+                        fec.remove()
+
+                        let img = tab0.querySelectorAll('img.loadSmilies')
+                        for (let i = 0; i < img.length; i++) {
+                            let src = img[i].getAttribute('src')
+                            img[i].setAttribute('data-src', `[IMG]${src}[/IMG]`)
+                        }
+                    }
+                }
+            })
+        }
     }
 }
 
