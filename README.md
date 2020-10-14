@@ -5,8 +5,10 @@ Menyederhanakan tampilan Kaskus (Mobile Browser) dan Script Pendukung (PC dan Mo
 
 ### Simplified Kaskus (Filter)
 
-*Cari cara buat mengembalikan fitur quote dan mengatasi nested comment ? 
-Lewati langkah ini dan langsung menuju ke [Kumpulan Script](#script)*
+*Cari cara buat mengembalikan fitur quote dan mengatasi nested comment ?*
+
+
+*Lewati langkah ini dan langsung menuju ke [Kumpulan Script](#script)*
 
 
 Cara ini dilakukan dalam upaya untuk mengurangi kompleksitas tampilan Kaskus mobile web. Yang dimaksud disini ialah element yang tidak terlalu penting dan iklan. Sehingga tampilan Kaskus bisa terlihat lebih sederhana.
@@ -138,23 +140,29 @@ Mengubah halaman post reply menjadi thread maker. Digunakan untuk membuat thread
 ### Screenshots
 
 **k-lastpost dan k-scrollbottom**
+
 ![](https://s.kaskus.id/images/2020/05/03/9880921_20200503011217.png)
 
 **k-quote**
+
 ![](https://s.kaskus.id/images/2020/05/03/9880921_20200503011241.png)
 
 **k-postreply**
+
 ![](https://s.kaskus.id/images/2020/05/03/9880921_20200503011306.png)
 
 
 **k-editor**
+
 ![](https://s.kaskus.id/images/2020/05/03/9880921_20200503014756.png)
 ![](https://s.kaskus.id/images/2020/05/03/9880921_20200503014805.png)
 
 **k-quotepc**
+
 ![](https://s.kaskus.id/images/2020/05/03/9880921_20200503014830.png)
 
 **k-postreplypc**
+
 ![](https://s.kaskus.id/images/2020/05/03/9880921_20200503014852.png)
 
 
