@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Insert Quote Button (Mobile)
-// @version       2.7.4
+// @version       2.7.5
 // @namespace     k-quote
 // @author        ffsuperteam
 // @icon          https://s.kaskus.id/themes_3.0/mobile/images/logo-n.svg
@@ -11,6 +11,7 @@
 // @include       https://m.kaskus.co.id/show_post/*
 // @include       https://m.kaskus.co.id/lastpost/*
 // @include       https://m.kaskus.co.id/post_reply/*
+// @include       https://m.kaskus.co.id/edit_post/*
 // @downloadURL   https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/mobile/k-quote.user.js
 // @updateURL     https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/mobile/k-quote.user.js
 // @grant		  GM_addStyle
