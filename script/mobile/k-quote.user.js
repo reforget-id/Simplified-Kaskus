@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Insert Quote Button (Mobile)
-// @version       2.7.3
+// @version       2.7.4
 // @namespace     k-quote
 // @author        ffsuperteam
 // @icon          https://s.kaskus.id/themes_3.0/mobile/images/logo-n.svg
@@ -451,7 +451,7 @@ function replyTools() {
 
 function postReplyTools() {
     let url = window.location.pathname
-    if (url.match(/post_reply\//g)) {
+    if (url.match(/(post_reply|edit_post)\//g)) {
         let container = document.getElementsByClassName('markItUpHeader')[0].firstElementChild
         let NE0 = document.createElement('div')
         let NE1 = document.createElement('div')

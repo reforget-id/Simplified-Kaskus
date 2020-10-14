@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Plus Smilies for PC
-// @version       1.0.2
+// @version       1.0.3
 // @namespace     k-pluspc
 // @author        ffsuperteam
 // @icon          https://s.kaskus.id/themes_3.0/mobile/images/logo-n.svg
@@ -103,7 +103,7 @@ function thread() {
 
 function postReply() {
     let url = window.location.pathname
-    if (url.match(/post_reply\//g)) {
+    if (url.match(/(post_reply|edit_post)\//g)) {
         let tabMRU = document.getElementById('content-mru')
         if (typeof (tabMRU) == 'undefined' || tabMRU == null) {
             setTimeout(postReply, 1000)

@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Kaskus : Plus Smilies (Mobile)
-// @version       1.0.1
+// @version       1.0.2
 // @namespace     k-plus
 // @author        ffsuperteam
 // @icon          https://s.kaskus.id/themes_3.0/mobile/images/logo-n.svg
@@ -11,6 +11,7 @@
 // @include       https://m.kaskus.co.id/show_post/*
 // @include       https://m.kaskus.co.id/lastpost/*
 // @include       https://m.kaskus.co.id/post_reply/*
+// @include       https://m.kaskus.co.id/edit_post/*
 // @downloadURL   https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/mobile/k-plus.user.js
 // @updateURL     https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/script/mobile/k-plus.user.js
 // @run-at        document-idle
@@ -94,7 +95,7 @@ function thread() {
 
 function postReply() {
     let url = window.location.pathname
-    if (url.match(/post_reply\//g)) {
+    if (url.match(/(post_reply|edit_post)\//g)) {
         let tabMRU = document.querySelector('div[data-id="content-mru"]')
         if (typeof (tabMRU) == 'undefined' || tabMRU == null) {
             setTimeout(postReply, 1000)
