@@ -1,0 +1,69 @@
+! Title: Simplified Kaskus
+! Version: 1.1.13
+! Description: Menyederhanakan interface Kaskus Mobile Web + Ads (Tanpa Mengubah Tampilan Homepage)
+! Last modified: 2020-10-15
+! Expires: 7 days (update frequency)
+! Homepage: https://github.com/reforget-id/Simplified-Kaskus
+
+
+! Ads 
+||criteo.net^$3p
+||d31qbv1cthcecs.cloudfront.net^
+||google-analytics.com^
+||googletagmanager.com/gtm.js?$3p
+||scorecardresearch.com^$3p
+/fbevents.js
+
+! Font Forum & Thread
+m.kaskus.co.id#$#.C\(c-primary\).nightmode_C\(c-primary-night\) {font-size: 14px!important;}
+m.kaskus.co.id#$#.C\(\#4a4a4a\).nightmode_C\(c-primary-night\) {font-size: 14px!important;}
+m.kaskus.co.id#$#.Fz\(16px\).C\(c-primary\).nightmode_C\(c-primary-night\).Lh\(1\.4\).Py\(8px\).Px\(16px\) {font-size: 100%!important;}
+m.kaskus.co.id#$#.Py\(8px\).Fz\(16px\).pagetext {font-size: 100%!important;}
+m.kaskus.co.id#$#.Tweet-text.e-entry-title {font-size: 14px!important;}
+m.kaskus.co.id##.nightmode_Bdt\(borderSolidGray6\).Bdt\(borderSolidGray2\).Py\(16px\) > .Mb\(10px\).Pos\(r\).D\(f\) > .Fx\(flex1Auto\) > .pagetext.Lh\(1\.5\).Wob\(breakWord\).Fz\(16px\).Mt\(5px\):style(font-size: 100% !important)
+
+! Forum
+m.kaskus.co.id##.Ta\(c\).Py\(10px\).Bgc\(bgPrimaryColor\).nightmode_Bgc\(c-dark-grey-2\).Bdb\(BdbThreadItem\).nightmode_Bdb\(night-border\)
+m.kaskus.co.id##.H\(5px\).Bgc\(c-lightgrey\).nightmode_Bgc\(c-tersier-night\)
+m.kaskus.co.id##div.D\(f\):nth-of-type(2) > .Ov\(h\).Pos\(r\).Fx\(flexZero\).H\(88px\).W\(88px\).Bdrsbstart\(0\).Bdrs\(5px\).Mstart\(10px\)
+m.kaskus.co.id#$#.Mx\(10px\).Px\(6px\).Bdb\(gray-border\).Py\(10px\).nightmode_Bdb\(night-border\).Pos\(r\).jsThreadCard {padding-bottom: 1px!important; padding-top: 2px!important;}
+m.kaskus.co.id##.Bdb\(BdbThreadItem\).nightmode_Bdb\(BdbThreadItemNight\).Bgc\(c-white\).P\(16px\).Pb\(0\).nightmode_Bgc\(c-gray-7\)
+m.kaskus.co.id##.Py\(5px\).Jc\(sb\).D\(f\):style(padding-bottom: 10px !important)
+! Margin View post
+m.kaskus.co.id##.is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .Mx\(16px\).Bgc\(c-lightgrey\).H\(16px\).W\(1px\):style(margin-right: 5px !important; margin-left: 5px !important)
+m.kaskus.co.id##.is-compact-view_Pb\(10px\).c-compact__info.Ai\(c\).nightmode_C\(c-secondary-night\).C\(c-secondary\).Py\(10px\).Jc\(fs\).D\(f\).Pos\(r\) > .jsWhoPosted.Mend\(16px\).Lh\(10px\).Ai\(c\).D\(f\):style(margin-right: 5px !important)
+
+! Thread
+m.kaskus.co.id#$#.D\(f\).Jc\(fs\).Bdb\(borderSolidGray2\).nightmode_Bdbc\(c-gray-6\).Pt\(16px\) {padding-top: 10px!important;}
+m.kaskus.co.id#$#.Pb\(16px\).Mih\(70px\).Fz\(16px\).W\(100\%\) {padding-bottom: 5px!important; min-height: 40px!important;} 
+m.kaskus.co.id##.Ai\(c\).Bgc\(c-white\).C\(c-black\).D\(f\).Jc\(sb\).Maw\(620px\).W\(100\%\).nightmode_Bgc\(c-primary\).nightmode_C\(c-grey-light-3\).Ov\(h\).nightmode_Bdt\(night-border\).Pos\(r\).Bdb\(BdbThreadItem\).nightmode_Bdb\(Bdb000\)
+m.kaskus.co.id##div.nightmode_Bgc\(c-gray-7\).P\(16px\).Bgc\(c-white\).nightmode_Bdb\(BdbThreadItemNight\).Bdb\(BdbThreadItem\) > div.Pos\(r\) > .Pt\(16px\).Jc\(fs\).D\(f\) > .is-no-image_D\(n\)
+m.kaskus.co.id##.whoCendolAjax.Px\(5px\).Fld\(r\).Ai\(c\).Jc\(fs\).D\(f\) > .Ai\(c\).Jc\(fs\).D\(f\)
+m.kaskus.co.id##.whoCendolAjax.Px\(5px\).Fld\(r\).Ai\(c\).Jc\(fs\).D\(f\) > .nightmode_C\(c-secondary\).Fz\(14px\).C\(c-tertiary\).Mx\(16px\):style(font-size: 12px !important; font-style: italic !important; margin-left: 2px !important)
+m.kaskus.co.id###my-ad-slot
+
+! Gambar Forum
+||s.kaskus.id/c200x200/images/*$domain=m.kaskus.co.id
+||s.kaskus.id/c200x200/themes_3.0/img/default-forum-image-doodle-600x315.png$domain=m.kaskus.co.id
+||s.kaskus.id/c60x60/img/hot_thread/$domain=m.kaskus.co.id
+! ------
+
+! Podcast & TV
+||c.kaskus.id/kaskus-tv/embed-resources/
+||tv.kaskus.co.id/embed-resources/embed-widget
+||s.kaskus.id/ms/assets/kaskus-podcast/js/kaskus_forum.007f623.js$domain=m.kaskus.co.id
+m.kaskus.co.id##.kaskus-tv-widget
+m.kaskus.co.id##div#podcastGlobalWidgetContainer
+m.kaskus.co.id#$#.jsHeaderSeparator {padding-top: 70px!important;}
+! ------
+
+
+! --- TEMPORARY ---
+! cendol sticky
+
+
+
+! --- EXCEPTION ---
+instagram.com#@#body:style(overflow-y: scroll !important;)
+instagram.com#@#[class]:style(-webkit-touch-callout: default !important; -webkit-user-select: text !important;-moz-user-select: text !important;-ms-user-select: text !important;user-select: text !important; -khtml-user-select: text !important; -o-user-select: text !important;)
+! --- --------- ---
