@@ -19,15 +19,15 @@ Cara ini dilakukan dalam upaya untuk mengurangi kompleksitas tampilan Kaskus mob
 3.  **ViolentMonkey**
 
 **Instalasi :**
-1.  Instal [Kiwi Browser]("https://play.google.com/store/apps/details?id=com.kiwibrowser.browser&hl=en") dari playstore.
-2.  Buka Kiwi Browser lalu buka link berikut untuk instal ektensi [uBlock Origin]("https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en") di dalam Kiwi Browser. Add To Chrome
+1.  Instal [Kiwi Browser](https://play.google.com/store/apps/details?id=com.kiwibrowser.browser&hl=en) dari playstore.
+2.  Buka Kiwi Browser lalu buka link berikut untuk instal ektensi [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en) di dalam Kiwi Browser. Add To Chrome
 .
-3. Instal [ViolentMonkey]("https://chrome.google.com/webstore/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag?hl=en"). Add To Chrome.
+3. Instal [ViolentMonkey](https://chrome.google.com/webstore/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag?hl=en). Add To Chrome.
 
 
 **uBlock Origin:**
 1.  Buka uBlock -> Dasbor -> Tab Daftar Filter.
-2.  Centang Import filter. Kemudian copy link di bawah ini dan import filter. [Simplified Kaskus]("https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/filter/simplified-kaskus.txt") (filter lengkap) atau  [Simplified Kaskus Without Home]("https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/filter/simplified-without-home.txt") (tanpa filter Homepage)
+2.  Centang Import filter. Kemudian copy link di bawah ini dan import filter. [Simplified Kaskus](https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/filter/simplified-kaskus.txt) (filter lengkap) atau  [Simplified Kaskus Without Home](https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/filter/simplified-without-home.txt) (tanpa filter Homepage)
 3.  Pastikan filter tersebut dicentang. Aktifkan perbarui otomatis  
 
 **ViolentMonkey :**
