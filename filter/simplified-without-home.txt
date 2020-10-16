@@ -1,5 +1,5 @@
-! Title: Simplified Kaskus
-! Version: 1.1.13
+! Title: Simplified Kaskus Without Home
+! Version: 1.1.14
 ! Description: Menyederhanakan interface Kaskus Mobile Web + Ads (Tanpa Mengubah Tampilan Homepage)
 ! Last modified: 2020-10-15
 ! Expires: 7 days (update frequency)

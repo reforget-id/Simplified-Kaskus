@@ -15,21 +15,19 @@ Cara ini dilakukan dalam upaya untuk mengurangi kompleksitas tampilan Kaskus mob
 
 **Tools :**
 1.  **Kiwi Browser a̶t̶a̶u̶ ̶M̶o̶z̶i̶l̶l̶a̶ ̶F̶i̶r̶e̶f̶o̶x̶**
-2.  **uBlock Origin / Nano Adblocker**
+2.  **uBlock Origin / N̶a̶n̶o̶ ̶A̶d̶b̶l̶o̶c̶k̶e̶r̶**
 3.  **ViolentMonkey**
 
 **Instalasi :**
-1.  Instal browser dari playstore [Kiwi Browser]("https://play.google.com/store/apps/details?id=com.kiwibrowser.browser&hl=en").
-2.  Buka browser lalu instal ektensi uBlock Origin atau Nano Adblocker (Recommend) di dalam Kiwi Browser.
-Link ekstensi : [uBlock Origin]("https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en") atau [Nano Adblocker]("https://chrome.google.com/webstore/detail/nano-adblocker/gabbbocakeomblphkmmnoamkioajlkfo?hl=en"). 
-3.  Add To Chrome
-4. Instal ViolentMonkey. [ViolentMonkey]("https://chrome.google.com/webstore/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag?hl=en")
-5.  Add To Chrome
+1.  Instal [Kiwi Browser]("https://play.google.com/store/apps/details?id=com.kiwibrowser.browser&hl=en") dari playstore.
+2.  Buka Kiwi Browser lalu buka link berikut untuk instal ektensi [uBlock Origin]("https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en") di dalam Kiwi Browser. Add To Chrome
+.
+3. Instal [ViolentMonkey]("https://chrome.google.com/webstore/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag?hl=en"). Add To Chrome.
 
 
-**uBlock Origin / Nano Adblocker :**
-1.  Buka uBlock/Nano -> Dasbor -> Tab Daftar Filter.
-2.  Centang Import filter. Kemudian copy link di bawah ini dan import filter. [Simplified Kaskus]("https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/filter/simplified-kaskus.txt")
+**uBlock Origin:**
+1.  Buka uBlock -> Dasbor -> Tab Daftar Filter.
+2.  Centang Import filter. Kemudian copy link di bawah ini dan import filter. [Simplified Kaskus]("https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/filter/simplified-kaskus.txt") (filter lengkap) atau  [Simplified Kaskus Without Home]("https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/master/filter/simplified-without-home.txt") (tanpa filter Homepage)
 3.  Pastikan filter tersebut dicentang. Aktifkan perbarui otomatis  
 
 **ViolentMonkey :**
