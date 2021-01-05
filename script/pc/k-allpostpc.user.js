@@ -27,7 +27,7 @@
         window.location.href = `https://www.kaskus.co.id/post/${parentId}/?child_id=post${childId}`
     }
     else if (!childId && postId) {
-        window.location.href = `https://www.kaskus.co.id/post/${parentId}/${postId}`
+        window.location.href = `https://www.kaskus.co.id/post/${parentId}${postId}`
     }
     else {
         return
