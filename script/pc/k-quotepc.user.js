@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name			Kaskus : Insert Quote Button for PC (Dev)
+// @name		  	Kaskus : Insert Quote Button for PC (Dev)
 // @version			3.1.0
 // @namespace		k-quotepc
 // @author			ffsuperteam
