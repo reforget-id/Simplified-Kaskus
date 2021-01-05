@@ -12,10 +12,10 @@
 // @include       https://www.kaskus.co.id/post_reply/*/
 // @downloadURL   https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/dev/script/pc/k-quotepc.user.js
 // @updateURL     https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/dev/script/pc/k-quotepc.user.js
-// @grant		  GM_addStyle
-// @grant		  GM_setValue
-// @grant		  GM_getValue
-// @grant		  GM_deleteValue
+// @grant	  GM_addStyle
+// @grant	  GM_setValue
+// @grant	  GM_getValue
+// @grant	  GM_deleteValue
 // @grant         GM_xmlhttpRequest
 // @run-at        document-end
 // ==/UserScript==
@@ -468,6 +468,7 @@ margin-left: 32px;
                     clearQuoteCookie()
                     window.location.href = openUrl + '/'
                 } else {
+		    alert('Ada sesuatu yang salah. Coba reload halaman')
                     console.log(log, 'Failed to get quote text XHR')
                     clearQuoteCookie()
                 }
