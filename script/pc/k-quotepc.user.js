@@ -1,89 +1,89 @@
 // ==UserScript==
-// @name          Kaskus : Insert Quote Button for PC (Dev)
-// @version       3.0.0
-// @namespace     k-quotepc
-// @author        ffsuperteam
-// @icon          https://s.kaskus.id/themes_3.0/mobile/images/logo-n.svg
-// @homepage      https://github.com/reforget-id/Simplified-Kaskus
-// @description   Tambah tombol quote di nested reply di PC
-// @match         https://www.kaskus.co.id/thread/*
-// @match         https://www.kaskus.co.id/post/*
-// @match         https://www.kaskus.co.id/lastpost/*
-// @include       https://www.kaskus.co.id/post_reply/*/
-// @downloadURL   https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/dev/script/pc/k-quotepc.user.js
-// @updateURL     https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/dev/script/pc/k-quotepc.user.js
-// @grant	  GM_addStyle
-// @grant	  GM_setValue
-// @grant	  GM_getValue
-// @grant	  GM_deleteValue
-// @grant         GM_xmlhttpRequest
-// @run-at        document-end
+// @name			Kaskus : Insert Quote Button for PC (Dev)
+// @version			3.1.0
+// @namespace		k-quotepc
+// @author			ffsuperteam
+// @icon			https://s.kaskus.id/themes_3.0/mobile/images/logo-n.svg
+// @homepage		https://github.com/reforget-id/Simplified-Kaskus
+// @description		Tambah tombol quote di nested reply di PC
+// @match			https://www.kaskus.co.id/thread/*
+// @match			https://www.kaskus.co.id/post/*
+// @match			https://www.kaskus.co.id/lastpost/*
+// @include			https://www.kaskus.co.id/post_reply/*/
+// @downloadURL		https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/dev/script/pc/k-quotepc.user.js
+// @updateURL		https://raw.githubusercontent.com/reforget-id/Simplified-Kaskus/dev/script/pc/k-quotepc.user.js
+// @grant			GM_addStyle
+// @grant			GM_setValue
+// @grant			GM_getValue
+// @grant			GM_deleteValue
+// @grant			GM_xmlhttpRequest
+// @run-at			document-end
 // ==/UserScript==
 
 
 GM_addStyle(`
 .single-quote {
-padding-right: 3px !important;
-font-size: 15px !important;
+	padding-right: 3px !important;
+	font-size: 15px !important;
 }
 .nested-height {
-min-height: 50px !important;
-padding-bottom: 20px !important;
-padding-top: 10px !important;
+	min-height: 50px !important;
+	padding-bottom: 20px !important;
+	padding-top: 10px !important;
 }
 .nested-top {
-padding-bottom: 12px !important;
-padding-top: 4px !important;
+	padding-bottom: 12px !important;
+	padding-top: 4px !important;
 }
 .replybox {
-min-height: 85px !important;
+	min-height: 85px !important;
 }
 .toolbox {
-margin-right: 10px !important;
-color: #757373;
+	margin-right: 10px !important;
+	color: #757373;
 }
 .toolbox:hover {
-color: #000000;
+	color: #000000;
 }
 .mr-divtools {
-margin-top: 10px;
-margin-bottom: 3px;
-margin-left: 32px;
+	margin-top: 10px;
+	margin-bottom: 3px;
+	margin-left: 32px;
 }
 .tooltip {
-  position: relative;
-  display: inline-block;
+	position: relative;
+	display: inline-block;
 }
 .tooltip .tooltiptext {
-  visibility: hidden;
-  min-width: 110px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 5px 5px 5px;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -55px;
-  opacity: 0;
-  transition: opacity 0.3s;
-  font: 13px/normal "Roboto", Arial, sans-serif;
+ 	visibility: hidden;
+ 	min-width: 110px;
+ 	background-color: #555;
+  	color: #fff;
+  	text-align: center;
+  	border-radius: 6px;
+  	padding: 5px 5px 5px 5px;
+  	position: absolute;
+  	z-index: 1;
+  	bottom: 125%;
+  	left: 50%;
+  	margin-left: -55px;
+  	opacity: 0;
+  	transition: opacity 0.3s;
+  	font: 13px/normal "Roboto", Arial, sans-serif;
 }
 .tooltip .tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
+  	content: "";
+  	position: absolute;
+  	top: 100%;
+  	left: 50%;
+  	margin-left: -5px;
+  	border-width: 5px;
+  	border-style: solid;
+  	border-color: #555 transparent transparent transparent;
 }
 .tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
+  	visibility: visible;
+  	opacity: 1;
 }
 .nested-container {
     max-height: 80vh !important;
@@ -99,6 +99,16 @@ margin-left: 32px;
     position: sticky; 
     bottom: 0; 
     z-index: 1;
+}
+.sticky-button {
+	position: sticky;
+    bottom: 10vh;
+    height: 0px;
+    margin-right: -19%;
+	z-index: 1;
+}
+.shadow-box {
+	box-shadow: 0px 1px 35px #404040;
 }
 `);
 
@@ -304,7 +314,11 @@ margin-left: 32px;
                 clickIterator()
             } else {
                 setTimeout(focusToPost, 500)
+				setTimeout(stickyPostButton, 500)
             }
+        } else {
+            setTimeout(focusToPost, 500)
+			setTimeout(stickyPostButton, 500)
         }
 
         function clickIterator() {
@@ -323,6 +337,7 @@ margin-left: 32px;
             } else {
                 console.log(log, 'All nested comments were open')
                 setTimeout(focusToPost, 500)
+				setTimeout(stickyPostButton, 500)
             }
         }
     }
@@ -542,6 +557,32 @@ margin-left: 32px;
     }
 
     /******************************************************************************/
+	
+	function stickyPostButton() {
+		const container = document.getElementsByClassName('post-reply-button')[0]
+		const postReplyBtn = document.getElementsByClassName('jsButtonPostReply')[0]
+		const config = { childList : true, characterData : true }
+		
+		const observer = new MutationObserver(function(mutations) {
+			mutations.forEach(function(mutation) {
+				if (mutation.target.innerHTML.includes('Kutip') && !container.classList.contains('sticky-button')) {
+					container.classList.add('sticky-button')
+					mutation.target.classList.add('shadow-box')
+					return
+				}
+				
+				if (mutation.target.innerHTML.includes('Balas Thread')) {
+					container.classList.remove('sticky-button')
+					mutation.target.classList.remove('shadow-box')
+				}
+			})
+		})
+		
+		observer.observe(postReplyBtn, config)
+		console.log(log, 'Observe Post Button')
+	}
+	
+	/******************************************************************************/
 
     function replyTools() {
         let position = document.getElementsByClassName('small-reply')
