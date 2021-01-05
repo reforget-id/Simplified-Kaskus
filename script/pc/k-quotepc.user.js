@@ -461,19 +461,19 @@ GM_addStyle(`
         }
 
         GM_xmlhttpRequest({
-            method: 'GET',
-            url: openUrl,
+            method			: 'GET',
+            url				: openUrl,
             overrideMimeType: 'text/html; charset=UTF-8',
-            responseType: 'document',
-            binary: false,
-            timeout: 0,
-            withCredentials: true,
-            onerror: function () {
+            responseType	: 'document',
+            binary			: false,
+            timeout			: 0,
+            withCredentials	: true,
+            onerror			: function () {
                 clearQuoteCookie()
                 alert('Tidak bisa terhubung dengan server. Cek internet anda')
                 console.log(log, 'Failed to create XHR request')
             },
-            onload: function (res) {
+            onload			: function (res) {
                 let quotedText = res.response.getElementById('reply-messsage').value
 
                 if (quotedText) {
