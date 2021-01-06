@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name		  	Kaskus : Insert Quote Button for PC (Dev)
-// @version			3.1.0
+// @version			3.1.1
 // @namespace		k-quotepc
 // @author			ffsuperteam
 // @icon			https://s.kaskus.id/themes_3.0/mobile/images/logo-n.svg
@@ -336,7 +336,7 @@ GM_addStyle(`
                 setTimeout(clickIterator, 200)
             } else {
                 console.log(log, 'All nested comments were open')
-                setTimeout(focusToPost, 500)
+                setTimeout(focusToPost, 800)
 				setTimeout(stickyPostButton, 500)
             }
         }
@@ -565,13 +565,16 @@ GM_addStyle(`
 		
 		const observer = new MutationObserver(function(mutations) {
 			mutations.forEach(function(mutation) {
-				if (mutation.target.innerHTML.includes('Kutip') && !container.classList.contains('sticky-button')) {
-					container.classList.add('sticky-button')
+				let text = mutation.target.innerHTML.match(/^Kutip ([2-9]|\d{2}) Post$/)
+				let classList = container.classList.contains('sticky-button')
+				
+				if (text && !classList) {
 					mutation.target.classList.add('shadow-box')
+					container.classList.add('sticky-button')
 					return
 				}
 				
-				if (mutation.target.innerHTML.includes('Balas Thread')) {
+				if (!text && classList) {
 					container.classList.remove('sticky-button')
 					mutation.target.classList.remove('shadow-box')
 				}
