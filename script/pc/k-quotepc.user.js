@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name            Kaskus : Insert Quote Button (PC)
 // @version         3.0.1
-// @namespace		k-quotepc
+// @namespace       k-quotepc
 // @author          ffsuperteam
 // @icon            https://s.kaskus.id/themes_3.0/mobile/images/logo-n.svg
-// @homepage		https://github.com/reforget-id/Simplified-Kaskus
-// @description		Tambah tombol quote di nested reply di PC
+// @homepage        https://github.com/reforget-id/Simplified-Kaskus
+// @description     Tambah tombol quote di nested reply di PC
 // @match           https://www.kaskus.co.id/thread/*
 // @match           https://www.kaskus.co.id/post/*
 // @match           https://www.kaskus.co.id/lastpost/*
