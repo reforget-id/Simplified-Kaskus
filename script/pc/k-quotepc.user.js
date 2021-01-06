@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name		  	Kaskus : Insert Quote Button (PC)
-// @version			3.0.0
+// @version			3.0.1
 // @namespace		k-quotepc
 // @author			ffsuperteam
 // @icon			https://s.kaskus.id/themes_3.0/mobile/images/logo-n.svg
@@ -23,67 +23,67 @@
 
 GM_addStyle(`
 .single-quote {
-	padding-right: 3px !important;
-	font-size: 15px !important;
+    padding-right: 3px !important;
+    font-size: 15px !important;
 }
 .nested-height {
-	min-height: 50px !important;
-	padding-bottom: 20px !important;
-	padding-top: 10px !important;
+    min-height: 50px !important;
+    padding-bottom: 20px !important;
+    padding-top: 10px !important;
 }
 .nested-top {
-	padding-bottom: 12px !important;
-	padding-top: 4px !important;
+    padding-bottom: 12px !important;
+    padding-top: 4px !important;
 }
 .replybox {
-	min-height: 85px !important;
+    min-height: 85px !important;
 }
 .toolbox {
-	margin-right: 10px !important;
-	color: #757373;
+    margin-right: 10px !important;
+    color: #757373;
 }
 .toolbox:hover {
-	color: #000000;
+    color: #000000;
 }
 .mr-divtools {
-	margin-top: 10px;
-	margin-bottom: 3px;
-	margin-left: 32px;
+    margin-top: 10px;
+    margin-bottom: 3px;
+    margin-left: 32px;
 }
 .tooltip {
-	position: relative;
-	display: inline-block;
+    position: relative;
+    display: inline-block;
 }
 .tooltip .tooltiptext {
- 	visibility: hidden;
- 	min-width: 110px;
- 	background-color: #555;
-  	color: #fff;
-  	text-align: center;
-  	border-radius: 6px;
-  	padding: 5px 5px 5px 5px;
-  	position: absolute;
-  	z-index: 1;
-  	bottom: 125%;
-  	left: 50%;
-  	margin-left: -55px;
-  	opacity: 0;
-  	transition: opacity 0.3s;
-  	font: 13px/normal "Roboto", Arial, sans-serif;
+    visibility: hidden;
+    min-width: 110px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 5px 5px 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -55px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font: 13px/normal "Roboto", Arial, sans-serif;
 }
 .tooltip .tooltiptext::after {
-  	content: "";
-  	position: absolute;
-  	top: 100%;
-  	left: 50%;
-  	margin-left: -5px;
-  	border-width: 5px;
-  	border-style: solid;
-  	border-color: #555 transparent transparent transparent;
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
 }
 .tooltip:hover .tooltiptext {
-  	visibility: visible;
-  	opacity: 1;
+    visibility: visible;
+    opacity: 1;
 }
 .nested-container {
     max-height: 80vh !important;
@@ -101,14 +101,14 @@ GM_addStyle(`
     z-index: 1;
 }
 .sticky-button {
-	position: sticky;
+    position: sticky;
     bottom: 10vh;
     height: 0px;
     margin-right: -19%;
-	z-index: 1;
+    z-index: 1;
 }
 .shadow-box {
-	box-shadow: 0px 1px 35px #404040;
+    box-shadow: 0px 1px 35px #404040;
 }
 `);
 
@@ -227,9 +227,9 @@ GM_addStyle(`
                 singleQuoteBtn.setAttribute('onclick', click)
                 singleQuoteBtn.setAttribute('class', 'D(ib) Td(n):h Fz(16px) Mend(15px) Px(8px) Py(3px) Bdrs(8px) buttonMultiquote')
                 singleQuoteBtn.innerHTML = ` 
-				<i class="single-quote fas C(c-secondary) fa-comment Mend(2px)"></i>
-				<span class="C(c-secondary) Fz(12px)">Single Quote</span>
-			`
+                <i class="single-quote fas C(c-secondary) fa-comment Mend(2px)"></i>
+                <span class="C(c-secondary) Fz(12px)">Single Quote</span>
+            `
                 parentNode.prepend(singleQuoteBtn)
                 singleQuoteBtn.addEventListener('click', createXhr)
             }
@@ -607,53 +607,53 @@ GM_addStyle(`
             replyBox.id = 'divtools'
 
             replyBox.innerHTML = `
-			<button type="button" class="${classAtt}" onclick="${click('B')}">
-				<i class="far fa-fw fa-bold tooltip">
-					<span class="tooltiptext">Set Text Bold</span>
-				</i>
-			</button>
-			<button type="button" class="${classAtt}" onclick="${click('I')}">
-				<i class="far fa-fw fa-italic tooltip">
-					<span class="tooltiptext">Set Text Italic</span>
-				</i>
-			</button>
-			<button type="button" class="${classAtt} Fz(15px) Pt(1px)" onclick="${click('U')}">
-				<i class="far fa-fw fa-underline tooltip">
-					<span class="tooltiptext">Set Text Underline</span>
-				</i>
-			</button>
-			<div class="W(1px) H(16px) Bgc(c-lightgrey) toolbox"></div>
-			<button type="button" class="${classAtt}" onclick="${click('LEFT')}">
-				<i class="far fa-fw fa-align-left tooltip">
-					<span class="tooltiptext">Set Align Left</span>
-				</i>
-			</button>
-			<button type="button" class="${classAtt}" onclick="${click('CENTER')}">
-				<i class="far fa-fw fa-align-center tooltip">
-					<span class="tooltiptext">Set Align Center</span>
-				</i>
-			</button>
-			<button type="button" class="${classAtt}" onclick="${click('RIGHT')}">
-				<i class="far fa-fw fa-align-right tooltip">
-					<span class="tooltiptext">Set Align Right</span>
-				</i>
-			</button>
-			<div class="W(1px) H(16px) Bgc(c-lightgrey) toolbox"></div>
-			<button type="button" class="${classAtt} urlbtn">
-				<i class="far fa-fw fa-link tooltip">
-					<span class="tooltiptext">Insert URL</span>
-				</i>
-			</button>
-			<button type="button" class="${classAtt} imgurlbtn">
-				<i class="far fa-fw fa-image tooltip">
-					<span class="tooltiptext">Insert Image From URL</span>
-				</i>
-			</button>
-			<button type="button" class="${classAtt} spoilerbtn">
-				<i class="far fa-fw fa-comment-dots tooltip">
-					<span class="tooltiptext">Insert Spoiler</span>
-				</i>
-			</button>
+            <button type="button" class="${classAtt}" onclick="${click('B')}">
+                <i class="far fa-fw fa-bold tooltip">
+                    <span class="tooltiptext">Set Text Bold</span>
+                </i>
+            </button>
+            <button type="button" class="${classAtt}" onclick="${click('I')}">
+                <i class="far fa-fw fa-italic tooltip">
+                    <span class="tooltiptext">Set Text Italic</span>
+                </i>
+            </button>
+            <button type="button" class="${classAtt} Fz(15px) Pt(1px)" onclick="${click('U')}">
+                <i class="far fa-fw fa-underline tooltip">
+                    <span class="tooltiptext">Set Text Underline</span>
+                </i>
+            </button>
+            <div class="W(1px) H(16px) Bgc(c-lightgrey) toolbox"></div>
+            <button type="button" class="${classAtt}" onclick="${click('LEFT')}">
+                <i class="far fa-fw fa-align-left tooltip">
+                    <span class="tooltiptext">Set Align Left</span>
+                </i>
+            </button>
+            <button type="button" class="${classAtt}" onclick="${click('CENTER')}">
+                <i class="far fa-fw fa-align-center tooltip">
+                    <span class="tooltiptext">Set Align Center</span>
+                </i>
+            </button>
+            <button type="button" class="${classAtt}" onclick="${click('RIGHT')}">
+                <i class="far fa-fw fa-align-right tooltip">
+                    <span class="tooltiptext">Set Align Right</span>
+                </i>
+            </button>
+            <div class="W(1px) H(16px) Bgc(c-lightgrey) toolbox"></div>
+            <button type="button" class="${classAtt} urlbtn">
+                <i class="far fa-fw fa-link tooltip">
+                    <span class="tooltiptext">Insert URL</span>
+                </i>
+            </button>
+            <button type="button" class="${classAtt} imgurlbtn">
+                <i class="far fa-fw fa-image tooltip">
+                    <span class="tooltiptext">Insert Image From URL</span>
+                </i>
+            </button>
+            <button type="button" class="${classAtt} spoilerbtn">
+                <i class="far fa-fw fa-comment-dots tooltip">
+                    <span class="tooltiptext">Insert Spoiler</span>
+                </i>
+            </button>
 `
 
             let urlBtn = document.getElementsByClassName('urlbtn')
