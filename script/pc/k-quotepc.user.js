@@ -505,7 +505,7 @@ GM_addStyle(`
 
     function focusToPost() {
         const childPost = url.match(/\/post\/\w{24}\/\?child_id=post\w{24}$/)
-        const parentPost = url.match(/\/(last|)post\/\w{24}.+#post\w{24}/)
+        const parentPost = url.match(/\/(last|)post\/\w{24}.*#post\w{24}/)
 
         if (childPost) {
             const parentId = url.match(/(?<=\/post\/)\w{24}/)
