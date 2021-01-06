@@ -506,39 +506,8 @@ GM_addStyle(`
     function focusToPost() {
         const childPost = url.match(/\/post\/\w{24}\/\?child_id=post\w{24}$/)
         const parentPost = url.match(/\/(last|)post\/\w{24}.*#post\w{24}/)
-
-        if (childPost) {
-            const parentId = url.match(/(?<=\/post\/)\w{24}/)
-            const childId = url.match(/(?<=child_id=)post\w{24}$/)
-            const parentElement = document.getElementById('post' + parentId)
-
-            try {
-                function iterator() {
-                    let childElement = parentElement.getElementsByClassName(childId)[0]
-                    let moreNested = parentElement.getElementsByClassName('moreNested')[0]
-
-                    if (childElement) {
-                        childElement.scrollIntoView({
-                            block: 'center',
-                            behavior: 'smooth'
-                        })
-                        console.log(log, 'Focusing to nested comment ' + childId[0])
-                        return
-                    } else if (!childElement && moreNested.innerHTML) {
-                        moreNested.click()
-                        setTimeout(iterator, 800)
-                    } else {
-                        return
-                    }
-                }
-                iterator()
-            } catch (e) {
-                console.log(log, e)
-                return
-            }
-        }
-
-        if (parentPost) {
+		
+		if (parentPost) {
             let postId = url.match(/(?<=#)post\w{24}/)
             const target = document.getElementById(postId)
             const headerOffset = 60
@@ -553,7 +522,39 @@ GM_addStyle(`
             })
 
             console.log(log, 'Focusing to the ' + postId[0])
+			return
         }
+
+        if (childPost) {
+            const parentId = url.match(/(?<=\/post\/)\w{24}/)
+            const childId = url.match(/(?<=child_id=)post\w{24}$/)
+            const parentElement = document.getElementById('post' + parentId)
+
+            try {
+				iterator()
+				
+                function iterator() {
+                    let childElement = parentElement.getElementsByClassName(childId)[0]
+                    let moreNested = parentElement.getElementsByClassName('moreNested')[0]
+
+                    if (childElement) {
+                        childElement.scrollIntoView({
+                            block: 'center',
+                            behavior: 'smooth'
+                        })
+                        console.log(log, 'Focusing to nested comment ' + childId[0])
+                    } 
+					
+					if (!childElement && moreNested.innerHTML) {
+                        moreNested.click()
+                        setTimeout(iterator, 800)
+                    } 
+                }           
+            } catch (e) {
+                console.log(log, e)
+            }
+        }
+
     }
 
     /******************************************************************************/
