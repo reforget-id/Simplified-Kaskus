@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name            Kaskus : Insert Quote Button (PC)
-// @version         3.0.1
+// @version         3.1.0
 // @namespace       k-quotepc
 // @author          ffsuperteam
 // @icon            https://s.kaskus.id/themes_3.0/mobile/images/logo-n.svg
@@ -162,9 +162,33 @@ GM_addStyle(`
     /******************************************************************************/
     /******************************************************************************/
 
+    // DEFAULT SETTINGS
+    const maxReplyDefault = 10
+    const nestedCommentStyleDefault = 'scroll'
+
+    // USER SETTINGS
+    let maxReply = GM_getValue('maxReply', null)
+    let nestedCommentStyle = GM_getValue('nestedCommentStyle', null)
+
+    // CONSTANTS
+    const posts = getElementsByIdStartsWith('div', 'post')
     const url = window.location.href
     const log = '[Kaskus Quote]'
     let threadId
+
+    /******************************************************************************/
+
+    if (maxReply == null) {
+        GM_setValue('maxReply', maxReplyDefault)
+        maxReply = GM_getValue('maxReply')
+    }
+
+    if (nestedCommentStyle == null || (nestedCommentStyle !== 'expand' && nestedCommentStyle !== 'scroll')) {
+        GM_setValue('nestedCommentStyle', nestedCommentStyleDefault)
+        nestedCommentStyle = GM_getValue('nestedCommentStyle')
+    }
+    console.log(log, 'maxReply = ' + maxReply)
+    console.log(log, 'nestedCommentStyle = ' + nestedCommentStyle)
 
     /******************************************************************************/
     /*************************** FUNCTION CONTROLLER ******************************/
@@ -174,14 +198,15 @@ GM_addStyle(`
         setQuotedText()
     } else {
         threadId = document.getElementById('thread_id').value
-        setTimeout(removeModeratedPosts, 10)
-        setTimeout(createSingleQuote, 20)
+        setTimeout(replaceTextKutip, 10)
+        setTimeout(createSingleQuote(posts), 10)
+        setTimeout(removeModeratedPosts, 20)
     }
 
     /******************************************************************************/
 
     function removeModeratedPosts() {
-        let moderatedPost = getElementsByIdStartsWith('div', 'moderated-')
+        const moderatedPost = getElementsByIdStartsWith('div', 'moderated-')
 
         if (moderatedPost.length > 0) {
             for (let i = 0; i < moderatedPost.length; i++) {
@@ -189,11 +214,33 @@ GM_addStyle(`
             }
             console.log(log, 'Removing moderated-post')
         }
-        setTimeout(replaceTextKutip, 10)
-        setTimeout(nestedWrapperProperties, 20)
-        setTimeout(nestedCommentsObserver, 30)
-        setTimeout(openNestedComments, 200)
-        setTimeout(replyTools, 300)
+        nestedCommentsHandler()
+    }
+
+    /******************************************************************************/
+
+    function nestedCommentsHandler() {
+        const nestedWrapper = document.getElementsByClassName('nestedWrapper')
+        const emptyArray = []
+        const dummyElement = null
+
+        if (nestedWrapper.length === 0) {
+            setTimeout(stickyPostButton, 500)
+            return
+        }
+
+        if (nestedCommentStyle === 'scroll') {
+            setTimeout(nestedWrapperProperties(nestedWrapper), 20)
+        }
+
+        if (maxReply > 0) {
+            setTimeout(openNestedComments(posts), 50)
+        } else {
+            setTimeout(nestedCommentsObserver(emptyArray, dummyElement), 50)
+        }
+
+        setTimeout(replyTools, 2000)
+        setTimeout(stickyPostButton, 1500)
     }
 
     /******************************************************************************/
@@ -210,10 +257,7 @@ GM_addStyle(`
 
     /******************************************************************************/
 
-    function createSingleQuote() {
-        //const replyButton = document.getElementsByClassName('D(ib) Td(n):h Fz(16px) jsButtonReply buttonReply')
-        const posts = getElementsByIdStartsWith('div', 'post')
-
+    function createSingleQuote(posts) {
         for (let i = 0; i < posts.length; i++) {
             let replyButton = posts[i].getElementsByClassName('D(ib) Td(n):h Fz(16px) jsButtonReply buttonReply')[0]
 
@@ -227,9 +271,9 @@ GM_addStyle(`
                 singleQuoteBtn.setAttribute('onclick', click)
                 singleQuoteBtn.setAttribute('class', 'D(ib) Td(n):h Fz(16px) Mend(15px) Px(8px) Py(3px) Bdrs(8px) buttonMultiquote')
                 singleQuoteBtn.innerHTML = ` 
-                <i class="single-quote fas C(c-secondary) fa-comment Mend(2px)"></i>
-                <span class="C(c-secondary) Fz(12px)">Single Quote</span>
-            `
+                    <i class="single-quote fas C(c-secondary) fa-comment Mend(2px)"></i>
+                    <span class="C(c-secondary) Fz(12px)">Single Quote</span>
+                `
                 parentNode.prepend(singleQuoteBtn)
                 singleQuoteBtn.addEventListener('click', createXhr)
             }
@@ -240,9 +284,6 @@ GM_addStyle(`
     /******************************************************************************/
 
     function createNestedQuote(post) {
-        //let replyButton = post[i].getElementsByClassName('jsButtonReply buttonReply')[0]
-        //let post = getElementsByIdStartsWith('div', 'post')
-
         for (var i = 0; i < post.length; i++) {
             let replyButton = post[i].getElementsByClassName('jsButtonReply buttonReply')[0]
 
@@ -257,23 +298,22 @@ GM_addStyle(`
                 singleQuoteBtn.setAttribute('onclick', click)
                 singleQuoteBtn.setAttribute('class', 'D(ib) Td(n):h Fz(16px) Mend(15px) Px(8px) Py(3px) Bdrs(8px) buttonMultiquote')
                 singleQuoteBtn.innerHTML = ` 
-                <i class="single-quote fas C(c-secondary) fa-comment Mend(2px)" ></i>
-                <span class="C(c-secondary) Fz(12px)">Single Quote</span></a>
-            `
+                    <i class="single-quote fas C(c-secondary) fa-comment Mend(2px)" ></i>
+                    <span class="C(c-secondary) Fz(12px)">Single Quote</span></a>
+                `
 
                 multiQuoteBtn.href = 'javascript:void(0);'
                 multiQuoteBtn.setAttribute('onclick', click)
                 multiQuoteBtn.setAttribute("class", "D(ib) Td(n):h Fz(16px) Mend(15px) Px(8px) Py(3px) Bdrs(8px) jsButtonMultiquote buttonMultiquote")
                 multiQuoteBtn.innerHTML = `
-                <i class="single-quote fas C(c-secondary) fa-comments Mend(2px)"></i>
-                <span class="C(c-secondary) Fz(12px)">Multi Quote</span>
-            `
+                    <i class="single-quote fas C(c-secondary) fa-comments Mend(2px)"></i>
+                    <span class="C(c-secondary) Fz(12px)">Multi Quote</span>
+                `
 
                 parentNode.prepend(singleQuoteBtn, multiQuoteBtn)
                 singleQuoteBtn.addEventListener('click', createXhr)
-            }
 
-            if (!replyButton) {
+            } else if (!replyButton) {
                 post[i].remove()
                 console.log(log, 'Removing invalid post in nested comments')
             }
@@ -283,42 +323,72 @@ GM_addStyle(`
 
     /******************************************************************************/
 
-    function openNestedComments() {
-        const filteredElements = []
-        const nestedTrigger = document.getElementsByClassName('jsShowNestedTrigger')
+    function openNestedComments(posts) {
+        const postUrl = url.match(/\/(last|)post\/\w{24}.*#post\w{24}/)
         const nestedUrl = url.match(/\/post\/\w{24}\/\?child_id=post\w{24}$/)
+        const totalNested = []
+        const priorityNested = []
+        let filteredElements = []
+        let checkHelper = true
+        let postId, childId, postElement
 
-        if (nestedUrl) {
+        if (postUrl) {
+            postId = url.match(/(?<=#)post\w{24}/)
+            postElement = document.getElementById(postId)
+        } else if (nestedUrl) {
             try {
-                const parentId = url.match(/(?<=\/post\/)\w{24}/)
-                const parentPost = document.getElementById('post' + parentId)
-                const parentTrigger = parentPost.getElementsByClassName('jsShowNestedTrigger')[0]
-                parentTrigger.setAttribute('priority', 'high')
+                postId = 'post' + url.match(/(?<=\/post\/)\w{24}/)
+                childId = url.match(/(?<=child_id=)post\w{24}$/)
+                postElement = document.getElementById(postId)
+                postElement.getElementsByClassName('jsShowNestedTrigger')[0]
+                    .setAttribute('priority', 'high')
+
+                specificNestedCommentObserver(postElement, childId)
             } catch (e) {
                 console.log(log, e)
             }
         }
 
-        if (nestedTrigger.length > 0) {
-            for (let i = 0; i < nestedTrigger.length; i++) {
-                let replyCount = nestedTrigger[i].getAttribute('data-replycount')
-                let priority = nestedTrigger[i].getAttribute('priority') || ''
-                let classList = nestedTrigger[i].classList
+        if (maxReply >= 20) {
+            const nestedTrigger = document.getElementsByClassName('jsShowNestedTrigger')
+            filteredElements = Array.from(nestedTrigger)
 
-                if (classList.contains('getNestedAD') && (replyCount <= 10 || priority === 'high')) {
-                    filteredElements.push(nestedTrigger[i])
+            if (postElement) {
+                for (let i = 0; i < posts.length; i++) {
+                    let trigger = posts[i].getElementsByClassName('jsShowNestedTrigger')[0]
+                    if (posts[i].id == postId) {
+                        break
+                    } else if (trigger) {
+                        priorityNested.push(totalNested.length)
+                        totalNested.push(totalNested.length)
+                    }
                 }
             }
-
-            if (filteredElements.length > 0) {
-                clickIterator()
-            } else {
-                setTimeout(focusToPost, 500)
-                setTimeout(stickyPostButton, 500)
-            }
         } else {
-            setTimeout(focusToPost, 500)
-            setTimeout(stickyPostButton, 500)
+            for (let i = 0; i < posts.length; i++) {
+                let trigger = posts[i].getElementsByClassName('jsShowNestedTrigger')[0]
+                if (posts[i].id == postId) {
+                    checkHelper = false
+                } 
+                
+                if (trigger) {
+                    let replyCount = trigger.getAttribute('data-replycount')
+                    let priority = trigger.getAttribute('priority') || ''
+
+                    if (replyCount <= maxReply || priority === 'high') {
+                        filteredElements.push(trigger)
+                        if (postElement && checkHelper) {
+                            priorityNested.push(totalNested.length)
+                        }
+                    }
+                    totalNested.push(totalNested.length)
+                }
+            }
+        }
+
+        nestedCommentsObserver(priorityNested, postElement)
+        if (filteredElements.length > 0) {
+            setTimeout(clickIterator, 200)
         }
 
         function clickIterator() {
@@ -333,32 +403,29 @@ GM_addStyle(`
             console.log(log, `Clicking (${filteredElements.length}) nested trigger `)
 
             if (filteredElements.length > 0) {
-                setTimeout(clickIterator, 200)
+                setTimeout(clickIterator, 100)
             } else {
                 console.log(log, 'All nested comments were open')
-                setTimeout(focusToPost, 800)
-                setTimeout(stickyPostButton, 500)
             }
         }
     }
 
     /******************************************************************************/
 
-    function nestedCommentsObserver() {
+    function nestedCommentsObserver(priorityNested, postElement) {
         const targetNode = document.getElementsByClassName('jsNestedItemContent')
         const observers = []
-
-        if (targetNode.length > 0) {
-            for (let i = 0; i < targetNode.length; i++) {
-                mutationObserverFactory(targetNode[i], i)
-            }
+        const filteredNested = []
+        const config = {
+            childList: true
         }
 
-        function mutationObserverFactory(target, i) {
-            const config = {
-                childList: true
-            }
+        for (let i = 0; i < targetNode.length; i++) {
+            mutationObserverFactory(targetNode[i], i)
+        }
+        console.log(log, 'Register observer for nested comments')
 
+        function mutationObserverFactory(target, i) {
             observers[i] = new MutationObserver((mutations) => {
                 mutations.forEach((mutation) => {
                     if (mutation.target && [...mutation.addedNodes].length) {
@@ -366,33 +433,35 @@ GM_addStyle(`
                         let newNodes = [...mutation.addedNodes]
                         let moreNested = mutation.target.getElementsByClassName('moreNested')[0]
 
-                        for (let i = 0; i < newNodes.length; i++) {
-                            let postId = newNodes[i].id || ''
+                        for (let j = 0; j < newNodes.length; j++) {
+                            let postId = newNodes[j].id || ''
 
                             if (postId.startsWith('post')) {
-                                newPosts.push(newNodes[i])
-                            }
-
-                            if (postId.startsWith('moderated-')) {
-                                newNodes[i].remove()
+                                newPosts.push(newNodes[j])
+                            } else if (postId.startsWith('moderated-')) {
+                                newNodes[j].remove()
                                 console.log(log, 'Removing moderated-post in nested comments')
                             }
                         }
 
                         if (newPosts.length > 0) {
-                            console.log(log, `(${newPosts.length}) post has been added in nested comments (${i+1}) !`);
+                            console.log(log, `(${newPosts.length}) post has been added in nested comments (${i}) !`);
                             setTimeout(nestedPostProperties(newPosts), 10)
                             setTimeout(createNestedQuote(newPosts), 20)
+                        }
+
+                        if (priorityNested.includes(i) && !filteredNested.includes(i)) {
+                            filteredNested.push(i)
                         }
 
                         let totalPosts = mutation.target.getElementsByClassName('nestedbit')
                         if (!moreNested.innerHTML) {
                             observers[i].disconnect()
-                            console.log(log, `Disconnect observer for nested comments (${i+1})`)
+                            console.log(log, `Disconnect observer for nested comments (${i})`)
 
                             if (!totalPosts.length) {
                                 mutation.target.parentNode.remove()
-                                console.log(log, `Remove empty nested comments (${i+1})`)
+                                console.log(log, `Remove empty nested comments (${i})`)
                             }
                         }
                     }
@@ -401,37 +470,87 @@ GM_addStyle(`
             observers[i].observe(target, config)
         }
 
+        if (priorityNested.length) {
+            let checkPriorityNested = setInterval(() => {
+                if (filteredNested.length == priorityNested.length) {
+                    clearInterval(checkPriorityNested)
+                    console.log(log, `Focus after nested comments ${filteredNested} are open`)
+                    setTimeout(focusToPost(postElement), 60)
+                }
+            }, 100)
+        }
     }
 
     /******************************************************************************/
 
-    function nestedWrapperProperties() {
-        const nestedWrapper = document.getElementsByClassName('nestedWrapper')
-
-        if (nestedWrapper.length > 0) {
-            for (let i = 0; i < nestedWrapper.length; i++) {
-                let simpleReply = nestedWrapper[i].getElementsByClassName('simple-reply')[0]
-                let smallReply = nestedWrapper[i].getElementsByClassName('small-reply')[0]
-
-                nestedWrapper[i].classList.add('nested-container')
-                nestedWrapper[i].firstElementChild.classList.add('nested-toogle', 'Bgc(#f9f9f9)')
-                smallReply.classList.add('nested-reply')
-                simpleReply.classList.add('nested-reply', 'Bgc(#f9f9f9)')
-                simpleReply.addEventListener('click', function sibling() {
-                    let formReply = simpleReply.nextElementSibling
-                    if (formReply && formReply.classList.contains('form-reply-message')) {
-                        formReply.classList.add('Px(20px)', 'Mx(-16px)', 'Bgc(#f9f9f9)')
-                        let parent = nestedWrapper[i].parentNode
-                        let fragment = document.createDocumentFragment()
-                        fragment.appendChild(formReply)
-                        parent.appendChild(fragment)
-                    } else {
-                        setTimeout(sibling, 100)
-                    }
-                })
-            }
-            console.log(log, 'Success set nested wrapper properties')
+    function specificNestedCommentObserver(parentElement, childId) {
+        const itemContent = parentElement.getElementsByClassName('jsNestedItemContent')[0]
+        const config = {
+            childList: true
         }
+
+        const observer = new MutationObserver(function (mutations) {
+            mutations.forEach(function (mutation) {
+                let childElement = mutation.target.getElementsByClassName(childId)[0]
+                let moreNested = mutation.target.getElementsByClassName('moreNested')[0]
+
+                if (!childElement && moreNested.innerHTML) {
+                    moreNested.click()
+                } else {
+                    if (childElement) {
+                        console.log(log, `Child Post is found in ${parentElement.id}`)
+                    } else if (!moreNested.innerHTML) {
+                        console.log(log, `Child Post is not found in ${parentElement.id}`)
+                    }
+                    observer.disconnect()
+                    console.log(log, `Disconnect observer for nestedItemContent in ${parentElement.id}`)
+                }
+
+                /*
+                if (childElement) {
+                    childElement.scrollIntoView({
+                        block: 'center',
+                        behavior: 'smooth'
+                    })
+                    console.log(log, 'Focusing to nested comment ' + childId[0])
+                    observer.disconnect()
+
+                } else if (!childElement && moreNested.innerHTML) {
+                    moreNested.click()
+                }
+                */
+            })
+        })
+
+        observer.observe(itemContent, config)
+        console.log(log, `Observing nestedItemContent in ${parentElement.id} for focusing business`)
+    }
+
+    /******************************************************************************/
+
+    function nestedWrapperProperties(nestedWrapper) {
+        for (let i = 0; i < nestedWrapper.length; i++) {
+            let simpleReply = nestedWrapper[i].getElementsByClassName('simple-reply')[0]
+            let smallReply = nestedWrapper[i].getElementsByClassName('small-reply')[0]
+
+            nestedWrapper[i].classList.add('nested-container')
+            nestedWrapper[i].firstElementChild.classList.add('nested-toogle', 'Bgc(#f9f9f9)')
+            smallReply.classList.add('nested-reply')
+            simpleReply.classList.add('nested-reply', 'Bgc(#f9f9f9)')
+            simpleReply.addEventListener('click', function sibling() {
+                let formReply = simpleReply.nextElementSibling
+                if (formReply && formReply.classList.contains('form-reply-message')) {
+                    formReply.classList.add('Px(20px)', 'Mx(-16px)', 'Bgc(#f9f9f9)')
+                    let parent = nestedWrapper[i].parentNode
+                    let fragment = document.createDocumentFragment()
+                    fragment.appendChild(formReply)
+                    parent.appendChild(fragment)
+                } else {
+                    setTimeout(sibling, 100)
+                }
+            })
+        }
+        console.log(log, 'Success set nested wrapper properties')
     }
 
     /******************************************************************************/
@@ -503,58 +622,19 @@ GM_addStyle(`
 
     /******************************************************************************/
 
-    function focusToPost() {
-        const childPost = url.match(/\/post\/\w{24}\/\?child_id=post\w{24}$/)
-        const parentPost = url.match(/\/(last|)post\/\w{24}.*#post\w{24}/)
+    function focusToPost(postElement) {
+        const headerOffset = 60
+        const bodyRect = document.body.getBoundingClientRect().top
+        const elementRect = postElement.getBoundingClientRect().top
+        const elementPosition = elementRect - bodyRect
+        const offsetPosition = elementPosition - headerOffset
 
-        if (parentPost) {
-            let postId = url.match(/(?<=#)post\w{24}/)
-            const target = document.getElementById(postId)
-            const headerOffset = 60
-            const bodyRect = document.body.getBoundingClientRect().top
-            const elementRect = target.getBoundingClientRect().top
-            const elementPosition = elementRect - bodyRect
-            const offsetPosition = elementPosition - headerOffset
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        })
 
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth"
-            })
-
-            console.log(log, 'Focusing to the ' + postId[0])
-            return
-        }
-
-        if (childPost) {
-            const parentId = url.match(/(?<=\/post\/)\w{24}/)
-            const childId = url.match(/(?<=child_id=)post\w{24}$/)
-            const parentElement = document.getElementById('post' + parentId)
-
-            try {
-                iterator()
-
-                function iterator() {
-                    let childElement = parentElement.getElementsByClassName(childId)[0]
-                    let moreNested = parentElement.getElementsByClassName('moreNested')[0]
-
-                    if (childElement) {
-                        childElement.scrollIntoView({
-                            block: 'center',
-                            behavior: 'smooth'
-                        })
-                        console.log(log, 'Focusing to nested comment ' + childId[0])
-                    }
-
-                    if (!childElement && moreNested.innerHTML) {
-                        moreNested.click()
-                        setTimeout(iterator, 800)
-                    }
-                }
-            } catch (e) {
-                console.log(log, e)
-            }
-        }
-
+        console.log(log, 'Focusing to the ' + postElement.id)
     }
 
     /******************************************************************************/
@@ -575,10 +655,7 @@ GM_addStyle(`
                 if (text && !classList) {
                     mutation.target.classList.add('shadow-box')
                     container.classList.add('sticky-button')
-                    return
-                }
-
-                if (!text && classList) {
+                } else if (!text && classList) {
                     container.classList.remove('sticky-button')
                     mutation.target.classList.remove('shadow-box')
                 }
@@ -607,54 +684,54 @@ GM_addStyle(`
             replyBox.id = 'divtools'
 
             replyBox.innerHTML = `
-            <button type="button" class="${classAtt}" onclick="${click('B')}">
-                <i class="far fa-fw fa-bold tooltip">
-                    <span class="tooltiptext">Set Text Bold</span>
-                </i>
-            </button>
-            <button type="button" class="${classAtt}" onclick="${click('I')}">
-                <i class="far fa-fw fa-italic tooltip">
-                    <span class="tooltiptext">Set Text Italic</span>
-                </i>
-            </button>
-            <button type="button" class="${classAtt} Fz(15px) Pt(1px)" onclick="${click('U')}">
-                <i class="far fa-fw fa-underline tooltip">
-                    <span class="tooltiptext">Set Text Underline</span>
-                </i>
-            </button>
-            <div class="W(1px) H(16px) Bgc(c-lightgrey) toolbox"></div>
-            <button type="button" class="${classAtt}" onclick="${click('LEFT')}">
-                <i class="far fa-fw fa-align-left tooltip">
-                    <span class="tooltiptext">Set Align Left</span>
-                </i>
-            </button>
-            <button type="button" class="${classAtt}" onclick="${click('CENTER')}">
-                <i class="far fa-fw fa-align-center tooltip">
-                    <span class="tooltiptext">Set Align Center</span>
-                </i>
-            </button>
-            <button type="button" class="${classAtt}" onclick="${click('RIGHT')}">
-                <i class="far fa-fw fa-align-right tooltip">
-                    <span class="tooltiptext">Set Align Right</span>
-                </i>
-            </button>
-            <div class="W(1px) H(16px) Bgc(c-lightgrey) toolbox"></div>
-            <button type="button" class="${classAtt} urlbtn">
-                <i class="far fa-fw fa-link tooltip">
-                    <span class="tooltiptext">Insert URL</span>
-                </i>
-            </button>
-            <button type="button" class="${classAtt} imgurlbtn">
-                <i class="far fa-fw fa-image tooltip">
-                    <span class="tooltiptext">Insert Image From URL</span>
-                </i>
-            </button>
-            <button type="button" class="${classAtt} spoilerbtn">
-                <i class="far fa-fw fa-comment-dots tooltip">
-                    <span class="tooltiptext">Insert Spoiler</span>
-                </i>
-            </button>
-`
+                <button type="button" class="${classAtt}" onclick="${click('B')}">
+                    <i class="far fa-fw fa-bold tooltip">
+                        <span class="tooltiptext">Set Text Bold</span>
+                    </i>
+                </button>
+                <button type="button" class="${classAtt}" onclick="${click('I')}">
+                    <i class="far fa-fw fa-italic tooltip">
+                        <span class="tooltiptext">Set Text Italic</span>
+                    </i>
+                </button>
+                <button type="button" class="${classAtt} Fz(15px) Pt(1px)" onclick="${click('U')}">
+                    <i class="far fa-fw fa-underline tooltip">
+                        <span class="tooltiptext">Set Text Underline</span>
+                    </i>
+                </button>
+                <div class="W(1px) H(16px) Bgc(c-lightgrey) toolbox"></div>
+                <button type="button" class="${classAtt}" onclick="${click('LEFT')}">
+                    <i class="far fa-fw fa-align-left tooltip">
+                        <span class="tooltiptext">Set Align Left</span>
+                    </i>
+                </button>
+                <button type="button" class="${classAtt}" onclick="${click('CENTER')}">
+                    <i class="far fa-fw fa-align-center tooltip">
+                        <span class="tooltiptext">Set Align Center</span>
+                    </i>
+                </button>
+                <button type="button" class="${classAtt}" onclick="${click('RIGHT')}">
+                    <i class="far fa-fw fa-align-right tooltip">
+                        <span class="tooltiptext">Set Align Right</span>
+                    </i>
+                </button>
+                <div class="W(1px) H(16px) Bgc(c-lightgrey) toolbox"></div>
+                <button type="button" class="${classAtt} urlbtn">
+                    <i class="far fa-fw fa-link tooltip">
+                        <span class="tooltiptext">Insert URL</span>
+                    </i>
+                </button>
+                <button type="button" class="${classAtt} imgurlbtn">
+                    <i class="far fa-fw fa-image tooltip">
+                        <span class="tooltiptext">Insert Image From URL</span>
+                    </i>
+                </button>
+                <button type="button" class="${classAtt} spoilerbtn">
+                    <i class="far fa-fw fa-comment-dots tooltip">
+                        <span class="tooltiptext">Insert Spoiler</span>
+                    </i>
+                </button>
+            `
 
             let urlBtn = document.getElementsByClassName('urlbtn')
             urlBtn[i].addEventListener('click', () => {
