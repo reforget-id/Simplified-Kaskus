@@ -1,5 +1,6 @@
 # Simplified Kaskus
 
+>_Script ini sudah deprecated, silahkan gunakan [Kaskus Essentials Script (Dekstop)](https://github.com/reforget-id/kaskus-essentials-desktop)_
 
 Menyederhanakan tampilan Kaskus (Mobile Browser) dan Script Pendukung (PC dan Mobile)
 
